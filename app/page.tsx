@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { CoverSlide } from "@/components/slides/cover-slide"
@@ -27,32 +27,46 @@ import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
 import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
 import { ThankYouSlide } from "@/components/slides/thank-you-slide"
 
+// Slide Factory: 컴포넌트를 렌더링 함수로 변환
+const createSlide = (Component: React.ComponentType<any>) => {
+  return () => <Component />
+}
+
+// Slide Factory with Props: props가 필요한 컴포넌트를 위한 팩토리
+const createSlideWithProps = <T extends Record<string, any>>(
+  Component: React.ComponentType<T>,
+  props: T
+) => {
+  return () => <Component {...props} />
+}
+
+// Slides 배열 정의
 const slides = [
-  CoverSlide,
-  Chapter01Slide,
-  IpRealitySlide,
-  WhyNotManagedSlide,
-  IpJudgmentCoreSlide,
-  CurrentIssuesSlide,
-  Chapter02Slide,
-  AnnuityManagementSlide,
-  CompetitiveAdvantageSlide,
-  Chapter03Slide,
-  ServiceAdvantagesSlide,
-  ServicesSlide,
-  CrossCheckSlide,
-  DataServicesSlide,
-  PatentValueInfoSlide,
-  TechValuationSlide,
-  Chapter04Slide,
-  WhyPaytentAiSlide,
-  PaytentAiFeaturesSlide,
-  PaytentVsAiSlide,
-  AiCalendarSlide,
-  () => <AiCalendarSlide isPage22={true} />,
-  () => <AiCalendarSlide isPage23={true} />,
-  PaytentAiAdoptionSlide,
-  ThankYouSlide,
+  createSlide(CoverSlide),
+  createSlide(Chapter01Slide),
+  createSlide(IpRealitySlide),
+  createSlide(WhyNotManagedSlide),
+  createSlide(IpJudgmentCoreSlide),
+  createSlide(CurrentIssuesSlide),
+  createSlide(Chapter02Slide),
+  createSlide(AnnuityManagementSlide),
+  createSlide(CompetitiveAdvantageSlide),
+  createSlide(Chapter03Slide),
+  createSlide(ServiceAdvantagesSlide),
+  createSlide(ServicesSlide),
+  createSlide(CrossCheckSlide),
+  createSlide(DataServicesSlide),
+  createSlide(PatentValueInfoSlide),
+  createSlide(TechValuationSlide),
+  createSlide(Chapter04Slide),
+  createSlide(WhyPaytentAiSlide),
+  createSlide(PaytentAiFeaturesSlide),
+  createSlide(PaytentVsAiSlide),
+  createSlide(AiCalendarSlide),
+  createSlideWithProps(AiCalendarSlide, { isPage22: true }),
+  createSlideWithProps(AiCalendarSlide, { isPage23: true }),
+  createSlide(PaytentAiAdoptionSlide),
+  createSlide(ThankYouSlide),
 ]
 
 export default function PresentationPage() {
