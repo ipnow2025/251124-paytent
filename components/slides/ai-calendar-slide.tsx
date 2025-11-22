@@ -37,7 +37,7 @@ interface AiCalendarSlideProps {
   isPage23?: boolean
 }
 
-export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalendarSlideProps = {}) {
+export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalendarSlideProps) {
   const [showPopup, setShowPopup] = useState(false)
   const [popupType, setPopupType] = useState<PopupType>(null)
   const [messages, setMessages] = useState<ChatMessage[]>([])

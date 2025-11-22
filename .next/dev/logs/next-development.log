@@ -1,438 +1,3032 @@
-[00:00:01.073] Server  LOG      ✓ Ready in 753ms
-[00:00:05.619] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:05.765] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:05.766] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:05.766] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763805757050}
-[00:04:43.710] Server  LOG      ✓ Compiled in 104ms
-[00:08:53.729] Server  LOG      ✓ Compiled in 109ms
-[00:08:55.690] Server  LOG      ✓ Compiled in 174ms
-[00:08:57.456] Server  LOG      ✓ Compiled in 101ms
-[00:08:59.326] Server  LOG      ✓ Compiled in 133ms
-[00:09:01.281] Server  LOG      ✓ Compiled in 96ms
-[00:09:03.539] Server  LOG      ✓ Compiled in 105ms
-[00:09:12.466] Server  LOG      ✓ Compiled in 85ms
-[00:09:20.822] Server  LOG      ✓ Compiled in 69ms
-[00:09:28.970] Server  LOG      ✓ Compiled in 85ms
-[00:09:45.315] Server  LOG      ✓ Compiled in 72ms
-[00:09:46.551] Server  LOG      ✓ Compiled in 68ms
-[00:09:47.818] Server  LOG      ✓ Compiled in 66ms
-[00:09:49.541] Server  LOG      ✓ Compiled in 72ms
-[00:09:50.732] Server  LOG      ✓ Compiled in 76ms
-[00:09:51.935] Server  LOG      ✓ Compiled in 77ms
-[00:09:53.030] Server  LOG      ✓ Compiled in 80ms
-[00:09:54.194] Server  LOG      ✓ Compiled in 70ms
-[00:09:55.376] Server  LOG      ✓ Compiled in 67ms
-[00:09:56.576] Server  LOG      ✓ Compiled in 64ms
-[00:09:59.310] Server  LOG      ✓ Compiled in 75ms
-[00:10:00.778] Server  LOG      ✓ Compiled in 75ms
-[00:10:02.729] Server  LOG      ✓ Compiled in 76ms
-[00:10:03.557] Server  LOG      ✓ Compiled in 73ms
-[00:10:04.689] Server  LOG      ✓ Compiled in 84ms
-[00:10:05.679] Server  LOG      ✓ Compiled in 76ms
-[00:10:31.159] Server  LOG      ✓ Compiled in 81ms
-[00:10:32.244] Server  LOG      ✓ Compiled in 70ms
-[00:10:33.341] Server  LOG      ✓ Compiled in 67ms
-[00:10:34.359] Server  LOG      ✓ Compiled in 60ms
-[00:10:35.469] Server  LOG      ✓ Compiled in 73ms
-[00:10:36.286] Server  LOG      ✓ Compiled in 66ms
-[00:10:37.433] Server  LOG      ✓ Compiled in 85ms
-[00:10:38.326] Server  LOG      ✓ Compiled in 73ms
-[00:10:39.425] Server  LOG      ✓ Compiled in 66ms
-[00:10:40.460] Server  LOG      ✓ Compiled in 73ms
-[00:10:41.227] Server  LOG      ✓ Compiled in 59ms
-[00:10:44.218] Server  LOG      ✓ Compiled in 81ms
-[00:10:45.504] Server  LOG      ✓ Compiled in 83ms
-[00:10:46.898] Server  LOG      ✓ Compiled in 69ms
-[00:10:48.091] Server  LOG      ✓ Compiled in 69ms
-[00:10:49.140] Server  LOG      ✓ Compiled in 73ms
-[00:10:50.159] Server  LOG      ✓ Compiled in 70ms
-[00:10:51.191] Server  LOG      ✓ Compiled in 69ms
-[00:11:10.991] Server  LOG      ✓ Compiled in 83ms
-[00:11:12.102] Server  LOG      ✓ Compiled in 66ms
-[00:11:12.966] Server  LOG      ✓ Compiled in 56ms
-[00:11:13.825] Server  LOG      ✓ Compiled in 63ms
-[00:11:14.732] Server  LOG      ✓ Compiled in 77ms
-[00:11:15.673] Server  LOG      ✓ Compiled in 66ms
-[00:11:16.755] Server  LOG      ✓ Compiled in 58ms
-[00:11:17.635] Server  LOG      ✓ Compiled in 65ms
-[00:11:18.555] Server  LOG      ✓ Compiled in 77ms
-[00:11:19.594] Server  LOG      ✓ Compiled in 68ms
-[00:11:20.653] Server  LOG      ✓ Compiled in 63ms
-[00:11:21.825] Server  LOG      ✓ Compiled in 73ms
-[00:11:23.066] Server  LOG      ✓ Compiled in 69ms
-[00:11:24.035] Server  LOG      ✓ Compiled in 78ms
-[00:11:24.896] Server  LOG      ✓ Compiled in 67ms
-[00:11:25.938] Server  LOG      ✓ Compiled in 71ms
-[00:11:27.146] Server  LOG      ✓ Compiled in 82ms
-[00:11:28.169] Server  LOG      ✓ Compiled in 70ms
-[00:11:29.378] Server  LOG      ✓ Compiled in 71ms
-[00:11:30.338] Server  LOG      ✓ Compiled in 70ms
-[00:13:40.621] Server  LOG      ✓ Compiled in 71ms
-[00:13:43.403] Server  LOG      ✓ Compiled in 62ms
-[00:13:46.574] Server  LOG      ✓ Compiled in 66ms
-[00:13:49.639] Server  LOG      ✓ Compiled in 66ms
-[00:13:52.307] Server  LOG      ✓ Compiled in 62ms
-[00:16:01.559] Server  LOG      ✓ Compiled in 63ms
-[00:16:03.933] Server  LOG      ✓ Compiled in 61ms
-[00:16:06.338] Server  LOG      ✓ Compiled in 56ms
-[00:16:08.905] Server  LOG      ✓ Compiled in 74ms
-[00:16:14.274] Server  LOG      ✓ Compiled in 57ms
-[00:16:39.218] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:39.355] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:16:39.355] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:16:39.355] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763806750644}
-[00:17:10.650] Server  LOG      ✓ Compiled in 85ms
-[00:17:13.919] Server  LOG      ✓ Compiled in 78ms
-[00:17:17.121] Server  LOG      ✓ Compiled in 77ms
-[00:17:20.007] Server  LOG      ✓ Compiled in 71ms
-[00:17:23.087] Server  LOG      ✓ Compiled in 64ms
-[00:17:25.860] Server  LOG      ✓ Compiled in 73ms
-[00:17:29.022] Server  LOG      ✓ Compiled in 70ms
-[00:17:32.734] Server  LOG      ✓ Compiled in 66ms
-[00:17:38.741] Server  LOG      ✓ Compiled in 67ms
-[00:17:45.730] Server  LOG      ✓ Compiled in 60ms
-[00:17:46.797] Server  LOG      ✓ Compiled in 72ms
-[00:17:49.019] Server  LOG      ✓ Compiled in 83ms
-[00:17:51.773] Server  LOG      ✓ Compiled in 64ms
-[00:19:55.610] Server  LOG      ✓ Compiled in 65ms
-[00:19:56.457] Server  LOG      ✓ Compiled in 82ms
-[00:19:57.538] Server  LOG      ✓ Compiled in 61ms
-[00:19:59.092] Server  LOG      ✓ Compiled in 61ms
-[00:20:00.501] Server  LOG      ✓ Compiled in 65ms
-[00:20:01.894] Server  LOG      ✓ Compiled in 63ms
-[00:20:02.809] Server  LOG      ✓ Compiled in 68ms
-[00:20:04.419] Server  LOG      ✓ Compiled in 66ms
-[00:20:05.825] Server  LOG      ✓ Compiled in 60ms
-[00:20:07.427] Server  LOG      ✓ Compiled in 67ms
-[00:20:09.185] Server  LOG      ✓ Compiled in 67ms
-[00:20:10.153] Server  LOG      ✓ Compiled in 59ms
-[00:20:11.389] Server  LOG      ✓ Compiled in 58ms
-[00:20:12.605] Server  LOG      ✓ Compiled in 65ms
-[00:21:23.703] Server  LOG      ✓ Compiled in 73ms
-[00:22:25.055] Server  LOG      ✓ Compiled in 76ms
-[00:26:18.737] Server  LOG      ✓ Compiled in 61ms
-[00:26:19.902] Server  LOG      ✓ Compiled in 66ms
-[00:26:21.106] Server  LOG      ✓ Compiled in 58ms
-[00:27:08.652] Server  LOG      ✓ Compiled in 65ms
-[00:28:02.715] Server  LOG      ✓ Compiled in 69ms
-[00:29:12.546] Server  LOG      ✓ Compiled in 84ms
-[00:29:47.765] Server  LOG      ✓ Compiled in 61ms
-[00:30:43.144] Server  LOG      ✓ Compiled in 76ms
-[00:32:22.367] Server  LOG      ✓ Compiled in 62ms
-[00:32:25.182] Server  LOG      ✓ Compiled in 61ms
-[00:33:43.075] Server  LOG      ✓ Compiled in 89ms
-[00:33:45.067] Server  LOG      ✓ Compiled in 87ms
-[00:33:46.940] Server  LOG      ✓ Compiled in 83ms
-[00:33:49.261] Server  LOG      ✓ Compiled in 70ms
-[00:33:50.399] Server  LOG      ✓ Compiled in 77ms
-[00:33:51.718] Server  LOG      ✓ Compiled in 71ms
-[00:35:01.305] Server  LOG      ✓ Compiled in 59ms
-[00:35:01.413] Browser ERROR   ./components/slides/data-services-slide.tsx:8:40
-Parsing ecmascript source code failed
-   6 |       icon: Radio,
-   7 |       title: "연차료\n시그널링",
->  8 |       items: ["특허경쟁력 검토" "(연계특허, 주요국가출원)"],
-     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |       arrow: true,
-  10 |       result: "특허 유지 or 포기 제안",
-  11 |       outcome: "비전문가 판단근거 제공",
+[00:00:00.964] Server  LOG     
+[00:00:00.964] Server  LOG        We detected TypeScript in your project and created a tsconfig.json file for you.
+[00:00:01.085] Server  LOG      ✓ Ready in 768ms
+[00:00:04.998] Server  ERROR    ⨯ ./app/page.tsx:26:1
+Module not found: Can't resolve '@/components/slides/ai-calendar-slide'
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+> 26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
 
-Expected ',', got 'string literal ((연계특허, 주요국가출원), "(연계특허, 주요국가출원)")'
+
 
 Import traces:
   Client Component Browser:
-    ./components/slides/data-services-slide.tsx [Client Component Browser]
     ./app/page.tsx [Client Component Browser]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/slides/data-services-slide.tsx [Client Component SSR]
     ./app/page.tsx [Client Component SSR]
     ./app/page.tsx [Server Component]
-[00:35:49.145] Server  ERROR    ⨯ ./components/slides/data-services-slide.tsx:8:40
-Parsing ecmascript source code failed
-   6 |       icon: Radio,
-   7 |       title: "연차료\n시그널링",
->  8 |       items: ["특허경쟁력 검토" "(연계특허, 주요국가출원)"],
-     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |       arrow: true,
-  10 |       result: "특허 유지 or 포기 제안",
-  11 |       outcome: "비전문가 판단근거 제공",
 
-Expected ',', got 'string literal ((연계특허, 주요국가출원), "(연계특허, 주요국가출원)")'
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:13:1
+Module not found: Can't resolve '@/components/slides/annuity-management-slide'
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+> 13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+
+
 
 Import traces:
   Client Component Browser:
-    ./components/slides/data-services-slide.tsx [Client Component Browser]
     ./app/page.tsx [Client Component Browser]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/slides/data-services-slide.tsx [Client Component SSR]
     ./app/page.tsx [Client Component SSR]
     ./app/page.tsx [Server Component]
 
+https://nextjs.org/docs/messages/module-not-found
 
-[00:35:49.278] Browser ERROR   ./components/slides/data-services-slide.tsx:8:40
-Parsing ecmascript source code failed
-   6 |       icon: Radio,
-   7 |       title: "연차료\n시그널링",
->  8 |       items: ["특허경쟁력 검토" "(연계특허, 주요국가출원)"],
-     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |       arrow: true,
-  10 |       result: "특허 유지 or 포기 제안",
-  11 |       outcome: "비전문가 판단근거 제공",
 
-Expected ',', got 'string literal ((연계특허, 주요국가출원), "(연계특허, 주요국가출원)")'
+
+./app/page.tsx:7:1
+Module not found: Can't resolve '@/components/slides/chapter-01-slide'
+   5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+>  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+
+
 
 Import traces:
   Client Component Browser:
-    ./components/slides/data-services-slide.tsx [Client Component Browser]
     ./app/page.tsx [Client Component Browser]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/slides/data-services-slide.tsx [Client Component SSR]
     ./app/page.tsx [Client Component SSR]
     ./app/page.tsx [Server Component]
-[00:35:49.972] Browser ERROR   ./components/slides/data-services-slide.tsx:8:40
-Parsing ecmascript source code failed
-   6 |       icon: Radio,
-   7 |       title: "연차료\n시그널링",
->  8 |       items: ["특허경쟁력 검토" "(연계특허, 주요국가출원)"],
-     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |       arrow: true,
-  10 |       result: "특허 유지 or 포기 제안",
-  11 |       outcome: "비전문가 판단근거 제공",
 
-Expected ',', got 'string literal ((연계특허, 주요국가출원), "(연계특허, 주요국가출원)")'
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:12:1
+Module not found: Can't resolve '@/components/slides/chapter-02-slide'
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+> 12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+
+
 
 Import traces:
   Client Component Browser:
-    ./components/slides/data-services-slide.tsx [Client Component Browser]
     ./app/page.tsx [Client Component Browser]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/slides/data-services-slide.tsx [Client Component SSR]
     ./app/page.tsx [Client Component SSR]
     ./app/page.tsx [Server Component]
-[00:35:49.972] Browser ERROR   ./components/slides/data-services-slide.tsx:8:40
-Parsing ecmascript source code failed
-   6 |       icon: Radio,
-   7 |       title: "연차료\n시그널링",
->  8 |       items: ["특허경쟁력 검토" "(연계특허, 주요국가출원)"],
-     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |       arrow: true,
-  10 |       result: "특허 유지 or 포기 제안",
-  11 |       outcome: "비전문가 판단근거 제공",
 
-Expected ',', got 'string literal ((연계특허, 주요국가출원), "(연계특허, 주요국가출원)")'
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:15:1
+Module not found: Can't resolve '@/components/slides/chapter-03-slide'
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+> 15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+
+
 
 Import traces:
   Client Component Browser:
-    ./components/slides/data-services-slide.tsx [Client Component Browser]
     ./app/page.tsx [Client Component Browser]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/slides/data-services-slide.tsx [Client Component SSR]
     ./app/page.tsx [Client Component SSR]
     ./app/page.tsx [Server Component]
-[00:35:50.107] Browser ERROR   uncaughtError: Error: ./components/slides/data-services-slide.tsx:8:40
-Parsing ecmascript source code failed
-   6 |       icon: Radio,
-   7 |       title: "연차료\n시그널링",
->  8 |       items: ["특허경쟁력 검토" "(연계특허, 주요국가출원)"],
-     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |       arrow: true,
-  10 |       result: "특허 유지 or 포기 제안",
-  11 |       outcome: "비전문가 판단근거 제공",
 
-Expected ',', got 'string literal ((연계특허, 주요국가출원), "(연계특허, 주요국가출원)")'
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:22:1
+Module not found: Can't resolve '@/components/slides/chapter-04-slide'
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+> 22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+
+
 
 Import traces:
   Client Component Browser:
-    ./components/slides/data-services-slide.tsx [Client Component Browser]
     ./app/page.tsx [Client Component Browser]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/slides/data-services-slide.tsx [Client Component SSR]
     ./app/page.tsx [Client Component SSR]
     ./app/page.tsx [Server Component]
 
+https://nextjs.org/docs/messages/module-not-found
 
-[00:35:50.282] Browser ERROR   ./components/slides/data-services-slide.tsx:8:40
-Parsing ecmascript source code failed
-   6 |       icon: Radio,
-   7 |       title: "연차료\n시그널링",
->  8 |       items: ["특허경쟁력 검토" "(연계특허, 주요국가출원)"],
-     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |       arrow: true,
-  10 |       result: "특허 유지 or 포기 제안",
-  11 |       outcome: "비전문가 판단근거 제공",
 
-Expected ',', got 'string literal ((연계특허, 주요국가출원), "(연계특허, 주요국가출원)")'
+
+./app/page.tsx:14:1
+Module not found: Can't resolve '@/components/slides/competitive-advantage-slide'
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+> 14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+
+
 
 Import traces:
   Client Component Browser:
-    ./components/slides/data-services-slide.tsx [Client Component Browser]
     ./app/page.tsx [Client Component Browser]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/slides/data-services-slide.tsx [Client Component SSR]
     ./app/page.tsx [Client Component SSR]
     ./app/page.tsx [Server Component]
-[00:35:50.282] Browser ERROR   ./components/slides/data-services-slide.tsx:8:40
-Parsing ecmascript source code failed
-   6 |       icon: Radio,
-   7 |       title: "연차료\n시그널링",
->  8 |       items: ["특허경쟁력 검토" "(연계특허, 주요국가출원)"],
-     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |       arrow: true,
-  10 |       result: "특허 유지 or 포기 제안",
-  11 |       outcome: "비전문가 판단근거 제공",
 
-Expected ',', got 'string literal ((연계특허, 주요국가출원), "(연계특허, 주요국가출원)")'
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:6:1
+Module not found: Can't resolve '@/components/slides/cover-slide'
+  4 | import { Button } from "@/components/ui/button"
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+> 6 | import { CoverSlide } from "@/components/slides/cover-slide"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+
+
 
 Import traces:
   Client Component Browser:
-    ./components/slides/data-services-slide.tsx [Client Component Browser]
     ./app/page.tsx [Client Component Browser]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/slides/data-services-slide.tsx [Client Component SSR]
     ./app/page.tsx [Client Component SSR]
     ./app/page.tsx [Server Component]
-[00:35:55.651] Browser ERROR   ./components/slides/data-services-slide.tsx:8:40
-Parsing ecmascript source code failed
-   6 |       icon: Radio,
-   7 |       title: "연차료\n시그널링",
->  8 |       items: ["특허경쟁력 검토" "(연계특허, 주요국가출원)"],
-     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |       arrow: true,
-  10 |       result: "특허 유지 or 포기 제안",
-  11 |       outcome: "비전문가 판단근거 제공",
 
-Expected ',', got 'string literal ((연계특허, 주요국가출원), "(연계특허, 주요국가출원)")'
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:18:1
+Module not found: Can't resolve '@/components/slides/cross-check-slide'
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+> 18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+
+
 
 Import traces:
   Client Component Browser:
-    ./components/slides/data-services-slide.tsx [Client Component Browser]
     ./app/page.tsx [Client Component Browser]
     ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./components/slides/data-services-slide.tsx [Client Component SSR]
     ./app/page.tsx [Client Component SSR]
     ./app/page.tsx [Server Component]
-[00:35:58.591] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:58.759] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:35:58.759] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:35:58.759] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763807910042}
-[00:37:00.994] Server  LOG      ✓ Compiled in 65ms
-[00:37:41.613] Server  LOG      ✓ Compiled in 66ms
-[00:38:13.754] Server  LOG      ✓ Compiled in 58ms
-[00:38:35.418] Server  LOG      ✓ Compiled in 58ms
-[00:39:08.919] Server  LOG      ✓ Compiled in 59ms
-[00:39:26.291] Server  LOG      ✓ Compiled in 61ms
-[00:41:04.117] Server  LOG      ✓ Compiled in 90ms
-[00:42:03.634] Server  LOG      ✓ Compiled in 61ms
-[00:42:46.184] Server  LOG      ✓ Compiled in 68ms
-[00:42:53.562] Server  LOG      ✓ Compiled in 61ms
-[00:42:55.321] Server  LOG      ✓ Compiled in 112ms
-[00:44:17.229] Server  LOG      ✓ Compiled in 58ms
-[00:45:25.234] Server  LOG      ✓ Compiled in 76ms
-[00:45:34.006] Server  LOG      ✓ Compiled in 73ms
-[00:45:36.023] Server  LOG      ✓ Compiled in 66ms
-[00:47:30.126] Server  LOG      ✓ Compiled in 85ms
-[00:48:10.933] Server  LOG      ✓ Compiled in 60ms
-[00:49:39.069] Server  LOG      ✓ Compiled in 62ms
-[00:50:44.091] Server  LOG      ✓ Compiled in 66ms
-[00:50:44.937] Server  LOG      ✓ Compiled in 67ms
-[00:50:45.819] Server  LOG      ✓ Compiled in 58ms
-[00:50:46.663] Server  LOG      ✓ Compiled in 59ms
-[00:51:48.871] Server  LOG      ✓ Compiled in 66ms
-[00:51:51.443] Server  LOG      ✓ Compiled in 61ms
-[00:51:54.120] Server  LOG      ✓ Compiled in 64ms
-[00:52:00.810] Server  LOG      ✓ Compiled in 68ms
-[00:52:41.843] Server  LOG      ✓ Compiled in 66ms
-[00:52:51.246] Server  LOG      ✓ Compiled in 64ms
-[00:54:14.011] Server  LOG      ✓ Compiled in 65ms
-[00:55:24.065] Server  LOG      ✓ Compiled in 60ms
-[00:56:30.750] Server  LOG      ✓ Compiled in 115ms
-[00:57:40.798] Server  LOG      ✓ Compiled in 70ms
-[00:57:42.190] Server  LOG      ✓ Compiled in 76ms
-[00:57:43.074] Server  LOG      ✓ Compiled in 72ms
-[00:57:44.504] Server  LOG      ✓ Compiled in 64ms
-[00:57:45.417] Server  LOG      ✓ Compiled in 62ms
-[00:57:52.429] Server  LOG      ✓ Compiled in 66ms
-[00:58:45.902] Server  LOG      ✓ Compiled in 62ms
-[01:02:16.592] Server  LOG      ✓ Compiled in 70ms
-[01:04:17.112] Server  LOG      ✓ Compiled in 75ms
-[01:04:24.931] Server  LOG      ✓ Compiled in 62ms
-[01:04:40.731] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:04:40.885] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:04:40.885] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:04:40.885] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763809632166}
-[01:05:01.733] Server  LOG      ✓ Compiled in 73ms
-[01:05:19.128] Server  LOG      ✓ Compiled in 147ms
-[01:05:25.028] Server  LOG      ✓ Compiled in 79ms
-[01:06:31.238] Server  LOG      ✓ Compiled in 70ms
-[01:07:52.845] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:07:52.978] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:07:52.978] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:07:52.978] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763809824267}
-[01:08:21.623] Server  LOG      ✓ Compiled in 80ms
-[01:08:34.308] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:08:34.456] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:08:34.456] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:08:34.456] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763809865745}
-[01:10:09.095] Server  LOG      ✓ Compiled in 90ms
-[01:10:44.744] Server  LOG      ✓ Compiled in 152ms
-[01:11:48.160] Server  LOG      ✓ Compiled in 77ms
-[01:11:57.465] Server  LOG      ✓ Compiled in 59ms
-[01:12:02.963] Server  LOG      ✓ Compiled in 58ms
-[01:12:05.575] Server  LOG      ✓ Compiled in 55ms
-[01:12:11.237] Server  LOG      ✓ Compiled in 56ms
-[01:12:19.323] Server  LOG      ✓ Compiled in 54ms
-[01:13:35.614] Server  LOG      ✓ Compiled in 60ms
-[01:13:38.534] Server  LOG      ✓ Compiled in 63ms
-[01:13:39.825] Server  LOG      ✓ Compiled in 71ms
-[01:13:42.094] Server  LOG      ✓ Compiled in 66ms
-[01:15:04.345] Server  LOG      ✓ Compiled in 77ms
-[01:16:25.562] Server  LOG      ✓ Compiled in 88ms
-[01:16:27.988] Server  LOG      ✓ Compiled in 70ms
-[01:17:14.992] Server  LOG      ✓ Compiled in 86ms
-[01:17:17.516] Server  LOG      ✓ Compiled in 77ms
-[01:18:32.270] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:18:32.410] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:18:32.410] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:18:32.410] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763810463699}
-[01:18:33.938] Server  LOG      ✓ Compiled in 90ms
-[01:19:15.130] Server  LOG      ✓ Compiled in 68ms
-[01:21:06.324] Server  LOG      ✓ Compiled in 66ms
-[01:21:11.802] Server  LOG      ✓ Compiled in 66ms
-[01:21:44.685] Server  LOG      ✓ Compiled in 77ms
-[01:22:27.667] Server  LOG      ✓ Compiled in 75ms
-[01:23:39.284] Server  LOG      ✓ Compiled in 84ms
-[01:23:49.614] Server  LOG      ✓ Compiled in 84ms
-[01:25:49.682] Server  LOG      ✓ Compiled in 62ms
-[01:26:20.691] Server  LOG      ✓ Compiled in 63ms
-[01:28:14.574] Server  LOG      ✓ Compiled in 76ms
-[01:29:14.948] Server  LOG      ✓ Compiled in 62ms
-[01:29:22.978] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:29:23.132] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:29:23.132] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:29:23.132] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763811114418}
-[01:30:37.499] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:30:37.630] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:30:37.630] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:30:37.631] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763811188915}
-[01:30:38.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:30:38.352] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:30:38.352] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:30:38.352] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763811189640}
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:11:1
+Module not found: Can't resolve '@/components/slides/current-issues-slide'
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+> 11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:19:1
+Module not found: Can't resolve '@/components/slides/data-services-slide'
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+> 19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:10:1
+Module not found: Can't resolve '@/components/slides/ip-judgment-core-slide'
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+> 10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:8:1
+Module not found: Can't resolve '@/components/slides/ip-reality-slide'
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+>  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:21:1
+Module not found: Can't resolve '@/components/slides/patent-value-info-slide'
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+> 21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:27:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-adoption-slide'
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+> 27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+  30 | const slides = [
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:24:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-features-slide'
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+> 24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:25:1
+Module not found: Can't resolve '@/components/slides/paytent-vs-ai-slide'
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+> 25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:16:1
+Module not found: Can't resolve '@/components/slides/service-advantages-slide'
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+> 16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:17:1
+Module not found: Can't resolve '@/components/slides/services-slide'
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+> 17 | import { ServicesSlide } from "@/components/slides/services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:20:1
+Module not found: Can't resolve '@/components/slides/tech-valuation-slide'
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+> 20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:28:1
+Module not found: Can't resolve '@/components/slides/thank-you-slide'
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+> 28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  29 |
+  30 | const slides = [
+  31 |   CoverSlide,
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:9:1
+Module not found: Can't resolve '@/components/slides/why-not-managed-slide'
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+>  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:23:1
+Module not found: Can't resolve '@/components/slides/why-paytent-ai-slide'
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+> 23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/button'
+  2 |
+  3 | import { useState, useEffect } from "react"
+> 4 | import { Button } from "@/components/ui/button"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+  6 | import { CoverSlide } from "@/components/slides/cover-slide"
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:05.945] Browser ERROR   uncaughtError: Error: ./app/page.tsx:26:1
+Module not found: Can't resolve '@/components/slides/ai-calendar-slide'
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+> 26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:06.153] Browser ERROR   ./app/page.tsx:26:1
+Module not found: Can't resolve '@/components/slides/ai-calendar-slide'
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+> 26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:13:1
+Module not found: Can't resolve '@/components/slides/annuity-management-slide'
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+> 13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:7:1
+Module not found: Can't resolve '@/components/slides/chapter-01-slide'
+   5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+>  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:12:1
+Module not found: Can't resolve '@/components/slides/chapter-02-slide'
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+> 12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:15:1
+Module not found: Can't resolve '@/components/slides/chapter-03-slide'
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+> 15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:22:1
+Module not found: Can't resolve '@/components/slides/chapter-04-slide'
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+> 22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:14:1
+Module not found: Can't resolve '@/components/slides/competitive-advantage-slide'
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+> 14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:6:1
+Module not found: Can't resolve '@/components/slides/cover-slide'
+  4 | import { Button } from "@/components/ui/button"
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+> 6 | import { CoverSlide } from "@/components/slides/cover-slide"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:18:1
+Module not found: Can't resolve '@/components/slides/cross-check-slide'
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+> 18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:11:1
+Module not found: Can't resolve '@/components/slides/current-issues-slide'
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+> 11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:19:1
+Module not found: Can't resolve '@/components/slides/data-services-slide'
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+> 19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:10:1
+Module not found: Can't resolve '@/components/slides/ip-judgment-core-slide'
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+> 10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:8:1
+Module not found: Can't resolve '@/components/slides/ip-reality-slide'
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+>  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:21:1
+Module not found: Can't resolve '@/components/slides/patent-value-info-slide'
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+> 21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:27:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-adoption-slide'
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+> 27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+  30 | const slides = [
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:24:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-features-slide'
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+> 24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:25:1
+Module not found: Can't resolve '@/components/slides/paytent-vs-ai-slide'
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+> 25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:16:1
+Module not found: Can't resolve '@/components/slides/service-advantages-slide'
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+> 16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:17:1
+Module not found: Can't resolve '@/components/slides/services-slide'
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+> 17 | import { ServicesSlide } from "@/components/slides/services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:20:1
+Module not found: Can't resolve '@/components/slides/tech-valuation-slide'
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+> 20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:28:1
+Module not found: Can't resolve '@/components/slides/thank-you-slide'
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+> 28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  29 |
+  30 | const slides = [
+  31 |   CoverSlide,
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:9:1
+Module not found: Can't resolve '@/components/slides/why-not-managed-slide'
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+>  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:23:1
+Module not found: Can't resolve '@/components/slides/why-paytent-ai-slide'
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+> 23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.153] Browser ERROR   ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/button'
+  2 |
+  3 | import { useState, useEffect } from "react"
+> 4 | import { Button } from "@/components/ui/button"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+  6 | import { CoverSlide } from "@/components/slides/cover-slide"
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:26:1
+Module not found: Can't resolve '@/components/slides/ai-calendar-slide'
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+> 26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:13:1
+Module not found: Can't resolve '@/components/slides/annuity-management-slide'
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+> 13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:7:1
+Module not found: Can't resolve '@/components/slides/chapter-01-slide'
+   5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+>  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:12:1
+Module not found: Can't resolve '@/components/slides/chapter-02-slide'
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+> 12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:15:1
+Module not found: Can't resolve '@/components/slides/chapter-03-slide'
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+> 15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:22:1
+Module not found: Can't resolve '@/components/slides/chapter-04-slide'
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+> 22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:14:1
+Module not found: Can't resolve '@/components/slides/competitive-advantage-slide'
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+> 14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:6:1
+Module not found: Can't resolve '@/components/slides/cover-slide'
+  4 | import { Button } from "@/components/ui/button"
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+> 6 | import { CoverSlide } from "@/components/slides/cover-slide"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:18:1
+Module not found: Can't resolve '@/components/slides/cross-check-slide'
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+> 18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:11:1
+Module not found: Can't resolve '@/components/slides/current-issues-slide'
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+> 11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:19:1
+Module not found: Can't resolve '@/components/slides/data-services-slide'
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+> 19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:10:1
+Module not found: Can't resolve '@/components/slides/ip-judgment-core-slide'
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+> 10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:8:1
+Module not found: Can't resolve '@/components/slides/ip-reality-slide'
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+>  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:21:1
+Module not found: Can't resolve '@/components/slides/patent-value-info-slide'
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+> 21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:27:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-adoption-slide'
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+> 27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+  30 | const slides = [
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:24:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-features-slide'
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+> 24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:25:1
+Module not found: Can't resolve '@/components/slides/paytent-vs-ai-slide'
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+> 25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:16:1
+Module not found: Can't resolve '@/components/slides/service-advantages-slide'
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+> 16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:17:1
+Module not found: Can't resolve '@/components/slides/services-slide'
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+> 17 | import { ServicesSlide } from "@/components/slides/services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:20:1
+Module not found: Can't resolve '@/components/slides/tech-valuation-slide'
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+> 20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:28:1
+Module not found: Can't resolve '@/components/slides/thank-you-slide'
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+> 28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  29 |
+  30 | const slides = [
+  31 |   CoverSlide,
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:9:1
+Module not found: Can't resolve '@/components/slides/why-not-managed-slide'
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+>  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:23:1
+Module not found: Can't resolve '@/components/slides/why-paytent-ai-slide'
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+> 23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.335] Browser ERROR   ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/button'
+  2 |
+  3 | import { useState, useEffect } from "react"
+> 4 | import { Button } from "@/components/ui/button"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+  6 | import { CoverSlide } from "@/components/slides/cover-slide"
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:26:1
+Module not found: Can't resolve '@/components/slides/ai-calendar-slide'
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+> 26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:13:1
+Module not found: Can't resolve '@/components/slides/annuity-management-slide'
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+> 13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:7:1
+Module not found: Can't resolve '@/components/slides/chapter-01-slide'
+   5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+>  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:12:1
+Module not found: Can't resolve '@/components/slides/chapter-02-slide'
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+> 12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:15:1
+Module not found: Can't resolve '@/components/slides/chapter-03-slide'
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+> 15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:22:1
+Module not found: Can't resolve '@/components/slides/chapter-04-slide'
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+> 22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:14:1
+Module not found: Can't resolve '@/components/slides/competitive-advantage-slide'
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+> 14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:6:1
+Module not found: Can't resolve '@/components/slides/cover-slide'
+  4 | import { Button } from "@/components/ui/button"
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+> 6 | import { CoverSlide } from "@/components/slides/cover-slide"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:18:1
+Module not found: Can't resolve '@/components/slides/cross-check-slide'
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+> 18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:11:1
+Module not found: Can't resolve '@/components/slides/current-issues-slide'
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+> 11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:19:1
+Module not found: Can't resolve '@/components/slides/data-services-slide'
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+> 19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:10:1
+Module not found: Can't resolve '@/components/slides/ip-judgment-core-slide'
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+> 10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:8:1
+Module not found: Can't resolve '@/components/slides/ip-reality-slide'
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+>  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:21:1
+Module not found: Can't resolve '@/components/slides/patent-value-info-slide'
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+> 21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:27:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-adoption-slide'
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+> 27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+  30 | const slides = [
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:24:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-features-slide'
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+> 24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:25:1
+Module not found: Can't resolve '@/components/slides/paytent-vs-ai-slide'
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+> 25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:16:1
+Module not found: Can't resolve '@/components/slides/service-advantages-slide'
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+> 16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:17:1
+Module not found: Can't resolve '@/components/slides/services-slide'
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+> 17 | import { ServicesSlide } from "@/components/slides/services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:20:1
+Module not found: Can't resolve '@/components/slides/tech-valuation-slide'
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+> 20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:28:1
+Module not found: Can't resolve '@/components/slides/thank-you-slide'
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+> 28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  29 |
+  30 | const slides = [
+  31 |   CoverSlide,
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:9:1
+Module not found: Can't resolve '@/components/slides/why-not-managed-slide'
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+>  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:23:1
+Module not found: Can't resolve '@/components/slides/why-paytent-ai-slide'
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+> 23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.520] Browser ERROR   ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/button'
+  2 |
+  3 | import { useState, useEffect } from "react"
+> 4 | import { Button } from "@/components/ui/button"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+  6 | import { CoverSlide } from "@/components/slides/cover-slide"
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:26:1
+Module not found: Can't resolve '@/components/slides/ai-calendar-slide'
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+> 26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:13:1
+Module not found: Can't resolve '@/components/slides/annuity-management-slide'
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+> 13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:7:1
+Module not found: Can't resolve '@/components/slides/chapter-01-slide'
+   5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+>  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:12:1
+Module not found: Can't resolve '@/components/slides/chapter-02-slide'
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+> 12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:15:1
+Module not found: Can't resolve '@/components/slides/chapter-03-slide'
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+> 15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:22:1
+Module not found: Can't resolve '@/components/slides/chapter-04-slide'
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+> 22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:14:1
+Module not found: Can't resolve '@/components/slides/competitive-advantage-slide'
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+> 14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:6:1
+Module not found: Can't resolve '@/components/slides/cover-slide'
+  4 | import { Button } from "@/components/ui/button"
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+> 6 | import { CoverSlide } from "@/components/slides/cover-slide"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:18:1
+Module not found: Can't resolve '@/components/slides/cross-check-slide'
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+> 18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:11:1
+Module not found: Can't resolve '@/components/slides/current-issues-slide'
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+> 11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:19:1
+Module not found: Can't resolve '@/components/slides/data-services-slide'
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+> 19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:10:1
+Module not found: Can't resolve '@/components/slides/ip-judgment-core-slide'
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+> 10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:8:1
+Module not found: Can't resolve '@/components/slides/ip-reality-slide'
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+>  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:21:1
+Module not found: Can't resolve '@/components/slides/patent-value-info-slide'
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+> 21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:27:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-adoption-slide'
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+> 27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+  30 | const slides = [
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:24:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-features-slide'
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+> 24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:25:1
+Module not found: Can't resolve '@/components/slides/paytent-vs-ai-slide'
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+> 25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:16:1
+Module not found: Can't resolve '@/components/slides/service-advantages-slide'
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+> 16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:17:1
+Module not found: Can't resolve '@/components/slides/services-slide'
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+> 17 | import { ServicesSlide } from "@/components/slides/services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:20:1
+Module not found: Can't resolve '@/components/slides/tech-valuation-slide'
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+> 20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:28:1
+Module not found: Can't resolve '@/components/slides/thank-you-slide'
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+> 28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  29 |
+  30 | const slides = [
+  31 |   CoverSlide,
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:9:1
+Module not found: Can't resolve '@/components/slides/why-not-managed-slide'
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+>  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:23:1
+Module not found: Can't resolve '@/components/slides/why-paytent-ai-slide'
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+> 23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:47.726] Browser ERROR   ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/button'
+  2 |
+  3 | import { useState, useEffect } from "react"
+> 4 | import { Button } from "@/components/ui/button"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+  6 | import { CoverSlide } from "@/components/slides/cover-slide"
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:26:1
+Module not found: Can't resolve '@/components/slides/ai-calendar-slide'
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+> 26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:13:1
+Module not found: Can't resolve '@/components/slides/annuity-management-slide'
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+> 13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:7:1
+Module not found: Can't resolve '@/components/slides/chapter-01-slide'
+   5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+>  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:12:1
+Module not found: Can't resolve '@/components/slides/chapter-02-slide'
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+> 12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:15:1
+Module not found: Can't resolve '@/components/slides/chapter-03-slide'
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+> 15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:22:1
+Module not found: Can't resolve '@/components/slides/chapter-04-slide'
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+> 22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:14:1
+Module not found: Can't resolve '@/components/slides/competitive-advantage-slide'
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+> 14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:6:1
+Module not found: Can't resolve '@/components/slides/cover-slide'
+  4 | import { Button } from "@/components/ui/button"
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+> 6 | import { CoverSlide } from "@/components/slides/cover-slide"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:18:1
+Module not found: Can't resolve '@/components/slides/cross-check-slide'
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+> 18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:11:1
+Module not found: Can't resolve '@/components/slides/current-issues-slide'
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+> 11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:19:1
+Module not found: Can't resolve '@/components/slides/data-services-slide'
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+> 19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:10:1
+Module not found: Can't resolve '@/components/slides/ip-judgment-core-slide'
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+> 10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+  13 | import { AnnuityManagementSlide } from "@/components/slides/annuity-management-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:8:1
+Module not found: Can't resolve '@/components/slides/ip-reality-slide'
+   6 | import { CoverSlide } from "@/components/slides/cover-slide"
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+>  8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:21:1
+Module not found: Can't resolve '@/components/slides/patent-value-info-slide'
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+> 21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:27:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-adoption-slide'
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+> 27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+  29 |
+  30 | const slides = [
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:24:1
+Module not found: Can't resolve '@/components/slides/paytent-ai-features-slide'
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+> 24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:25:1
+Module not found: Can't resolve '@/components/slides/paytent-vs-ai-slide'
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+> 25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+  28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:16:1
+Module not found: Can't resolve '@/components/slides/service-advantages-slide'
+  14 | import { CompetitiveAdvantageSlide } from "@/components/slides/competitive-advantage-slide"
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+> 16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { ServicesSlide } from "@/components/slides/services-slide"
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:17:1
+Module not found: Can't resolve '@/components/slides/services-slide'
+  15 | import { Chapter03Slide } from "@/components/slides/chapter-03-slide"
+  16 | import { ServiceAdvantagesSlide } from "@/components/slides/service-advantages-slide"
+> 17 | import { ServicesSlide } from "@/components/slides/services-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+  20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:20:1
+Module not found: Can't resolve '@/components/slides/tech-valuation-slide'
+  18 | import { CrossCheckSlide } from "@/components/slides/cross-check-slide"
+  19 | import { DataServicesSlide } from "@/components/slides/data-services-slide"
+> 20 | import { TechValuationSlide } from "@/components/slides/tech-valuation-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+  23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:28:1
+Module not found: Can't resolve '@/components/slides/thank-you-slide'
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+  27 | import { PaytentAiAdoptionSlide } from "@/components/slides/paytent-ai-adoption-slide"
+> 28 | import { ThankYouSlide } from "@/components/slides/thank-you-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  29 |
+  30 | const slides = [
+  31 |   CoverSlide,
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:9:1
+Module not found: Can't resolve '@/components/slides/why-not-managed-slide'
+   7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+   8 | import { IpRealitySlide } from "@/components/slides/ip-reality-slide"
+>  9 | import { WhyNotManagedSlide } from "@/components/slides/why-not-managed-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import { IpJudgmentCoreSlide } from "@/components/slides/ip-judgment-core-slide"
+  11 | import { CurrentIssuesSlide } from "@/components/slides/current-issues-slide"
+  12 | import { Chapter02Slide } from "@/components/slides/chapter-02-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:23:1
+Module not found: Can't resolve '@/components/slides/why-paytent-ai-slide'
+  21 | import { PatentValueInfoSlide } from "@/components/slides/patent-value-info-slide"
+  22 | import { Chapter04Slide } from "@/components/slides/chapter-04-slide"
+> 23 | import { WhyPaytentAiSlide } from "@/components/slides/why-paytent-ai-slide"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  24 | import { PaytentAiFeaturesSlide } from "@/components/slides/paytent-ai-features-slide"
+  25 | import { PaytentVsAiSlide } from "@/components/slides/paytent-vs-ai-slide"
+  26 | import { AiCalendarSlide } from "@/components/slides/ai-calendar-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:49.804] Browser ERROR   ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/button'
+  2 |
+  3 | import { useState, useEffect } from "react"
+> 4 | import { Button } from "@/components/ui/button"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { ChevronLeft, ChevronRight } from "lucide-react"
+  6 | import { CoverSlide } from "@/components/slides/cover-slide"
+  7 | import { Chapter01Slide } from "@/components/slides/chapter-01-slide"
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:51.547] Server  LOG      ✓ Compiled in 303ms
+[00:00:52.047] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.226] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:52.226] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:52.226] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763812068169}
+[00:00:59.345] Server  LOG      ✓ Compiled in 77ms

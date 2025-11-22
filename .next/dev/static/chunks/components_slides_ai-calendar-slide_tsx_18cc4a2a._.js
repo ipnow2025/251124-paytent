@@ -43,7 +43,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
+function AiCalendarSlide({ isPage22 = false, isPage23 = false }) {
     _s();
     const [showPopup, setShowPopup] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [popupType, setPopupType] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -4918,7 +4918,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
         columnNumber: 5
     }, this);
 }
-_s(AiCalendarSlide, "hakEsWWu8WqYnYrplheFkKSukYc=");
+_s(AiCalendarSlide, "8m3e6nDpOYdKWCAtUUjHs9LDGVw=");
 _c = AiCalendarSlide;
 var _c;
 __turbopack_context__.k.register(_c, "AiCalendarSlide");

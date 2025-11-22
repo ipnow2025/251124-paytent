@@ -159,7 +159,6 @@
     --container-sm: 24rem;
     --container-md: 28rem;
     --container-lg: 32rem;
-    --container-4xl: 56rem;
     --container-7xl: 80rem;
     --text-xs: .75rem;
     --text-xs--line-height: calc(1 / .75);
@@ -1360,10 +1359,6 @@
     max-width: var(--skeleton-width);
   }
 
-  .max-w-4xl {
-    max-width: var(--container-4xl);
-  }
-
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
@@ -2410,10 +2405,6 @@
 
   .bg-muted {
     background-color: var(--muted);
-  }
-
-  .bg-muted-foreground {
-    background-color: var(--muted-foreground);
   }
 
   .bg-muted\/50 {
