@@ -65,13 +65,28 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
   const maintainCount = patentRows.filter(row => row.decision === "유지").length
   const abandonCount = patentRows.filter(row => row.decision === "포기").length
   
-  // 예상 절감액 계산 (포기 추천된 건들의 연차료 합계)
+  // 예상 절감액 계산 (포기 추천된 건들의 연차료 합계, 통화별 환산)
   const totalSavings = patentRows
     .filter(row => row.decision === "포기")
     .reduce((sum, row) => {
       const feeStr = row.fee.replace(/,/g, "")
-      const feeNum = parseInt(feeStr) || 0
-      return sum + feeNum
+      const feeNum = parseFloat(feeStr) || 0
+      
+      // 통화별 원화 환산 (외국환 원화 환산 기준)
+      let feeInKRW = 0
+      if (row.country === "KR") {
+        feeInKRW = feeNum // 원화는 그대로
+      } else if (row.country === "US") {
+        feeInKRW = feeNum * 1300 // $1 = 1,300원
+      } else if (row.country === "EP") {
+        feeInKRW = feeNum * 1400 // €1 = 1,400원
+      } else if (row.country === "JP") {
+        feeInKRW = feeNum * 10 // ¥1 = 10원
+      } else {
+        feeInKRW = feeNum // 기타 통화는 그대로
+      }
+      
+      return sum + feeInKRW
     }, 0)
   
   const savingsText = totalSavings >= 10000 
@@ -89,7 +104,8 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
   // 테이블 업데이트 함수 (외부에서 호출 가능하도록)
   const updateTableDemo = async () => {
     const scores = [85, 72, 91, 68, 79, 88, 65, 76, 82, 94]
-    const decisions = ["유지", "포기", "유지", "유지", "유지", "유지", "유지", "유지", "유지", "유지"]
+    // AI 점수에 따라 의사결정 자동 결정: 70점 미만은 포기, 70점 이상은 유지
+    const decisions = scores.map(score => score >= 70 ? "유지" : "포기")
     const markets = ["1,200만원", "500만원", "2,500만원", "800만원", "1,500만원", "3,000만원", "600만원", "1,800만원", "1,000만원", "4,000만원"]
 
     // 초기화: 모든 데이터를 빈 값으로
@@ -311,9 +327,9 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
         } else {
           // 21p인 경우: 긴급한 특허 응답 (기존)
           const urgentPatents = [
-            "• KR10-2345678 - 연차료 납부 (마감일: 2024-12-31)",
+            "• KR10-2345678 - 연차료 납부 (마감일: 2026-12-31)",
             "• KR10-1234567 - 권리 포기 결정 필요",
-            "• EP18817150.8 - 연차료 납부 (마감일: 2025-01-15)",
+            "• EP18817150.8 - 연차료 납부 (마감일: 2027-01-13)",
           ]
           setMessages((prev) => [
             ...prev,
@@ -416,16 +432,18 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
       {/* Header */}
       <div className="mb-6">
         <div className="inline-block px-4 py-2 bg-primary/10 rounded-lg mb-3">
-          <span className="text-base font-semibold text-primary">Chapter 04 Paytent AI</span>
+          <span className="text-lg font-semibold text-primary">Chapter 04 Paytent AI</span>
         </div>
-        <h2 className="text-4xl font-bold text-foreground mb-3">
-          {isPage23 ? "AI 기반 연차료 관리시스템" :
-           isPage22 ? "AI 의사결정 보드로 포트폴리오를 한눈에" : "AI 지능형 알림 및 캘린더"}
+        <h2 className="text-[2.75rem] font-bold text-foreground mb-3">
+          {isPage23 ? "세번째 AI 기능 : AI 기반 연차료 관리시스템" :
+           isPage22 ? "두번째 AI 기능 : AI 의사결정 보드로 포트폴리오를 한눈에" : "첫번째 AI 기능 : AI 지능형 알림 및 캘린더"}
         </h2>
-        <p className="text-base text-muted-foreground leading-relaxed">
+        <p className="text-xl text-muted-foreground leading-relaxed">
           {isPage23 
             ? "자연어 질문만으로 필요한 정보 조회, 통계분석, 보고서 생성까지 제공."
-            : "수십, 수백 건의 IP를 사람이 하나씩 검토하고 판단하는 시대는 끝났습니다. Paytent AI는 'AI 의사결정 보드'로 전체 포트폴리오의 유지/포기 추천, 비용 시뮬레이션, 우선순위를 자동으로 제공합니다."
+            : isPage22
+            ? "수십, 수백 건의 IP를 사람이 하나씩 검토하고 판단하는 시대는 끝났습니다. Paytent AI는 'AI 의사결정 보드'로 전체 포트폴리오의 유지/포기 추천, 비용 시뮬레이션, 우선순위를 자동으로 제공합니다."
+            : "Paytent AI가 반복되는 일정추적을 줄이고, 판단이 필요한 시점만 선별해 알려드립니다."
           }
         </p>
       </div>
@@ -441,8 +459,8 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
               <div className="px-6 py-4 border-b border-gray-200 bg-white">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">AI 의사결정 보드</h3>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <h3 className="text-[1.375rem] font-bold text-gray-900">AI 의사결정 보드</h3>
+                    <p className="text-xl text-gray-600 mt-1">
                       IP(특허·상표·디자인)의 유지/포기 추천 및 비용 시뮬레이션
                     </p>
                   </div>
@@ -676,8 +694,8 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
               <div className="px-6 py-4 border-b border-gray-200 bg-white">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">연차료 지급리스트</h3>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <h3 className="text-[1.375rem] font-bold text-gray-900">연차료 지급리스트</h3>
+                    <p className="text-xl text-gray-600 mt-1">
                       2026년 1월 연차료 지급리스트
                     </p>
                   </div>
@@ -762,21 +780,21 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
                 <table className="w-full text-xs">
                   <thead className="bg-gray-50 sticky top-0">
                     <tr>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">순번</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">Smart5 등급</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">국가</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">출원번호</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">출원일</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">등록번호</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">등록일</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">납부기한</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">연차</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">청구항수</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">금액</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">납부 추천</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">검토</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">연차료 포기/납부</th>
-                      <th className="px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]">활용보고서</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">순번</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">Smart5 등급</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">국가</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">출원번호</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">출원일</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">등록번호</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">등록일</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">납부기한</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">연차</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">청구항수</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">금액</th>
+                      <th className="hidden px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">납부 추천</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">검토</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">연차료 포기/납부</th>
+                      <th className="px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]">활용보고서</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -793,44 +811,43 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
                       { no: 60, grade: "BB", country: "JP", appNo: "2019-234567", appDate: "2019-11-25", regNo: "JP7890123", regDate: "2022-04-08", due: "2026-01-08", year: "4", claims: "14", amount: "88,000¥", recommendation: "중", review: "검토 중" },
                     ].map((row) => (
                       <tr key={row.no} className="hover:bg-gray-50">
-                        <td className="px-4 py-3 text-gray-700 text-[0.7rem]">{row.no}</td>
-                        <td className="px-4 py-3">
+                        <td className="px-2 py-1.5 text-gray-700 text-[0.7rem]">{row.no}</td>
+                        <td className="px-2 py-1.5">
                           <Badge className="bg-gray-100 text-gray-800 text-[0.65rem] font-semibold">{row.grade}</Badge>
                         </td>
-                        <td className="px-4 py-3 text-gray-900 text-[0.7rem]">{row.country}</td>
-                        <td className="px-4 py-3 text-gray-900 font-mono text-[0.7rem]">{row.appNo}</td>
-                        <td className="px-4 py-3 text-gray-700 text-[0.7rem]">{row.appDate}</td>
-                        <td className="px-4 py-3 text-gray-900 font-mono text-[0.7rem]">{row.regNo}</td>
-                        <td className="px-4 py-3 text-gray-700 text-[0.7rem]">{row.regDate}</td>
-                        <td className="px-4 py-3 text-gray-700 text-[0.7rem]">{row.due}</td>
-                        <td className="px-4 py-3 text-gray-700 text-[0.7rem]">{row.year}</td>
-                        <td className="px-4 py-3 text-gray-700 text-[0.7rem]">{row.claims}</td>
-                        <td className="px-4 py-3 text-gray-700 font-medium text-[0.7rem]">{row.amount}</td>
-                        <td className="px-4 py-3">
+                        <td className="px-2 py-1.5 text-gray-900 text-[0.7rem]">{row.country}</td>
+                        <td className="px-2 py-1.5 text-gray-900 font-mono text-[0.7rem]">{row.appNo}</td>
+                        <td className="px-2 py-1.5 text-gray-700 text-[0.7rem]">{row.appDate}</td>
+                        <td className="px-2 py-1.5 text-gray-900 font-mono text-[0.7rem]">{row.regNo}</td>
+                        <td className="px-2 py-1.5 text-gray-700 text-[0.7rem]">{row.regDate}</td>
+                        <td className="px-2 py-1.5 text-gray-700 text-[0.7rem]">{row.due}</td>
+                        <td className="px-2 py-1.5 text-gray-700 text-[0.7rem]">{row.year}</td>
+                        <td className="px-2 py-1.5 text-gray-700 text-[0.7rem]">{row.claims}</td>
+                        <td className="px-2 py-1.5 text-gray-700 font-medium text-[0.7rem]">{row.amount}</td>
+                        <td className="hidden px-2 py-1.5">
                           <div className="flex items-center gap-1.5">
                             <Circle className="w-2 h-2 text-red-500 fill-red-500" />
                           </div>
                         </td>
-                        <td className="px-4 py-3">
-                          <div className="flex items-center gap-1.5">
-                            <Circle className="w-2 h-2 text-red-500 fill-red-500" />
-                            <span className="text-[0.65rem] text-gray-700">{row.review}</span>
+                        <td className="px-2 py-1.5">
+                          <span className="text-[0.65rem] text-gray-700">{row.review}</span>
+                        </td>
+                        <td className="px-2 py-1.5">
+                          <div className="flex flex-col gap-1">
+                            <div className="flex items-center gap-1">
+                              <Button size="sm" variant="outline" className="h-5 text-[0.65rem] bg-red-50 text-red-700 hover:bg-red-100 border-red-300 px-2">
+                                포기
+                              </Button>
+                              <Button size="sm" variant="outline" className="h-5 text-[0.65rem] bg-green-50 text-green-700 hover:bg-green-100 border-green-300 px-2">
+                                납부
+                              </Button>
+                            </div>
+                            <Button size="sm" variant="outline" className="h-5 text-[0.65rem] bg-gray-50 text-gray-700 hover:bg-gray-100 px-2">
+                              기업체 납부
+                            </Button>
                           </div>
                         </td>
-                        <td className="px-4 py-3">
-                          <div className="flex items-center gap-1">
-                            <Button size="sm" variant="outline" className="h-5 text-[0.65rem] bg-red-50 text-red-700 hover:bg-red-100 border-red-300 px-2">
-                              포기
-                            </Button>
-                            <Button size="sm" variant="outline" className="h-5 text-[0.65rem] bg-green-50 text-green-700 hover:bg-green-100 border-green-300 px-2">
-                              납부
-                            </Button>
-                             <Button size="sm" variant="outline" className="h-5 text-[0.65rem] bg-gray-50 text-gray-700 hover:bg-gray-100 px-2">
-                               기업
-                             </Button>
-                          </div>
-                        </td>
-                        <td className="px-4 py-3">
+                        <td className="px-2 py-1.5">
                           <Button size="sm" variant="outline" className="h-6 text-[0.65rem]">
                             확인하기
                           </Button>
@@ -896,8 +913,8 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
                   /* 포기 추천 특허 리스트 (22p) - 현재 테이블 데이터 사용 */
                   <div className="space-y-4">
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">포기 추천 특허</h3>
-                      <p className="text-sm text-gray-600">AI가 포기 추천한 특허 목록입니다.</p>
+                      <h3 className="text-[1.375rem] font-bold text-gray-900 mb-2">포기 추천 특허</h3>
+                      <p className="text-lg text-gray-600">AI가 포기 추천한 특허 목록입니다.</p>
                     </div>
                     <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
                       <table className="w-full text-sm">
@@ -961,8 +978,8 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
                   /* 손실위험이 있는 특허 리스트 (21p) */
                   <div className="space-y-4">
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">손실위험이 있는 특허</h3>
-                      <p className="text-sm text-gray-600">즉시 확인이 필요한 특허 목록입니다.</p>
+                      <h3 className="text-[1.375rem] font-bold text-gray-900 mb-2">손실위험이 있는 특허</h3>
+                      <p className="text-lg text-gray-600">즉시 확인이 필요한 특허 목록입니다.</p>
                     </div>
                     <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
                       <table className="w-full text-sm">
@@ -996,8 +1013,8 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
                   /* 긴급 특허 리스트 */
                   <div className="space-y-4">
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">긴급한 특허</h3>
-                      <p className="text-sm text-gray-600">즉시 처리해야 할 특허 목록입니다.</p>
+                      <h3 className="text-[1.375rem] font-bold text-gray-900 mb-2">긴급한 특허</h3>
+                      <p className="text-lg text-gray-600">즉시 처리해야 할 특허 목록입니다.</p>
                     </div>
                     <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
                       <table className="w-full text-sm">
@@ -1339,9 +1356,9 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
                         setTimeout(() => {
                           setIsTyping(false)
                           const urgentPatents = [
-                            "• KR10-2345678 - 연차료 납부 (마감일: 2024-12-31)",
+                            "• KR10-2345678 - 연차료 납부 (마감일: 2026-12-31)",
                             "• KR10-1234567 - 권리 포기 결정 필요",
-                            "• EP18817150.8 - 연차료 납부 (마감일: 2025-01-15)",
+                            "• EP18817150.8 - 연차료 납부 (마감일: 2027-01-13)",
                           ]
                           setMessages((prev) => [
                             ...prev,
@@ -1386,9 +1403,9 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
             <div className="mb-3">
               <div className="flex items-center gap-2 mb-2">
                 <TrendingUp className="w-5 h-5 text-accent" />
-                <h3 className="text-lg font-bold text-foreground">담당자가 얻는 가치</h3>
+                <h3 className="text-[1.375rem] font-bold text-foreground">담당자가 얻는 가치</h3>
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className={isPage22 ? "text-[16px] text-muted-foreground" : "text-lg text-muted-foreground"}>
                     {isPage22 
                       ? "단순 반복 작업에서 해방, 데이터 기반의 빠르고 정확한 의사결정 실현"
                       : "일정 누락 방지와 체계적 업무 관리로 스트레스 감소 및 생산성 향상"
@@ -1402,14 +1419,14 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
                     <div className="p-2.5 rounded-lg bg-accent/5 border border-accent/20">
                       <div className="flex items-start gap-2">
                         <TrendingUp className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                        <p className="text-sm text-foreground leading-relaxed">사용자 질문에 즉시 답변 가능한 대시보드</p>
+                        <p className="text-[15px] text-foreground leading-relaxed">사용자 질문에 즉시 답변 가능한 대시보드</p>
                       </div>
                     </div>
 
                     <div className="p-2.5 rounded-lg bg-accent/5 border border-accent/20">
                       <div className="flex items-start gap-2">
                         <TrendingUp className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                        <p className="text-sm text-foreground leading-relaxed">
+                        <p className="text-[15px] text-foreground leading-relaxed">
                           사람이 며칠 걸릴 분석을 AI가 몇 초만에 완료
                         </p>
                       </div>
@@ -1418,7 +1435,7 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
                     <div className="p-2.5 rounded-lg bg-accent/5 border border-accent/20">
                       <div className="flex items-start gap-2">
                         <TrendingUp className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                        <p className="text-sm text-foreground leading-relaxed">
+                        <p className="text-[15px] text-foreground leading-relaxed">
                           포트폴리오 전체를 한눈에 보며 전략적 판단 지원
                         </p>
                       </div>
@@ -1429,14 +1446,14 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
               <div className="p-2.5 rounded-lg bg-accent/5 border border-accent/20">
                 <div className="flex items-start gap-2">
                   <TrendingUp className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-foreground leading-relaxed">마감일 누락 걱정 없이 안심하고 업무 진행</p>
+                  <p className="text-[15px] text-foreground leading-relaxed">마감일 누락 걱정 없이 안심하고 업무 진행</p>
                 </div>
               </div>
 
               <div className="p-2.5 rounded-lg bg-accent/5 border border-accent/20">
                 <div className="flex items-start gap-2">
                   <TrendingUp className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-foreground leading-relaxed">
+                  <p className="text-[15px] text-foreground leading-relaxed">
                     엑셀과 캘린더를 뒤지는 시간 절약, 업무 효율 극대화
                   </p>
                 </div>
@@ -1445,7 +1462,7 @@ export function AiCalendarSlide({ isPage22 = false, isPage23 = false }: AiCalend
               <div className="p-2.5 rounded-lg bg-accent/5 border border-accent/20">
                 <div className="flex items-start gap-2">
                   <TrendingUp className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-foreground leading-relaxed">
+                  <p className="text-[15px] text-foreground leading-relaxed">
                     업무 부하가 높은 시기를 미리 파악해 계획적 대응 가능
                   </p>
                 </div>

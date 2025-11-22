@@ -188,11 +188,24 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
     const totalCount = patentRows.filter((row)=>row.evalDate).length;
     const maintainCount = patentRows.filter((row)=>row.decision === "유지").length;
     const abandonCount = patentRows.filter((row)=>row.decision === "포기").length;
-    // 예상 절감액 계산 (포기 추천된 건들의 연차료 합계)
+    // 예상 절감액 계산 (포기 추천된 건들의 연차료 합계, 통화별 환산)
     const totalSavings = patentRows.filter((row)=>row.decision === "포기").reduce((sum, row)=>{
         const feeStr = row.fee.replace(/,/g, "");
-        const feeNum = parseInt(feeStr) || 0;
-        return sum + feeNum;
+        const feeNum = parseFloat(feeStr) || 0;
+        // 통화별 원화 환산 (외국환 원화 환산 기준)
+        let feeInKRW = 0;
+        if (row.country === "KR") {
+            feeInKRW = feeNum; // 원화는 그대로
+        } else if (row.country === "US") {
+            feeInKRW = feeNum * 1300; // $1 = 1,300원
+        } else if (row.country === "EP") {
+            feeInKRW = feeNum * 1400; // €1 = 1,400원
+        } else if (row.country === "JP") {
+            feeInKRW = feeNum * 10; // ¥1 = 10원
+        } else {
+            feeInKRW = feeNum; // 기타 통화는 그대로
+        }
+        return sum + feeInKRW;
     }, 0);
     const savingsText = totalSavings >= 10000 ? `${(totalSavings / 10000).toFixed(0)}만원 (추정)` : `${totalSavings.toLocaleString()}원 (추정)`;
     const scrollToBottom = ()=>{
@@ -220,18 +233,8 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
             82,
             94
         ];
-        const decisions = [
-            "유지",
-            "포기",
-            "유지",
-            "유지",
-            "유지",
-            "유지",
-            "유지",
-            "유지",
-            "유지",
-            "유지"
-        ];
+        // AI 점수에 따라 의사결정 자동 결정: 70점 미만은 포기, 70점 이상은 유지
+        const decisions = scores.map((score)=>score >= 70 ? "유지" : "포기");
         const markets = [
             "1,200만원",
             "500만원",
@@ -581,9 +584,9 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                 } else {
                     // 21p인 경우: 긴급한 특허 응답 (기존)
                     const urgentPatents = [
-                        "• KR10-2345678 - 연차료 납부 (마감일: 2024-12-31)",
+                        "• KR10-2345678 - 연차료 납부 (마감일: 2026-12-31)",
                         "• KR10-1234567 - 권리 포기 결정 필요",
-                        "• EP18817150.8 - 연차료 납부 (마감일: 2025-01-15)"
+                        "• EP18817150.8 - 연차료 납부 (마감일: 2027-01-13)"
                     ];
                     setMessages((prev)=>[
                             ...prev,
@@ -677,38 +680,38 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "inline-block px-4 py-2 bg-primary/10 rounded-lg mb-3",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-base font-semibold text-primary",
+                            className: "text-lg font-semibold text-primary",
                             children: "Chapter 04 Paytent AI"
                         }, void 0, false, {
                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                            lineNumber: 419,
+                            lineNumber: 435,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                        lineNumber: 418,
+                        lineNumber: 434,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-4xl font-bold text-foreground mb-3",
-                        children: isPage23 ? "AI 기반 연차료 관리시스템" : isPage22 ? "AI 의사결정 보드로 포트폴리오를 한눈에" : "AI 지능형 알림 및 캘린더"
+                        className: "text-[2.75rem] font-bold text-foreground mb-3",
+                        children: isPage23 ? "세번째 AI 기능 : AI 기반 연차료 관리시스템" : isPage22 ? "두번째 AI 기능 : AI 의사결정 보드로 포트폴리오를 한눈에" : "첫번째 AI 기능 : AI 지능형 알림 및 캘린더"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                        lineNumber: 421,
+                        lineNumber: 437,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-base text-muted-foreground leading-relaxed",
-                        children: isPage23 ? "자연어 질문만으로 필요한 정보 조회, 통계분석, 보고서 생성까지 제공." : "수십, 수백 건의 IP를 사람이 하나씩 검토하고 판단하는 시대는 끝났습니다. Paytent AI는 'AI 의사결정 보드'로 전체 포트폴리오의 유지/포기 추천, 비용 시뮬레이션, 우선순위를 자동으로 제공합니다."
+                        className: "text-xl text-muted-foreground leading-relaxed",
+                        children: isPage23 ? "자연어 질문만으로 필요한 정보 조회, 통계분석, 보고서 생성까지 제공." : isPage22 ? "수십, 수백 건의 IP를 사람이 하나씩 검토하고 판단하는 시대는 끝났습니다. Paytent AI는 'AI 의사결정 보드'로 전체 포트폴리오의 유지/포기 추천, 비용 시뮬레이션, 우선순위를 자동으로 제공합니다." : "Paytent AI가 반복되는 일정추적을 줄이고, 판단이 필요한 시점만 선별해 알려드립니다."
                     }, void 0, false, {
                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                        lineNumber: 425,
+                        lineNumber: 441,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                lineNumber: 417,
+                lineNumber: 433,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -729,25 +732,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                className: "text-xl font-bold text-gray-900",
+                                                                className: "text-[1.375rem] font-bold text-gray-900",
                                                                 children: "AI 의사결정 보드"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 444,
+                                                                lineNumber: 462,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-sm text-gray-600 mt-1",
+                                                                className: "text-xl text-gray-600 mt-1",
                                                                 children: "IP(특허·상표·디자인)의 유지/포기 추천 및 비용 시뮬레이션"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 445,
+                                                                lineNumber: 463,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 443,
+                                                        lineNumber: 461,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -761,14 +764,14 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         className: "w-4 h-4 mr-1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 451,
+                                                                        lineNumber: 469,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "시뮬레이션"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 450,
+                                                                lineNumber: 468,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -779,14 +782,14 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         className: "w-4 h-4 mr-1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 455,
+                                                                        lineNumber: 473,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "AI 보고서 생성하기"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 454,
+                                                                lineNumber: 472,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -797,14 +800,14 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         className: "w-4 h-4 mr-1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 459,
+                                                                        lineNumber: 477,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "내보내기"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 458,
+                                                                lineNumber: 476,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -816,26 +819,26 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         className: "w-4 h-4 mr-1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 463,
+                                                                        lineNumber: 481,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "일괄 처리"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 462,
+                                                                lineNumber: 480,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 449,
+                                                        lineNumber: 467,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 442,
+                                                lineNumber: 460,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -849,7 +852,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "전체 건수"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 472,
+                                                                lineNumber: 490,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -857,13 +860,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: totalCount
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 473,
+                                                                lineNumber: 491,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 471,
+                                                        lineNumber: 489,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -873,7 +876,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 className: "w-3 h-3 text-green-500 fill-green-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 476,
+                                                                lineNumber: 494,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -881,7 +884,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "유지 추천"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 477,
+                                                                lineNumber: 495,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -889,13 +892,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: maintainCount
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 478,
+                                                                lineNumber: 496,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 475,
+                                                        lineNumber: 493,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -905,7 +908,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 className: "w-3 h-3 text-pink-500 fill-pink-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 481,
+                                                                lineNumber: 499,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -913,7 +916,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "포기 추천"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 482,
+                                                                lineNumber: 500,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -921,13 +924,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: abandonCount
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 483,
+                                                                lineNumber: 501,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 480,
+                                                        lineNumber: 498,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -941,7 +944,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "예상 절감액"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 487,
+                                                                        lineNumber: 505,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -949,13 +952,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: savingsText
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 488,
+                                                                        lineNumber: 506,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 486,
+                                                                lineNumber: 504,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -963,13 +966,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "외국환 원화 환산 기준"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 490,
+                                                                lineNumber: 508,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 485,
+                                                        lineNumber: 503,
                                                         columnNumber: 19
                                                     }, this),
                                                     currentEvalDate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -980,7 +983,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "평가일자"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 494,
+                                                                lineNumber: 512,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -988,25 +991,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: currentEvalDate
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 495,
+                                                                lineNumber: 513,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 493,
+                                                        lineNumber: 511,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 470,
+                                                lineNumber: 488,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 441,
+                                        lineNumber: 459,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1022,7 +1025,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 className: "absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 505,
+                                                                lineNumber: 523,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1031,13 +1034,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 className: "pl-10"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 506,
+                                                                lineNumber: 524,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 504,
+                                                        lineNumber: 522,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -1048,12 +1051,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     placeholder: "전체 국가"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 514,
+                                                                    lineNumber: 532,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 513,
+                                                                lineNumber: 531,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1063,7 +1066,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "전체 국가"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 517,
+                                                                        lineNumber: 535,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1071,7 +1074,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "한국"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 518,
+                                                                        lineNumber: 536,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1079,7 +1082,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "미국"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 519,
+                                                                        lineNumber: 537,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1087,19 +1090,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "유럽"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 520,
+                                                                        lineNumber: 538,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 516,
+                                                                lineNumber: 534,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 512,
+                                                        lineNumber: 530,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -1110,12 +1113,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     placeholder: "연차"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 525,
+                                                                    lineNumber: 543,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 524,
+                                                                lineNumber: 542,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1125,7 +1128,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "연차"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 528,
+                                                                        lineNumber: 546,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1133,7 +1136,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "1년"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 529,
+                                                                        lineNumber: 547,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1141,7 +1144,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "2년"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 530,
+                                                                        lineNumber: 548,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1149,19 +1152,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "3년"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 531,
+                                                                        lineNumber: 549,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 527,
+                                                                lineNumber: 545,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 523,
+                                                        lineNumber: 541,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -1172,12 +1175,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     placeholder: "Smart5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 536,
+                                                                    lineNumber: 554,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 535,
+                                                                lineNumber: 553,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1187,7 +1190,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "Smart5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 539,
+                                                                        lineNumber: 557,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1195,7 +1198,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "AAA"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 540,
+                                                                        lineNumber: 558,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1203,7 +1206,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "AA"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 541,
+                                                                        lineNumber: 559,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1211,19 +1214,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "A"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 542,
+                                                                        lineNumber: 560,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 538,
+                                                                lineNumber: 556,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 534,
+                                                        lineNumber: 552,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -1234,12 +1237,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     placeholder: "전체 의사결정"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 547,
+                                                                    lineNumber: 565,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 546,
+                                                                lineNumber: 564,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1249,7 +1252,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "전체 의사결정"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 550,
+                                                                        lineNumber: 568,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1257,7 +1260,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "유지 추천"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 551,
+                                                                        lineNumber: 569,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1265,25 +1268,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "포기 추천"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 552,
+                                                                        lineNumber: 570,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 549,
+                                                                lineNumber: 567,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 545,
+                                                        lineNumber: 563,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 503,
+                                                lineNumber: 521,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1295,7 +1298,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         placeholder: "시작날짜"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 557,
+                                                        lineNumber: 575,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1303,7 +1306,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         children: "~"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 558,
+                                                        lineNumber: 576,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1312,7 +1315,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         placeholder: "종료날짜"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 559,
+                                                        lineNumber: 577,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -1323,12 +1326,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     placeholder: "AI 점수순"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 562,
+                                                                    lineNumber: 580,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 561,
+                                                                lineNumber: 579,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1338,7 +1341,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "AI 점수순"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 565,
+                                                                        lineNumber: 583,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1346,7 +1349,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "날짜순"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 566,
+                                                                        lineNumber: 584,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1354,31 +1357,31 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "이름순"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 567,
+                                                                        lineNumber: 585,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 564,
+                                                                lineNumber: 582,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 560,
+                                                        lineNumber: 578,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 556,
+                                                lineNumber: 574,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 502,
+                                        lineNumber: 520,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1397,12 +1400,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     className: "w-4 h-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 579,
+                                                                    lineNumber: 597,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 578,
+                                                                lineNumber: 596,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1410,7 +1413,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "국가"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 581,
+                                                                lineNumber: 599,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1418,7 +1421,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "Smart5 등급"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 582,
+                                                                lineNumber: 600,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1426,7 +1429,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "출원번호"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 583,
+                                                                lineNumber: 601,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1434,7 +1437,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "연차"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 584,
+                                                                lineNumber: 602,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1442,7 +1445,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "납부기한"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 585,
+                                                                lineNumber: 603,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1450,7 +1453,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "연차료"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 586,
+                                                                lineNumber: 604,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1458,7 +1461,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "평가일자"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 587,
+                                                                lineNumber: 605,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1466,7 +1469,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "AI 점수"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 588,
+                                                                lineNumber: 606,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1474,7 +1477,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "의사결정"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 589,
+                                                                lineNumber: 607,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1482,7 +1485,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "시장가치"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 590,
+                                                                lineNumber: 608,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1490,7 +1493,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "특허활용보고서"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 591,
+                                                                lineNumber: 609,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1498,18 +1501,18 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "기술가치평가"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 592,
+                                                                lineNumber: 610,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 577,
+                                                        lineNumber: 595,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 576,
+                                                    lineNumber: 594,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -1524,12 +1527,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 599,
+                                                                        lineNumber: 617,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 598,
+                                                                    lineNumber: 616,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1537,7 +1540,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     children: row.country
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 601,
+                                                                    lineNumber: 619,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1547,12 +1550,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: row.grade
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 603,
+                                                                        lineNumber: 621,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 602,
+                                                                    lineNumber: 620,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1560,7 +1563,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     children: row.appNo
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 605,
+                                                                    lineNumber: 623,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1568,7 +1571,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     children: row.year
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 606,
+                                                                    lineNumber: 624,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1576,7 +1579,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     children: row.due
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 607,
+                                                                    lineNumber: 625,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1584,7 +1587,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     children: row.country === "KR" ? `${row.fee}원` : row.country === "US" ? `$${row.fee}` : row.country === "EP" ? `€${row.fee}` : row.country === "JP" ? `¥${row.fee}` : row.fee
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 608,
+                                                                    lineNumber: 626,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1592,7 +1595,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     children: row.evalDate || "-"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 615,
+                                                                    lineNumber: 633,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1604,7 +1607,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 className: `w-2.5 h-2.5 ${row.score >= 80 ? 'text-green-500 fill-green-500' : row.score >= 70 ? 'text-green-300 fill-green-300' : 'text-red-500 fill-red-500'}`
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 619,
+                                                                                lineNumber: 637,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1612,25 +1615,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: row.score
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 620,
+                                                                                lineNumber: 638,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 618,
+                                                                        lineNumber: 636,
                                                                         columnNumber: 29
                                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         className: "text-gray-400",
                                                                         children: "-"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 623,
+                                                                        lineNumber: 641,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 616,
+                                                                    lineNumber: 634,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1641,18 +1644,18 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: row.decision
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 628,
+                                                                        lineNumber: 646,
                                                                         columnNumber: 29
                                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Circle$3e$__["Circle"], {
                                                                         className: "w-4 h-4 text-gray-300"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 632,
+                                                                        lineNumber: 650,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 626,
+                                                                    lineNumber: 644,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1660,7 +1663,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     children: row.market || "-"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 635,
+                                                                    lineNumber: 653,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1672,12 +1675,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "확인하기"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 637,
+                                                                        lineNumber: 655,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 636,
+                                                                    lineNumber: 654,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1689,34 +1692,34 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "확인하기"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 642,
+                                                                        lineNumber: 660,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 641,
+                                                                    lineNumber: 659,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, idx, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 597,
+                                                            lineNumber: 615,
                                                             columnNumber: 23
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 595,
+                                                    lineNumber: 613,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                            lineNumber: 575,
+                                            lineNumber: 593,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 574,
+                                        lineNumber: 592,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1727,7 +1730,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                 children: "총 60건 중 1-10건 표시"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 654,
+                                                lineNumber: 672,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1742,14 +1745,14 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 className: "w-4 h-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 659,
+                                                                lineNumber: 677,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "이전"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 658,
+                                                        lineNumber: 676,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1759,7 +1762,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         children: "1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 662,
+                                                        lineNumber: 680,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1772,31 +1775,31 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 className: "w-4 h-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 667,
+                                                                lineNumber: 685,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 665,
+                                                        lineNumber: 683,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 657,
+                                                lineNumber: 675,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 653,
+                                        lineNumber: 671,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                lineNumber: 439,
+                                lineNumber: 457,
                                 columnNumber: 13
                             }, this) : /* 21p: 연차료 지급리스트 */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "h-full bg-white rounded-lg border border-gray-200 overflow-hidden flex flex-col",
@@ -1810,25 +1813,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                className: "text-xl font-bold text-gray-900",
+                                                                className: "text-[1.375rem] font-bold text-gray-900",
                                                                 children: "연차료 지급리스트"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 679,
+                                                                lineNumber: 697,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-sm text-gray-600 mt-1",
+                                                                className: "text-xl text-gray-600 mt-1",
                                                                 children: "2026년 1월 연차료 지급리스트"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 680,
+                                                                lineNumber: 698,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 678,
+                                                        lineNumber: 696,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1842,14 +1845,14 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         className: "w-4 h-4 mr-1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 686,
+                                                                        lineNumber: 704,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "엑셀 다운로드"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 685,
+                                                                lineNumber: 703,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1859,7 +1862,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "검토/포기 모아보기"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 689,
+                                                                lineNumber: 707,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1868,7 +1871,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "Tab 설정"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 692,
+                                                                lineNumber: 710,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1877,7 +1880,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "연차료 비교"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 695,
+                                                                lineNumber: 713,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1887,19 +1890,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "연차료 일괄납부"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 698,
+                                                                lineNumber: 716,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 684,
+                                                        lineNumber: 702,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 677,
+                                                lineNumber: 695,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1912,7 +1915,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 className: "absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 707,
+                                                                lineNumber: 725,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1921,13 +1924,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 className: "pl-10"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 708,
+                                                                lineNumber: 726,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 706,
+                                                        lineNumber: 724,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -1938,12 +1941,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     placeholder: "표시 건수 10개"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 716,
+                                                                    lineNumber: 734,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 715,
+                                                                lineNumber: 733,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1953,7 +1956,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "10개"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 719,
+                                                                        lineNumber: 737,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1961,7 +1964,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "20개"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 720,
+                                                                        lineNumber: 738,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1969,7 +1972,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "50개"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 721,
+                                                                        lineNumber: 739,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1977,19 +1980,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "100개"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 722,
+                                                                        lineNumber: 740,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 718,
+                                                                lineNumber: 736,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 714,
+                                                        lineNumber: 732,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2000,7 +2003,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "연월 선택"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 726,
+                                                                lineNumber: 744,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -2011,12 +2014,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                             placeholder: "2026년"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 729,
+                                                                            lineNumber: 747,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 728,
+                                                                        lineNumber: 746,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2026,7 +2029,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "2026년"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 732,
+                                                                                lineNumber: 750,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2034,7 +2037,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "2025년"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 733,
+                                                                                lineNumber: 751,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2042,19 +2045,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "2024년"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 734,
+                                                                                lineNumber: 752,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 731,
+                                                                        lineNumber: 749,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 727,
+                                                                lineNumber: 745,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -2065,12 +2068,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                             placeholder: "1월"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 739,
+                                                                            lineNumber: 757,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 738,
+                                                                        lineNumber: 756,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2080,7 +2083,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "1월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 742,
+                                                                                lineNumber: 760,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2088,7 +2091,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "2월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 743,
+                                                                                lineNumber: 761,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2096,7 +2099,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "3월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 744,
+                                                                                lineNumber: 762,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2104,7 +2107,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "4월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 745,
+                                                                                lineNumber: 763,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2112,7 +2115,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "5월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 746,
+                                                                                lineNumber: 764,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2120,7 +2123,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "6월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 747,
+                                                                                lineNumber: 765,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2128,7 +2131,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "7월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 748,
+                                                                                lineNumber: 766,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2136,7 +2139,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "8월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 749,
+                                                                                lineNumber: 767,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2144,7 +2147,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "9월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 750,
+                                                                                lineNumber: 768,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2152,7 +2155,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "10월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 751,
+                                                                                lineNumber: 769,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2160,7 +2163,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "11월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 752,
+                                                                                lineNumber: 770,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -2168,37 +2171,37 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "12월"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 753,
+                                                                                lineNumber: 771,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 741,
+                                                                        lineNumber: 759,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 737,
+                                                                lineNumber: 755,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 725,
+                                                        lineNumber: 743,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 705,
+                                                lineNumber: 723,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 676,
+                                        lineNumber: 694,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2211,134 +2214,134 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "순번"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 765,
+                                                                lineNumber: 783,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "Smart5 등급"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 766,
+                                                                lineNumber: 784,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "국가"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 767,
+                                                                lineNumber: 785,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "출원번호"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 768,
+                                                                lineNumber: 786,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "출원일"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 769,
+                                                                lineNumber: 787,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "등록번호"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 770,
+                                                                lineNumber: 788,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "등록일"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 771,
+                                                                lineNumber: 789,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "납부기한"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 772,
+                                                                lineNumber: 790,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "연차"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 773,
+                                                                lineNumber: 791,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "청구항수"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 774,
+                                                                lineNumber: 792,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "금액"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 775,
+                                                                lineNumber: 793,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "hidden px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "납부 추천"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 776,
+                                                                lineNumber: 794,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "검토"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 777,
+                                                                lineNumber: 795,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "연차료 포기/납부"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 778,
+                                                                lineNumber: 796,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                                className: "px-4 py-3 text-left text-gray-700 font-semibold text-[0.7rem]",
+                                                                className: "px-2 py-1.5 text-left text-gray-700 font-semibold text-[0.7rem]",
                                                                 children: "활용보고서"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 779,
+                                                                lineNumber: 797,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 764,
+                                                        lineNumber: 782,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 763,
+                                                    lineNumber: 781,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -2498,200 +2501,193 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                             className: "hover:bg-gray-50",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-700 text-[0.7rem]",
+                                                                    className: "px-2 py-1.5 text-gray-700 text-[0.7rem]",
                                                                     children: row.no
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 796,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3",
-                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
-                                                                        className: "bg-gray-100 text-gray-800 text-[0.65rem] font-semibold",
-                                                                        children: row.grade
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 798,
-                                                                        columnNumber: 27
-                                                                    }, this)
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 797,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-900 text-[0.7rem]",
-                                                                    children: row.country
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 800,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-900 font-mono text-[0.7rem]",
-                                                                    children: row.appNo
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 801,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-700 text-[0.7rem]",
-                                                                    children: row.appDate
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 802,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-900 font-mono text-[0.7rem]",
-                                                                    children: row.regNo
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 803,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-700 text-[0.7rem]",
-                                                                    children: row.regDate
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 804,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-700 text-[0.7rem]",
-                                                                    children: row.due
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 805,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-700 text-[0.7rem]",
-                                                                    children: row.year
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 806,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-700 text-[0.7rem]",
-                                                                    children: row.claims
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 807,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3 text-gray-700 font-medium text-[0.7rem]",
-                                                                    children: row.amount
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 808,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3",
-                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "flex items-center gap-1.5",
-                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Circle$3e$__["Circle"], {
-                                                                            className: "w-2 h-2 text-red-500 fill-red-500"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 811,
-                                                                            columnNumber: 29
-                                                                        }, this)
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 810,
-                                                                        columnNumber: 27
-                                                                    }, this)
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 809,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3",
-                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "flex items-center gap-1.5",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Circle$3e$__["Circle"], {
-                                                                                className: "w-2 h-2 text-red-500 fill-red-500"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 816,
-                                                                                columnNumber: 29
-                                                                            }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                className: "text-[0.65rem] text-gray-700",
-                                                                                children: row.review
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 817,
-                                                                                columnNumber: 29
-                                                                            }, this)
-                                                                        ]
-                                                                    }, void 0, true, {
-                                                                        fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 815,
-                                                                        columnNumber: 27
-                                                                    }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
                                                                     lineNumber: 814,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3",
-                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "flex items-center gap-1",
-                                                                        children: [
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                                                                size: "sm",
-                                                                                variant: "outline",
-                                                                                className: "h-5 text-[0.65rem] bg-red-50 text-red-700 hover:bg-red-100 border-red-300 px-2",
-                                                                                children: "포기"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 822,
-                                                                                columnNumber: 29
-                                                                            }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                                                                size: "sm",
-                                                                                variant: "outline",
-                                                                                className: "h-5 text-[0.65rem] bg-green-50 text-green-700 hover:bg-green-100 border-green-300 px-2",
-                                                                                children: "납부"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 825,
-                                                                                columnNumber: 29
-                                                                            }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                                                                size: "sm",
-                                                                                variant: "outline",
-                                                                                className: "h-5 text-[0.65rem] bg-gray-50 text-gray-700 hover:bg-gray-100 px-2",
-                                                                                children: "기업"
-                                                                            }, void 0, false, {
-                                                                                fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 828,
-                                                                                columnNumber: 30
-                                                                            }, this)
-                                                                        ]
-                                                                    }, void 0, true, {
+                                                                    className: "px-2 py-1.5",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
+                                                                        className: "bg-gray-100 text-gray-800 text-[0.65rem] font-semibold",
+                                                                        children: row.grade
+                                                                    }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 821,
+                                                                        lineNumber: 816,
                                                                         columnNumber: 27
                                                                     }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 815,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5 text-gray-900 text-[0.7rem]",
+                                                                    children: row.country
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 818,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5 text-gray-900 font-mono text-[0.7rem]",
+                                                                    children: row.appNo
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 819,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5 text-gray-700 text-[0.7rem]",
+                                                                    children: row.appDate
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
                                                                     lineNumber: 820,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                                    className: "px-4 py-3",
+                                                                    className: "px-2 py-1.5 text-gray-900 font-mono text-[0.7rem]",
+                                                                    children: row.regNo
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 821,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5 text-gray-700 text-[0.7rem]",
+                                                                    children: row.regDate
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 822,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5 text-gray-700 text-[0.7rem]",
+                                                                    children: row.due
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 823,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5 text-gray-700 text-[0.7rem]",
+                                                                    children: row.year
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 824,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5 text-gray-700 text-[0.7rem]",
+                                                                    children: row.claims
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 825,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5 text-gray-700 font-medium text-[0.7rem]",
+                                                                    children: row.amount
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 826,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "hidden px-2 py-1.5",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex items-center gap-1.5",
+                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Circle$3e$__["Circle"], {
+                                                                            className: "w-2 h-2 text-red-500 fill-red-500"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                            lineNumber: 829,
+                                                                            columnNumber: 29
+                                                                        }, this)
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                        lineNumber: 828,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 827,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "text-[0.65rem] text-gray-700",
+                                                                        children: row.review
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                        lineNumber: 833,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 832,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex flex-col gap-1",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "flex items-center gap-1",
+                                                                                children: [
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                                                        size: "sm",
+                                                                                        variant: "outline",
+                                                                                        className: "h-5 text-[0.65rem] bg-red-50 text-red-700 hover:bg-red-100 border-red-300 px-2",
+                                                                                        children: "포기"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                                        lineNumber: 838,
+                                                                                        columnNumber: 31
+                                                                                    }, this),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                                                        size: "sm",
+                                                                                        variant: "outline",
+                                                                                        className: "h-5 text-[0.65rem] bg-green-50 text-green-700 hover:bg-green-100 border-green-300 px-2",
+                                                                                        children: "납부"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                                        lineNumber: 841,
+                                                                                        columnNumber: 31
+                                                                                    }, this)
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                                lineNumber: 837,
+                                                                                columnNumber: 29
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                                                size: "sm",
+                                                                                variant: "outline",
+                                                                                className: "h-5 text-[0.65rem] bg-gray-50 text-gray-700 hover:bg-gray-100 px-2",
+                                                                                children: "기업체 납부"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                                lineNumber: 845,
+                                                                                columnNumber: 29
+                                                                            }, this)
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                        lineNumber: 836,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/slides/ai-calendar-slide.tsx",
+                                                                    lineNumber: 835,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-2 py-1.5",
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                                         size: "sm",
                                                                         variant: "outline",
@@ -2699,34 +2695,34 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "확인하기"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 834,
+                                                                        lineNumber: 851,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 833,
+                                                                    lineNumber: 850,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, row.no, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 795,
+                                                            lineNumber: 813,
                                                             columnNumber: 23
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 782,
+                                                    lineNumber: 800,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                            lineNumber: 762,
+                                            lineNumber: 780,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 761,
+                                        lineNumber: 779,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2737,7 +2733,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                 children: "총 60건 중 51-60건 표시"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 846,
+                                                lineNumber: 863,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2750,7 +2746,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         children: "«"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 850,
+                                                        lineNumber: 867,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2761,12 +2757,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                             className: "w-4 h-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 854,
+                                                            lineNumber: 871,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 853,
+                                                        lineNumber: 870,
                                                         columnNumber: 19
                                                     }, this),
                                                     [
@@ -2787,7 +2783,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                             children: page
                                                         }, page, false, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 857,
+                                                            lineNumber: 874,
                                                             columnNumber: 21
                                                         }, this)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2798,12 +2794,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                             className: "w-4 h-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 867,
+                                                            lineNumber: 884,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 866,
+                                                        lineNumber: 883,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2813,25 +2809,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         children: "»"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 869,
+                                                        lineNumber: 886,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 849,
+                                                lineNumber: 866,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 845,
+                                        lineNumber: 862,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                lineNumber: 674,
+                                lineNumber: 692,
                                 columnNumber: 13
                             }, this),
                             showPopup && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2853,17 +2849,17 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         className: "w-5 h-5 text-gray-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 891,
+                                                        lineNumber: 908,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 884,
+                                                    lineNumber: 901,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 883,
+                                                lineNumber: 900,
                                                 columnNumber: 17
                                             }, this),
                                             popupType === "abandon" ? /* 포기 추천 특허 리스트 (22p) - 현재 테이블 데이터 사용 */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2873,25 +2869,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         className: "mb-4",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                className: "text-xl font-bold text-gray-900 mb-2",
+                                                                className: "text-[1.375rem] font-bold text-gray-900 mb-2",
                                                                 children: "포기 추천 특허"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 899,
+                                                                lineNumber: 916,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-sm text-gray-600",
+                                                                className: "text-lg text-gray-600",
                                                                 children: "AI가 포기 추천한 특허 목록입니다."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 900,
+                                                                lineNumber: 917,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 898,
+                                                        lineNumber: 915,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2908,7 +2904,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "국가"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 906,
+                                                                                lineNumber: 923,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2916,7 +2912,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "Smart5 등급"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 907,
+                                                                                lineNumber: 924,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2924,7 +2920,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "출원번호"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 908,
+                                                                                lineNumber: 925,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2932,7 +2928,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "연차"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 909,
+                                                                                lineNumber: 926,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2940,7 +2936,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "납부기한"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 910,
+                                                                                lineNumber: 927,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2948,7 +2944,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "연차료"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 911,
+                                                                                lineNumber: 928,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2956,7 +2952,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "평가일자"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 912,
+                                                                                lineNumber: 929,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2964,7 +2960,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "AI 점수"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 913,
+                                                                                lineNumber: 930,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2972,7 +2968,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "의사결정"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 914,
+                                                                                lineNumber: 931,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -2980,18 +2976,18 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "시장가치"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 915,
+                                                                                lineNumber: 932,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 905,
+                                                                        lineNumber: 922,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 904,
+                                                                    lineNumber: 921,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -3004,7 +3000,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: row.country
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 923,
+                                                                                    lineNumber: 940,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3014,12 +3010,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: row.grade
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 925,
+                                                                                        lineNumber: 942,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 924,
+                                                                                    lineNumber: 941,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3027,7 +3023,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: row.appNo
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 927,
+                                                                                    lineNumber: 944,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3035,7 +3031,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: row.year
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 928,
+                                                                                    lineNumber: 945,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3043,7 +3039,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: row.due
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 929,
+                                                                                    lineNumber: 946,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3051,7 +3047,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: row.country === "KR" ? `${row.fee}원` : row.country === "US" ? `$${row.fee}` : row.country === "EP" ? `€${row.fee}` : row.country === "JP" ? `¥${row.fee}` : row.fee
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 930,
+                                                                                    lineNumber: 947,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3059,7 +3055,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: row.evalDate || "-"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 937,
+                                                                                    lineNumber: 954,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3071,7 +3067,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                                 className: `w-2.5 h-2.5 ${row.score >= 80 ? 'text-green-500 fill-green-500' : row.score >= 70 ? 'text-green-300 fill-green-300' : 'text-red-500 fill-red-500'}`
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                                lineNumber: 941,
+                                                                                                lineNumber: 958,
                                                                                                 columnNumber: 39
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3079,25 +3075,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                                 children: row.score
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                                lineNumber: 942,
+                                                                                                lineNumber: 959,
                                                                                                 columnNumber: 39
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 940,
+                                                                                        lineNumber: 957,
                                                                                         columnNumber: 37
                                                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         className: "text-gray-400",
                                                                                         children: "-"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 945,
+                                                                                        lineNumber: 962,
                                                                                         columnNumber: 37
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 938,
+                                                                                    lineNumber: 955,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3108,12 +3104,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: row.decision
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 949,
+                                                                                        lineNumber: 966,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 948,
+                                                                                    lineNumber: 965,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3121,35 +3117,35 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: row.market || "-"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 953,
+                                                                                    lineNumber: 970,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, idx, true, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 922,
+                                                                            lineNumber: 939,
                                                                             columnNumber: 31
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 918,
+                                                                    lineNumber: 935,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 903,
+                                                            lineNumber: 920,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 902,
+                                                        lineNumber: 919,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 897,
+                                                lineNumber: 914,
                                                 columnNumber: 19
                                             }, this) : popupType === "lossRisk" ? /* 손실위험이 있는 특허 리스트 (21p) */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "space-y-4",
@@ -3158,25 +3154,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         className: "mb-4",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                className: "text-xl font-bold text-gray-900 mb-2",
+                                                                className: "text-[1.375rem] font-bold text-gray-900 mb-2",
                                                                 children: "손실위험이 있는 특허"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 964,
+                                                                lineNumber: 981,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-sm text-gray-600",
+                                                                className: "text-lg text-gray-600",
                                                                 children: "즉시 확인이 필요한 특허 목록입니다."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 965,
+                                                                lineNumber: 982,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 963,
+                                                        lineNumber: 980,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3193,7 +3189,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "특허"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 971,
+                                                                                lineNumber: 988,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3201,7 +3197,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "상세 정보"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 972,
+                                                                                lineNumber: 989,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3209,18 +3205,18 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "확인해야 할 담당자/기관"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 973,
+                                                                                lineNumber: 990,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 970,
+                                                                        lineNumber: 987,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 969,
+                                                                    lineNumber: 986,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -3244,7 +3240,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: item.patent
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 982,
+                                                                                    lineNumber: 999,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3252,7 +3248,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: item.detail
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 983,
+                                                                                    lineNumber: 1000,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3263,40 +3259,40 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: item.contact
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 985,
+                                                                                        lineNumber: 1002,
                                                                                         columnNumber: 33
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 984,
+                                                                                    lineNumber: 1001,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, idx, true, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 981,
+                                                                            lineNumber: 998,
                                                                             columnNumber: 29
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 976,
+                                                                    lineNumber: 993,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 968,
+                                                            lineNumber: 985,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 967,
+                                                        lineNumber: 984,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 962,
+                                                lineNumber: 979,
                                                 columnNumber: 19
                                             }, this) : popupType === "urgent" ? /* 긴급 특허 리스트 */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "space-y-4",
@@ -3305,25 +3301,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                         className: "mb-4",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                className: "text-xl font-bold text-gray-900 mb-2",
+                                                                className: "text-[1.375rem] font-bold text-gray-900 mb-2",
                                                                 children: "긴급한 특허"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 999,
+                                                                lineNumber: 1016,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-sm text-gray-600",
+                                                                className: "text-lg text-gray-600",
                                                                 children: "즉시 처리해야 할 특허 목록입니다."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1000,
+                                                                lineNumber: 1017,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 998,
+                                                        lineNumber: 1015,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3340,7 +3336,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "특허번호"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1006,
+                                                                                lineNumber: 1023,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3348,7 +3344,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "국가"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1007,
+                                                                                lineNumber: 1024,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3356,7 +3352,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "상태"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1008,
+                                                                                lineNumber: 1025,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3364,7 +3360,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "마감일"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1009,
+                                                                                lineNumber: 1026,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3372,7 +3368,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "긴급도"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1010,
+                                                                                lineNumber: 1027,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3380,18 +3376,18 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "액션"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1011,
+                                                                                lineNumber: 1028,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1005,
+                                                                        lineNumber: 1022,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1004,
+                                                                    lineNumber: 1021,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -3429,7 +3425,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: patent.no
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1021,
+                                                                                    lineNumber: 1038,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3437,7 +3433,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: patent.country
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1022,
+                                                                                    lineNumber: 1039,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3448,12 +3444,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: patent.status
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1024,
+                                                                                        lineNumber: 1041,
                                                                                         columnNumber: 33
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1023,
+                                                                                    lineNumber: 1040,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3461,7 +3457,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     children: patent.due
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1028,
+                                                                                    lineNumber: 1045,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3472,12 +3468,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: patent.urgency
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1030,
+                                                                                        lineNumber: 1047,
                                                                                         columnNumber: 33
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1029,
+                                                                                    lineNumber: 1046,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3489,40 +3485,40 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: "상세보기"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1035,
+                                                                                        lineNumber: 1052,
                                                                                         columnNumber: 33
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1034,
+                                                                                    lineNumber: 1051,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, idx, true, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1020,
+                                                                            lineNumber: 1037,
                                                                             columnNumber: 29
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1014,
+                                                                    lineNumber: 1031,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1003,
+                                                            lineNumber: 1020,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1002,
+                                                        lineNumber: 1019,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 997,
+                                                lineNumber: 1014,
                                                 columnNumber: 19
                                             }, this) : /* 의사결정 보드 */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "space-y-3",
@@ -3540,14 +3536,14 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 className: "h-4 w-4 text-orange-600"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1052,
+                                                                                lineNumber: 1069,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             "AI 인사이트"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1051,
+                                                                        lineNumber: 1068,
                                                                         columnNumber: 19
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -3555,13 +3551,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "IP특허·상표·디자인의 유지/포기 추천 및 비용 시뮬레이션"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1055,
+                                                                        lineNumber: 1072,
                                                                         columnNumber: 19
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1050,
+                                                                lineNumber: 1067,
                                                                 columnNumber: 17
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3577,7 +3573,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: "업무 부하 분석"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1063,
+                                                                                        lineNumber: 1080,
                                                                                         columnNumber: 23
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3585,13 +3581,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: "90%"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1064,
+                                                                                        lineNumber: 1081,
                                                                                         columnNumber: 23
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1062,
+                                                                                lineNumber: 1079,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Progress"], {
@@ -3599,7 +3595,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 className: "h-1.5 bg-gray-200"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1066,
+                                                                                lineNumber: 1083,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3607,13 +3603,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "연계 업무들이 동반되니, 우선순위 업무에 집중하세요."
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1067,
+                                                                                lineNumber: 1084,
                                                                                 columnNumber: 21
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1061,
+                                                                        lineNumber: 1078,
                                                                         columnNumber: 19
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -3628,19 +3624,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                             className: "h-3 w-3"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                            lineNumber: 1076,
+                                                                                            lineNumber: 1093,
                                                                                             columnNumber: 25
                                                                                         }, this),
                                                                                         "우선 처리 필요"
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1075,
+                                                                                    lineNumber: 1092,
                                                                                     columnNumber: 23
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1074,
+                                                                                lineNumber: 1091,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3653,7 +3649,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                             children: "• 연차료 납부 (KR10-2345678)"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                            lineNumber: 1082,
+                                                                                            lineNumber: 1099,
                                                                                             columnNumber: 25
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -3661,36 +3657,36 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                             children: "• 권리 포기 결정 (KR10-1234567)"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                            lineNumber: 1083,
+                                                                                            lineNumber: 1100,
                                                                                             columnNumber: 25
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1081,
+                                                                                    lineNumber: 1098,
                                                                                     columnNumber: 23
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1080,
+                                                                                lineNumber: 1097,
                                                                                 columnNumber: 21
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1073,
+                                                                        lineNumber: 1090,
                                                                         columnNumber: 19
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1059,
+                                                                lineNumber: 1076,
                                                                 columnNumber: 17
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1049,
+                                                        lineNumber: 1066,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tabs"], {
@@ -3707,14 +3703,14 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                             className: "h-3 w-3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1094,
+                                                                            lineNumber: 1111,
                                                                             columnNumber: 21
                                                                         }, this),
                                                                         "캘린더"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1093,
+                                                                    lineNumber: 1110,
                                                                     columnNumber: 19
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -3725,14 +3721,14 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                             className: "h-3 w-3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1098,
+                                                                            lineNumber: 1115,
                                                                             columnNumber: 21
                                                                         }, this),
                                                                         "알림"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1097,
+                                                                    lineNumber: 1114,
                                                                     columnNumber: 19
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -3743,25 +3739,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                             className: "h-3 w-3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1102,
+                                                                            lineNumber: 1119,
                                                                             columnNumber: 21
                                                                         }, this),
                                                                         "AI 분석"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1101,
+                                                                    lineNumber: 1118,
                                                                     columnNumber: 19
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1092,
+                                                            lineNumber: 1109,
                                                             columnNumber: 17
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1091,
+                                                        lineNumber: 1108,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3778,19 +3774,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     className: "h-3 w-3"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1113,
+                                                                                    lineNumber: 1130,
                                                                                     columnNumber: 23
                                                                                 }, this),
                                                                                 "긴급 마감일"
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1112,
+                                                                            lineNumber: 1129,
                                                                             columnNumber: 21
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1111,
+                                                                        lineNumber: 1128,
                                                                         columnNumber: 19
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3801,7 +3797,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "2"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1118,
+                                                                                lineNumber: 1135,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3809,19 +3805,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "2건 이내 마감"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1119,
+                                                                                lineNumber: 1136,
                                                                                 columnNumber: 21
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1117,
+                                                                        lineNumber: 1134,
                                                                         columnNumber: 19
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1110,
+                                                                lineNumber: 1127,
                                                                 columnNumber: 17
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -3835,19 +3831,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     className: "h-3 w-3"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1126,
+                                                                                    lineNumber: 1143,
                                                                                     columnNumber: 23
                                                                                 }, this),
                                                                                 "예정된 일정"
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1125,
+                                                                            lineNumber: 1142,
                                                                             columnNumber: 21
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1124,
+                                                                        lineNumber: 1141,
                                                                         columnNumber: 19
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3858,7 +3854,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "3"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1131,
+                                                                                lineNumber: 1148,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3866,19 +3862,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "다가오는 마감일"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1132,
+                                                                                lineNumber: 1149,
                                                                                 columnNumber: 21
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1130,
+                                                                        lineNumber: 1147,
                                                                         columnNumber: 19
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1123,
+                                                                lineNumber: 1140,
                                                                 columnNumber: 17
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -3892,19 +3888,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     className: "h-3 w-3"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1139,
+                                                                                    lineNumber: 1156,
                                                                                     columnNumber: 23
                                                                                 }, this),
                                                                                 "연차료 납부"
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1138,
+                                                                            lineNumber: 1155,
                                                                             columnNumber: 21
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1137,
+                                                                        lineNumber: 1154,
                                                                         columnNumber: 19
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3915,7 +3911,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "3"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1144,
+                                                                                lineNumber: 1161,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3923,19 +3919,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "예정된 건수"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1145,
+                                                                                lineNumber: 1162,
                                                                                 columnNumber: 21
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1143,
+                                                                        lineNumber: 1160,
                                                                         columnNumber: 19
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1136,
+                                                                lineNumber: 1153,
                                                                 columnNumber: 17
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -3949,19 +3945,19 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                     className: "h-3 w-3"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                    lineNumber: 1152,
+                                                                                    lineNumber: 1169,
                                                                                     columnNumber: 23
                                                                                 }, this),
                                                                                 "권리 결정"
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1151,
+                                                                            lineNumber: 1168,
                                                                             columnNumber: 21
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1150,
+                                                                        lineNumber: 1167,
                                                                         columnNumber: 19
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3972,7 +3968,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "1"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1157,
+                                                                                lineNumber: 1174,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3980,25 +3976,25 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 children: "결정 필요"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1158,
+                                                                                lineNumber: 1175,
                                                                                 columnNumber: 21
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1156,
+                                                                        lineNumber: 1173,
                                                                         columnNumber: 19
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1149,
+                                                                lineNumber: 1166,
                                                                 columnNumber: 17
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1109,
+                                                        lineNumber: 1126,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -4014,14 +4010,14 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 className: "h-4 w-4"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1167,
+                                                                                lineNumber: 1184,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             "업무 최적화 제안"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1166,
+                                                                        lineNumber: 1183,
                                                                         columnNumber: 19
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -4029,13 +4025,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                         children: "건재 업무들을 분석한 AI의 제안입니다"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1170,
+                                                                        lineNumber: 1187,
                                                                         columnNumber: 19
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1165,
+                                                                lineNumber: 1182,
                                                                 columnNumber: 17
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4048,7 +4044,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                             children: "• 연차료는 납부는 마감일 7일 전에 처리하는 것을 권장합니다"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1174,
+                                                                            lineNumber: 1191,
                                                                             columnNumber: 21
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4056,7 +4052,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                             children: "• 권리 포기 결정은 유료한 결단 시간이 허용합니다 (최소 14일)"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1177,
+                                                                            lineNumber: 1194,
                                                                             columnNumber: 21
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4064,24 +4060,24 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                             children: "• 비소인 시가의 마감일은 한 번에 처리하면 효율적입니다"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                            lineNumber: 1180,
+                                                                            lineNumber: 1197,
                                                                             columnNumber: 21
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1173,
+                                                                    lineNumber: 1190,
                                                                     columnNumber: 19
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1172,
+                                                                lineNumber: 1189,
                                                                 columnNumber: 17
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1164,
+                                                        lineNumber: 1181,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -4093,12 +4089,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     children: "예상 업무 패턴"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1190,
+                                                                    lineNumber: 1207,
                                                                     columnNumber: 19
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1189,
+                                                                lineNumber: 1206,
                                                                 columnNumber: 17
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4114,7 +4110,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: "이번 주"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1195,
+                                                                                        lineNumber: 1212,
                                                                                         columnNumber: 23
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
@@ -4123,13 +4119,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: "폭증"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1196,
+                                                                                        lineNumber: 1213,
                                                                                         columnNumber: 23
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1194,
+                                                                                lineNumber: 1211,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Progress"], {
@@ -4137,13 +4133,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 className: "h-1.5 bg-gray-200"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1200,
+                                                                                lineNumber: 1217,
                                                                                 columnNumber: 21
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1193,
+                                                                        lineNumber: 1210,
                                                                         columnNumber: 19
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4156,7 +4152,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: "다음 주"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1205,
+                                                                                        lineNumber: 1222,
                                                                                         columnNumber: 23
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
@@ -4165,13 +4161,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: "중간"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1206,
+                                                                                        lineNumber: 1223,
                                                                                         columnNumber: 23
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1204,
+                                                                                lineNumber: 1221,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Progress"], {
@@ -4179,13 +4175,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 className: "h-1.5 bg-gray-200"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1210,
+                                                                                lineNumber: 1227,
                                                                                 columnNumber: 21
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1203,
+                                                                        lineNumber: 1220,
                                                                         columnNumber: 19
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4198,7 +4194,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: "다음달"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1215,
+                                                                                        lineNumber: 1232,
                                                                                         columnNumber: 23
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
@@ -4207,13 +4203,13 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                         children: "낮음"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                        lineNumber: 1216,
+                                                                                        lineNumber: 1233,
                                                                                         columnNumber: 23
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1214,
+                                                                                lineNumber: 1231,
                                                                                 columnNumber: 21
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$progress$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Progress"], {
@@ -4221,53 +4217,53 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                                 className: "h-1.5 bg-gray-200"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                                lineNumber: 1220,
+                                                                                lineNumber: 1237,
                                                                                 columnNumber: 21
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                        lineNumber: 1213,
+                                                                        lineNumber: 1230,
                                                                         columnNumber: 19
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1192,
+                                                                lineNumber: 1209,
                                                                 columnNumber: 17
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1188,
+                                                        lineNumber: 1205,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 1047,
+                                                lineNumber: 1064,
                                                 columnNumber: 13
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 881,
+                                        lineNumber: 898,
                                         columnNumber: 11
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                    lineNumber: 880,
+                                    lineNumber: 897,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                lineNumber: 879,
+                                lineNumber: 896,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                        lineNumber: 436,
+                        lineNumber: 454,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4285,12 +4281,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                     className: "w-5 h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 1239,
+                                                    lineNumber: 1256,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 1238,
+                                                lineNumber: 1255,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4299,18 +4295,18 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                     children: "Paytent AI"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 1242,
+                                                    lineNumber: 1259,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 1241,
+                                                lineNumber: 1258,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 1237,
+                                        lineNumber: 1254,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4326,12 +4322,12 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                             className: "w-8 h-8 text-gray-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1252,
+                                                            lineNumber: 1269,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1251,
+                                                        lineNumber: 1268,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4341,7 +4337,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "질문을 시작해보세요"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1255,
+                                                                lineNumber: 1272,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4349,24 +4345,24 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: "특허에 대한 질문을 입력하면 AI가 답변해드립니다"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1256,
+                                                                lineNumber: 1273,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1254,
+                                                        lineNumber: 1271,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                lineNumber: 1250,
+                                                lineNumber: 1267,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                            lineNumber: 1249,
+                                            lineNumber: 1266,
                                             columnNumber: 17
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "space-y-2",
@@ -4380,17 +4376,17 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 children: msg.text
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                lineNumber: 1271,
+                                                                lineNumber: 1288,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1264,
+                                                            lineNumber: 1281,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, idx, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1263,
+                                                        lineNumber: 1280,
                                                         columnNumber: 21
                                                     }, this)),
                                                 isTyping && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4407,7 +4403,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1279,
+                                                                    lineNumber: 1296,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4417,7 +4413,7 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1283,
+                                                                    lineNumber: 1300,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4427,41 +4423,41 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1287,
+                                                                    lineNumber: 1304,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1278,
+                                                            lineNumber: 1295,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1277,
+                                                        lineNumber: 1294,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 1276,
+                                                    lineNumber: 1293,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     ref: messagesEndRef
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 1295,
+                                                    lineNumber: 1312,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                            lineNumber: 1261,
+                                            lineNumber: 1278,
                                             columnNumber: 13
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 1247,
+                                        lineNumber: 1264,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4512,9 +4508,9 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                 setTimeout(()=>{
                                                                     setIsTyping(false);
                                                                     const urgentPatents = [
-                                                                        "• KR10-2345678 - 연차료 납부 (마감일: 2024-12-31)",
+                                                                        "• KR10-2345678 - 연차료 납부 (마감일: 2026-12-31)",
                                                                         "• KR10-1234567 - 권리 포기 결정 필요",
-                                                                        "• EP18817150.8 - 연차료 납부 (마감일: 2025-01-15)"
+                                                                        "• EP18817150.8 - 연차료 납부 (마감일: 2027-01-13)"
                                                                     ];
                                                                     setMessages((prev)=>[
                                                                             ...prev,
@@ -4545,31 +4541,31 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                     }
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 1303,
+                                                    lineNumber: 1320,
                                                     columnNumber: 17
                                                 }, this),
                                                 isUserTyping && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "w-2 h-2 bg-orange-500 rounded-full animate-pulse"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 1376,
+                                                    lineNumber: 1393,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                            lineNumber: 1302,
+                                            lineNumber: 1319,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                        lineNumber: 1301,
+                                        lineNumber: 1318,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                lineNumber: 1235,
+                                lineNumber: 1252,
                                 columnNumber: 11
                             }, this),
                             !isPage23 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4587,35 +4583,35 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                             className: "w-5 h-5 text-accent"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1388,
+                                                            lineNumber: 1405,
                                                             columnNumber: 17
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "text-lg font-bold text-foreground",
+                                                            className: "text-[1.375rem] font-bold text-foreground",
                                                             children: "담당자가 얻는 가치"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1389,
+                                                            lineNumber: 1406,
                                                             columnNumber: 17
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 1387,
+                                                    lineNumber: 1404,
                                                     columnNumber: 15
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm text-muted-foreground",
+                                                    className: isPage22 ? "text-[16px] text-muted-foreground" : "text-lg text-muted-foreground",
                                                     children: isPage22 ? "단순 반복 작업에서 해방, 데이터 기반의 빠르고 정확한 의사결정 실현" : "일정 누락 방지와 체계적 업무 관리로 스트레스 감소 및 생산성 향상"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                    lineNumber: 1391,
+                                                    lineNumber: 1408,
                                                     columnNumber: 15
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                            lineNumber: 1386,
+                                            lineNumber: 1403,
                                             columnNumber: 13
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4631,26 +4627,26 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     className: "w-4 h-4 text-accent mt-0.5 flex-shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1404,
+                                                                    lineNumber: 1421,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-sm text-foreground leading-relaxed",
+                                                                    className: "text-[15px] text-foreground leading-relaxed",
                                                                     children: "사용자 질문에 즉시 답변 가능한 대시보드"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1405,
+                                                                    lineNumber: 1422,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1403,
+                                                            lineNumber: 1420,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1402,
+                                                        lineNumber: 1419,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4662,26 +4658,26 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     className: "w-4 h-4 text-accent mt-0.5 flex-shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1411,
+                                                                    lineNumber: 1428,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-sm text-foreground leading-relaxed",
+                                                                    className: "text-[15px] text-foreground leading-relaxed",
                                                                     children: "사람이 며칠 걸릴 분석을 AI가 몇 초만에 완료"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1412,
+                                                                    lineNumber: 1429,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1410,
+                                                            lineNumber: 1427,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1409,
+                                                        lineNumber: 1426,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4693,26 +4689,26 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     className: "w-4 h-4 text-accent mt-0.5 flex-shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1420,
+                                                                    lineNumber: 1437,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-sm text-foreground leading-relaxed",
+                                                                    className: "text-[15px] text-foreground leading-relaxed",
                                                                     children: "포트폴리오 전체를 한눈에 보며 전략적 판단 지원"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1421,
+                                                                    lineNumber: 1438,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1419,
+                                                            lineNumber: 1436,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1418,
+                                                        lineNumber: 1435,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
@@ -4727,26 +4723,26 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     className: "w-4 h-4 text-accent mt-0.5 flex-shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1431,
+                                                                    lineNumber: 1448,
                                                                     columnNumber: 19
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-sm text-foreground leading-relaxed",
+                                                                    className: "text-[15px] text-foreground leading-relaxed",
                                                                     children: "마감일 누락 걱정 없이 안심하고 업무 진행"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1432,
+                                                                    lineNumber: 1449,
                                                                     columnNumber: 19
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1430,
+                                                            lineNumber: 1447,
                                                             columnNumber: 17
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1429,
+                                                        lineNumber: 1446,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4758,26 +4754,26 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     className: "w-4 h-4 text-accent mt-0.5 flex-shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1438,
+                                                                    lineNumber: 1455,
                                                                     columnNumber: 19
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-sm text-foreground leading-relaxed",
+                                                                    className: "text-[15px] text-foreground leading-relaxed",
                                                                     children: "엑셀과 캘린더를 뒤지는 시간 절약, 업무 효율 극대화"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1439,
+                                                                    lineNumber: 1456,
                                                                     columnNumber: 19
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1437,
+                                                            lineNumber: 1454,
                                                             columnNumber: 17
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1436,
+                                                        lineNumber: 1453,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4789,62 +4785,62 @@ function AiCalendarSlide({ isPage22 = false, isPage23 = false } = {}) {
                                                                     className: "w-4 h-4 text-accent mt-0.5 flex-shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1447,
+                                                                    lineNumber: 1464,
                                                                     columnNumber: 19
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-sm text-foreground leading-relaxed",
+                                                                    className: "text-[15px] text-foreground leading-relaxed",
                                                                     children: "업무 부하가 높은 시기를 미리 파악해 계획적 대응 가능"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                                    lineNumber: 1448,
+                                                                    lineNumber: 1465,
                                                                     columnNumber: 19
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                            lineNumber: 1446,
+                                                            lineNumber: 1463,
                                                             columnNumber: 17
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                                        lineNumber: 1445,
+                                                        lineNumber: 1462,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true)
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                            lineNumber: 1399,
+                                            lineNumber: 1416,
                                             columnNumber: 13
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                    lineNumber: 1385,
+                                    lineNumber: 1402,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                                lineNumber: 1384,
+                                lineNumber: 1401,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                        lineNumber: 1233,
+                        lineNumber: 1250,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-                lineNumber: 434,
+                lineNumber: 452,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/slides/ai-calendar-slide.tsx",
-        lineNumber: 415,
+        lineNumber: 431,
         columnNumber: 5
     }, this);
 }

@@ -62,18 +62,16 @@ export function ServiceAdvantagesSlide() {
           {/* Header Labels */}
           <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] gap-6 items-center mb-10">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-6 py-3 bg-muted rounded-full mb-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground"></div>
-                <h3 className="text-lg font-bold text-muted-foreground">기존 시장</h3>
+              <div className="p-6 rounded-xl bg-muted border-2 border-muted-foreground/30 shadow-sm flex items-center justify-center min-h-[100px] mb-3">
+                <h3 className="text-[1.375rem] font-bold text-muted-foreground">기존 시장</h3>
               </div>
             </div>
             <div className="w-16"></div>
             <div></div>
             <div className="w-16"></div>
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary rounded-full shadow-lg">
-                <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
-                <h3 className="text-lg font-bold text-primary-foreground">IPNOW</h3>
+              <div className="p-6 rounded-xl bg-primary border-2 border-primary shadow-sm flex items-center justify-center min-h-[100px]">
+                <h3 className="text-[1.375rem] font-bold text-primary-foreground">IPNOW</h3>
               </div>
             </div>
           </div>
@@ -87,8 +85,8 @@ export function ServiceAdvantagesSlide() {
                   key={index}
                   className="p-6 rounded-xl bg-muted/50 border border-border shadow-sm flex flex-col justify-center hover:shadow-md transition-shadow min-h-[100px]"
                 >
-                  <p className="text-lg font-semibold text-foreground leading-relaxed">{problem.title}</p>
-                  <p className="text-base text-muted-foreground leading-relaxed mt-2">{problem.subtitle}</p>
+                  <p className="text-xl font-bold text-foreground text-center leading-relaxed">{problem.title}</p>
+                  <p className="text-xl font-bold text-muted-foreground text-center leading-relaxed mt-2">{problem.subtitle}</p>
                 </div>
               ))}
             </div>
@@ -109,7 +107,7 @@ export function ServiceAdvantagesSlide() {
                   key={index}
                   className="p-6 rounded-xl bg-amber-50 border-2 border-amber-300 shadow-sm flex items-center justify-center min-h-[100px]"
                 >
-                  <p className="text-lg font-bold text-amber-900 text-center leading-relaxed">{problem.issue}</p>
+                  <p className="text-xl font-bold text-amber-900 text-center leading-relaxed">{problem.issue}</p>
                 </div>
               ))}
             </div>
@@ -131,8 +129,8 @@ export function ServiceAdvantagesSlide() {
                   className="p-6 rounded-xl bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-400 shadow-md flex items-center gap-4 hover:shadow-lg transition-shadow min-h-[100px]"
                 >
                   <div className="flex-1 flex flex-col justify-center">
-                    <p className="text-lg font-bold text-red-600 text-center leading-relaxed">{solution.title}</p>
-                    <p className="text-base text-red-500 text-center leading-relaxed mt-2">{solution.subtitle}</p>
+                    <p className="text-xl font-bold text-red-600 text-center leading-relaxed">{solution.title}</p>
+                    <p className="text-xl font-bold text-red-500 text-center leading-relaxed mt-2">{solution.subtitle}</p>
                   </div>
                 </div>
               ))}
@@ -144,7 +142,7 @@ export function ServiceAdvantagesSlide() {
         <div className="w-1/3 flex flex-col gap-6">
           {/* Essential Services - Top Section */}
           <div className="flex-[2] p-8 rounded-2xl bg-white border-2 border-dashed border-blue-300 shadow-lg flex flex-col">
-            <h3 className="text-xl font-bold text-center text-foreground mb-8">연차료 관리 필수 제공 기능</h3>
+            <h3 className="text-[1.375rem] font-bold text-center text-foreground mb-8">연차료 관리 필수 제공 기능</h3>
 
             <div className="flex-1 grid grid-cols-3 gap-4 mb-6">
               {essentialServices.map((service, index) => {
@@ -154,7 +152,7 @@ export function ServiceAdvantagesSlide() {
                     <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center shadow-sm">
                       <Icon className="w-7 h-7 text-blue-600" />
                     </div>
-                    <p className="text-xs font-medium text-center text-foreground leading-tight whitespace-pre-line">
+                    <p className="text-base font-medium text-center text-foreground leading-tight whitespace-pre-line">
                       {service.text}
                     </p>
                   </div>
@@ -167,9 +165,6 @@ export function ServiceAdvantagesSlide() {
 
           {/* Divider with "전문가 지원" label and plus icon */}
           <div className="relative flex items-center justify-center py-2">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-dashed border-muted-foreground/30"></div>
-            </div>
             <div className="relative flex flex-col items-center gap-1">
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md">
                 <div className="text-2xl font-bold text-white leading-none">+</div>

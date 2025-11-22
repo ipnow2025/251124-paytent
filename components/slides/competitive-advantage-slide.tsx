@@ -30,7 +30,7 @@ export function CompetitiveAdvantageSlide() {
     {
       icon: TrendingUp,
       title: "IP 수익화 기회 발굴",
-      description: "다양한 레퍼런스 기반으로 IP 수익화까지 One-Stop 서비스 제공",
+      description: "다양한 레퍼런스 기반 IP 수익화까지 One-Stop 서비스제공",
     },
   ]
 
@@ -56,8 +56,8 @@ export function CompetitiveAdvantageSlide() {
             <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
               <advantage.icon className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-4 whitespace-pre-line">{advantage.title}</h3>
-            <p className="text-base text-muted-foreground leading-relaxed whitespace-pre-line">
+            <h3 className="text-[1.375rem] font-bold text-foreground mb-4 whitespace-pre-line">{advantage.title}</h3>
+            <p className="text-xl text-muted-foreground leading-relaxed whitespace-pre-line">
               {advantage.description}
             </p>
           </div>

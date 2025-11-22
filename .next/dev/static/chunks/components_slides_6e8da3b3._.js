@@ -245,7 +245,7 @@ function IpRealitySlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-800",
+                                        className: "text-[1.375rem] font-bold text-slate-800",
                                         children: '"왜 우리 특허는 돈이 되지 않을까?"'
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -282,7 +282,7 @@ function IpRealitySlide() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                        className: "text-lg font-bold text-slate-800 mb-1",
+                                                        className: "text-xl font-bold text-slate-800 mb-1",
                                                         children: "출원 목적은 수익화인데…"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -290,7 +290,7 @@ function IpRealitySlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-slate-600 leading-relaxed text-sm",
+                                                        className: "text-slate-600 leading-relaxed text-lg",
                                                         children: [
                                                             "기업/기관은 ",
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -341,7 +341,7 @@ function IpRealitySlide() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                        className: "text-lg font-bold text-slate-800 mb-1",
+                                                        className: "text-xl font-bold text-slate-800 mb-1",
                                                         children: "등록 후 가치 판단·활용 계획 부재"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -349,7 +349,7 @@ function IpRealitySlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-slate-600 leading-relaxed text-sm",
+                                                        className: "text-slate-600 leading-relaxed text-lg",
                                                         children: [
                                                             "등록된 특허 중 어떤 것이 돈이 될 핵심 IP인지 선별하지 못하며,",
                                                             " ",
@@ -401,7 +401,7 @@ function IpRealitySlide() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                        className: "text-lg font-bold text-slate-800 mb-1",
+                                                        className: "text-xl font-bold text-slate-800 mb-1",
                                                         children: "IP권리 유지를 위한 연차료가 '비용'으로만 인식"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -409,7 +409,7 @@ function IpRealitySlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-slate-600 leading-relaxed text-sm",
+                                                        className: "text-slate-600 leading-relaxed text-lg",
                                                         children: [
                                                             "재평가 없이 연차료만 계속 내다 보면, 변화한 시장·활용 가능성을 반영하지 못해",
                                                             " ",
@@ -503,7 +503,7 @@ function IpRealitySlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-red-900",
+                                        className: "text-[1.375rem] font-bold text-red-900",
                                         children: "수익화 실패의 악순환"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -537,7 +537,7 @@ function IpRealitySlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "font-semibold text-slate-700 text-sm",
+                                                className: "font-semibold text-slate-700 text-xl",
                                                 children: "수익화를 기대하며 IP 출원"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -575,7 +575,7 @@ function IpRealitySlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "font-semibold text-slate-700 text-sm",
+                                                className: "font-semibold text-slate-700 text-xl",
                                                 children: "등록 후 방치 (활용/수익화 계획 없음)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -613,7 +613,7 @@ function IpRealitySlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "font-semibold text-slate-700 text-sm",
+                                                className: "font-semibold text-slate-700 text-xl",
                                                 children: "유지비용(연차료)만 지속 발생"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -651,7 +651,7 @@ function IpRealitySlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "font-semibold text-slate-700 text-sm",
+                                                className: "font-semibold text-slate-700 text-xl",
                                                 children: "비용 부담 → 포기 or 장롱특허화"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -675,7 +675,7 @@ function IpRealitySlide() {
                                         className: "w-full bg-red-600 p-3 rounded-lg shadow-md text-center z-10",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "font-bold text-white mb-0.5 text-sm",
+                                                className: "font-bold text-white mb-0.5 text-xl",
                                                 children: "수익화 기회 상실 & 예산 낭비"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -683,7 +683,7 @@ function IpRealitySlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-red-100 text-xs",
+                                                className: "text-red-100 text-xl",
                                                 children: '다시 "출원만 늘고 수익은 없는 구조" 반복'
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -724,7 +724,7 @@ function IpRealitySlide() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-4 p-4 rounded-xl bg-primary text-primary-foreground shadow-lg shrink-0",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-center text-lg font-bold",
+                    className: "text-center text-[1.375rem] font-bold",
                     children: "\"단순한 '관리'를 넘어 '수익화'로 이어지기 위해서는 특허의 가치를 주기적으로 평가하고 선별하는 과정이 필수적입니다.\""
                 }, void 0, false, {
                     fileName: "[project]/components/slides/ip-reality-slide.tsx",
@@ -833,7 +833,7 @@ function WhyNotManagedSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-800",
+                                        className: "text-[1.375rem] font-bold text-slate-800",
                                         children: "특허 관리 전문 인력 부재"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -853,7 +853,7 @@ function WhyNotManagedSlide() {
                                         className: "space-y-3 text-slate-600",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base leading-relaxed",
+                                                className: "text-lg leading-relaxed",
                                                 children: [
                                                     "최근 5년 간 지재권 분쟁을 겪은 벤처 및 중소·중견기업",
                                                     " ",
@@ -872,7 +872,7 @@ function WhyNotManagedSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base leading-relaxed",
+                                                className: "text-lg leading-relaxed",
                                                 children: "관리 규모·복잡도 대비 담당자 수와 역량이 현저히 부족합니다."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -933,7 +933,7 @@ function WhyNotManagedSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-800",
+                                        className: "text-[1.375rem] font-bold text-slate-800",
                                         children: "연차료 관리 시스템 부재"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -953,7 +953,7 @@ function WhyNotManagedSlide() {
                                         className: "space-y-3 text-slate-600",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base leading-relaxed",
+                                                className: "text-lg leading-relaxed",
                                                 children: "지재권에 대한 중요성과 시장이 커짐에도 특허 연차료 관리시스템은 개선되지 않음"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -961,7 +961,7 @@ function WhyNotManagedSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base leading-relaxed",
+                                                className: "text-lg leading-relaxed",
                                                 children: "체계적인 연차료 관리 부재로 인한 권리 상실 위험이 상존합니다."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -1022,7 +1022,7 @@ function WhyNotManagedSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-800",
+                                        className: "text-[1.375rem] font-bold text-slate-800",
                                         children: "매출과 무관한 특허"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -1042,7 +1042,7 @@ function WhyNotManagedSlide() {
                                         className: "space-y-3 text-slate-600",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base leading-relaxed",
+                                                className: "text-lg leading-relaxed",
                                                 children: "비용만 쓰고 매출과 무관한 특허만 보유"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -1050,7 +1050,7 @@ function WhyNotManagedSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base leading-relaxed",
+                                                className: "text-lg leading-relaxed",
                                                 children: "특허 가치와 사업 연계성에 대한 평가 없이 단순 유지만 반복됩니다."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -1111,7 +1111,7 @@ function WhyNotManagedSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-800",
+                                        className: "text-[1.375rem] font-bold text-slate-800",
                                         children: "권리 행사가 어려운 특허 포트폴리오"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -1131,7 +1131,7 @@ function WhyNotManagedSlide() {
                                         className: "space-y-3 text-slate-600",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base leading-relaxed",
+                                                className: "text-lg leading-relaxed",
                                                 children: "특허권은 있으나 활용가능한 독점권은 확보하기 어려운 구조"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -1139,7 +1139,7 @@ function WhyNotManagedSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base leading-relaxed",
+                                                className: "text-lg leading-relaxed",
                                                 children: "포트폴리오 전략 부재로 권리 행사의 실효성이 낮습니다."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -1196,7 +1196,7 @@ function WhyNotManagedSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-center text-xl font-bold",
+                        className: "text-center text-[1.375rem] font-bold",
                         children: "IP 권리유지 의사결정 미흡 → 핵심·우수특허의 반복적 소멸"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/why-not-managed-slide.tsx",
@@ -1306,7 +1306,7 @@ function IpJudgmentCoreSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-800",
+                                        className: "text-[1.375rem] font-bold text-slate-800",
                                         children: "IP 권리 유지 vs 포기 판단"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ip-judgment-core-slide.tsx",
@@ -1325,7 +1325,7 @@ function IpJudgmentCoreSlide() {
                                     className: "space-y-3 text-slate-600",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-base leading-relaxed",
+                                            className: "text-lg leading-relaxed",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "font-bold text-blue-600",
@@ -1353,7 +1353,7 @@ function IpJudgmentCoreSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-base leading-relaxed",
+                                            className: "text-lg leading-relaxed",
                                             children: "시장, 기술 및 산업의 변화를 반영한 체계적인 평가와 판단이 필요합니다."
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/ip-judgment-core-slide.tsx",
@@ -1398,7 +1398,7 @@ function IpJudgmentCoreSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-800",
+                                        className: "text-[1.375rem] font-bold text-slate-800",
                                         children: "활용 전략 수립"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ip-judgment-core-slide.tsx",
@@ -1417,7 +1417,7 @@ function IpJudgmentCoreSlide() {
                                     className: "space-y-3 text-slate-600",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-base leading-relaxed",
+                                            className: "text-lg leading-relaxed",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "font-bold text-green-600",
@@ -1435,7 +1435,7 @@ function IpJudgmentCoreSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-base leading-relaxed",
+                                            className: "text-lg leading-relaxed",
                                             children: "기술이전, 라이선스, 방어 등 구체적인 수익화 시나리오를 위한 판단 근거가 필요합니다."
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/ip-judgment-core-slide.tsx",
@@ -1480,7 +1480,7 @@ function IpJudgmentCoreSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-800",
+                                        className: "text-[1.375rem] font-bold text-slate-800",
                                         children: "핵심 특허 선별"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ip-judgment-core-slide.tsx",
@@ -1499,7 +1499,7 @@ function IpJudgmentCoreSlide() {
                                     className: "space-y-3 text-slate-600",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-base leading-relaxed",
+                                            className: "text-lg leading-relaxed",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "font-bold text-purple-600",
@@ -1527,7 +1527,7 @@ function IpJudgmentCoreSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-base leading-relaxed",
+                                            className: "text-lg leading-relaxed",
                                             children: "사업 연관성, 기술 경쟁력, 권리 범위를 종합적으로 평가해야 합니다."
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/ip-judgment-core-slide.tsx",
@@ -1572,7 +1572,7 @@ function IpJudgmentCoreSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-slate-800",
+                                        className: "text-[1.375rem] font-bold text-slate-800",
                                         children: "투자 우선순위 결정"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/ip-judgment-core-slide.tsx",
@@ -1591,7 +1591,7 @@ function IpJudgmentCoreSlide() {
                                     className: "space-y-3 text-slate-600",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-base leading-relaxed",
+                                            className: "text-lg leading-relaxed",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "font-bold text-orange-600",
@@ -1619,7 +1619,7 @@ function IpJudgmentCoreSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-base leading-relaxed",
+                                            className: "text-lg leading-relaxed",
                                             children: "한정된 예산 내에서 수익화 가능성이 높은 특허에 집중하는 선택과 집중 전략이 필요합니다."
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/ip-judgment-core-slide.tsx",
@@ -1660,7 +1660,7 @@ function IpJudgmentCoreSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-center text-xl font-bold",
+                        className: "text-center text-[1.375rem] font-bold",
                         children: "IP관리의 핵심은 단순 권리 유지를 위한 연차료 납부가 아닌, 포트폴리오 전체를 최적화하는 '전략적 판단'의 연속입니다"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/ip-judgment-core-slide.tsx",
@@ -1754,7 +1754,7 @@ function CurrentIssuesSlide() {
                                 className: "p-6 rounded-xl bg-amber-50 border border-amber-200",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-xl font-bold text-amber-900 mb-3",
+                                        className: "text-[1.375rem] font-bold text-amber-900 mb-3",
                                         children: "연차료 관리에 대한 무관심 사유"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -1765,7 +1765,7 @@ function CurrentIssuesSlide() {
                                         className: "space-y-2",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "flex items-start gap-2 text-base",
+                                                className: "flex items-start gap-2 text-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "text-amber-600 mt-0.5",
@@ -1790,7 +1790,7 @@ function CurrentIssuesSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "flex items-start gap-2 text-base",
+                                                className: "flex items-start gap-2 text-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "text-amber-600 mt-0.5",
@@ -1815,7 +1815,7 @@ function CurrentIssuesSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "flex items-start gap-2 text-base",
+                                                className: "flex items-start gap-2 text-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "text-amber-600 mt-0.5",
@@ -1840,7 +1840,7 @@ function CurrentIssuesSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "flex items-start gap-2 text-base",
+                                                className: "flex items-start gap-2 text-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "text-amber-600 mt-0.5",
@@ -1880,7 +1880,7 @@ function CurrentIssuesSlide() {
                                 className: "p-6 rounded-xl bg-blue-50 border border-blue-200",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-xl font-bold text-blue-900 mb-3",
+                                        className: "text-[1.375rem] font-bold text-blue-900 mb-3",
                                         children: "연차료 관리 단계의 중요성"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -1894,7 +1894,7 @@ function CurrentIssuesSlide() {
                                                 className: "flex items-start gap-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-blue-600 font-bold text-base",
+                                                        className: "text-blue-600 font-bold text-lg",
                                                         children: "1."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -1902,7 +1902,7 @@ function CurrentIssuesSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-base text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "유지되어야 하는 특허권리에 대해서만 납부해야 효율적"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -1919,7 +1919,7 @@ function CurrentIssuesSlide() {
                                                 className: "flex items-start gap-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-blue-600 font-bold text-base",
+                                                        className: "text-blue-600 font-bold text-lg",
                                                         children: "2."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -1927,7 +1927,7 @@ function CurrentIssuesSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-base text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "유지가 필요한 특허권리는 평가를 통해서 확인 가능"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -1944,7 +1944,7 @@ function CurrentIssuesSlide() {
                                                 className: "flex items-start gap-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-blue-600 font-bold text-base",
+                                                        className: "text-blue-600 font-bold text-lg",
                                                         children: "3."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -1952,7 +1952,7 @@ function CurrentIssuesSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-base text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "보유특허의 평가는 연차료 납부 시점에 진행되어야 함"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -1969,7 +1969,7 @@ function CurrentIssuesSlide() {
                                                 className: "flex items-start gap-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-blue-600 font-bold text-base",
+                                                        className: "text-blue-600 font-bold text-lg",
                                                         children: "4."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -1977,7 +1977,7 @@ function CurrentIssuesSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-base text-gray-700 font-semibold",
+                                                        className: "text-lg text-gray-700 font-semibold",
                                                         children: "따라서, 연차료 납부는 특허전략에서 매우 중요한 절차"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -2029,7 +2029,7 @@ function CurrentIssuesSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                        className: "text-xl font-bold text-red-900 mb-2",
+                                        className: "text-[1.375rem] font-bold text-red-900 mb-2",
                                         children: "① 불필요한 비용 발생"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -2037,7 +2037,7 @@ function CurrentIssuesSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                        className: "space-y-1.5 text-base text-gray-700",
+                                        className: "space-y-1.5 text-lg text-gray-700",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "• 무분별한 비용 집행"
@@ -2083,7 +2083,7 @@ function CurrentIssuesSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                        className: "text-xl font-bold text-red-900 mb-2",
+                                        className: "text-[1.375rem] font-bold text-red-900 mb-2",
                                         children: "② 주요 특허 소멸"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -2091,7 +2091,7 @@ function CurrentIssuesSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                        className: "space-y-1.5 text-base text-gray-700",
+                                        className: "space-y-1.5 text-lg text-gray-700",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "• 외주업체 관리 미흡"
@@ -2145,7 +2145,7 @@ function CurrentIssuesSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                        className: "text-xl font-bold text-red-900 mb-2",
+                                        className: "text-[1.375rem] font-bold text-red-900 mb-2",
                                         children: "③ 판단 시기 상시"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -2153,7 +2153,7 @@ function CurrentIssuesSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                        className: "space-y-1.5 text-base text-gray-700",
+                                        className: "space-y-1.5 text-lg text-gray-700",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "· 우수·핵심 특허를 선별 못함"
@@ -2207,7 +2207,7 @@ function CurrentIssuesSlide() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-base font-bold text-center text-white",
+                                    className: "text-[1.375rem] font-bold text-center text-white",
                                     children: "IP 관리의 본질은 단순 연차료 '납부'가 아닌, 수익화 가능 IP를 제때 골라내는 판단과 관리 체계의 부재입니다."
                                 }, void 0, false, {
                                     fileName: "[project]/components/slides/current-issues-slide.tsx",
@@ -2331,7 +2331,7 @@ function AnnuityManagementSlide() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "inline-block px-3 py-1.5 bg-primary/10 rounded-lg mb-3",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-base font-semibold text-primary",
+                            className: "text-lg font-semibold text-primary",
                             children: "Chapter 02 해결방안"
                         }, void 0, false, {
                             fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2344,7 +2344,7 @@ function AnnuityManagementSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-4xl font-bold text-foreground mb-3",
+                        className: "text-[2.75rem] font-bold text-foreground mb-3",
                         children: "IP 수익화의 출발점, 연차료 관리"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2352,7 +2352,7 @@ function AnnuityManagementSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-lg text-muted-foreground",
+                        className: "text-xl text-muted-foreground",
                         children: "연차료 관리는 단순 비용 납부가 아닌, 미래 수익을 위한 전략적 의사결정입니다"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2391,7 +2391,7 @@ function AnnuityManagementSlide() {
                                     className: "flex-1",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-lg font-bold text-foreground mb-1.5",
+                                            className: "text-[1.375rem] font-bold text-foreground mb-1.5",
                                             children: "연차료란?"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2399,7 +2399,7 @@ function AnnuityManagementSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-sm text-muted-foreground",
+                                            className: "text-xl text-muted-foreground",
                                             children: [
                                                 "IP(특허, 상표, 디자인) 의 권리 유지를 위해 매년(미국 3.5)마다 국가별 특허청에 납부하는 비용 ➜ 연차료 납부의 이유는 ",
                                                 "해당 IP가 ",
@@ -2452,7 +2452,7 @@ function AnnuityManagementSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                className: "text-base font-bold text-gray-900",
+                                                className: "text-[1.375rem] font-bold text-gray-900",
                                                 children: "현재 연차료 관리의 현황·문제"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2472,7 +2472,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-red-50 p-2.5 rounded-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-red-900 mb-1 text-sm",
+                                                        className: "font-semibold text-red-900 mb-1 text-xl",
                                                         children: "형식적 관리"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2480,7 +2480,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "단순 납부 대행 중심의 수동적 관리"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2497,7 +2497,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-red-50 p-2.5 rounded-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-red-900 mb-1 text-sm",
+                                                        className: "font-semibold text-red-900 mb-1 text-xl",
                                                         children: "판단 근거 부재"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2505,7 +2505,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "특허 가치 평가 없이 일괄 납부 또는 무분별한 포기"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2522,7 +2522,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-red-50 p-2.5 rounded-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-red-900 mb-1 text-sm",
+                                                        className: "font-semibold text-red-900 mb-1 text-xl",
                                                         children: "연차료 누락 사고"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2530,7 +2530,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "체계적 관리 시스템 부재로 우수 특허 소멸"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2547,7 +2547,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-red-50 p-2.5 rounded-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-red-900 mb-1 text-sm",
+                                                        className: "font-semibold text-red-900 mb-1 text-xl",
                                                         children: "과도한 비용 부담"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2555,7 +2555,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "다단계 구조로 인한 불필요한 비용 증가"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2595,7 +2595,7 @@ function AnnuityManagementSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                className: "text-base font-bold text-gray-900",
+                                                className: "text-[1.375rem] font-bold text-gray-900",
                                                 children: "왜 연차료 관리가 중요한가?"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2615,7 +2615,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-blue-50 p-2.5 rounded-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-blue-900 mb-1 text-sm",
+                                                        className: "font-semibold text-blue-900 mb-1 text-xl",
                                                         children: "가치 판단의 시점"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2623,7 +2623,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "연차료 납부 시점은 특허 가치를 재평가하는 핵심 타이밍"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2640,7 +2640,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-blue-50 p-2.5 rounded-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-blue-900 mb-1 text-sm",
+                                                        className: "font-semibold text-blue-900 mb-1 text-xl",
                                                         children: "전략적 자원 배분"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2648,7 +2648,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "핵심 특허 집중 관리로 효율적 예산 운영"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2665,7 +2665,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-blue-50 p-2.5 rounded-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-blue-900 mb-1 text-sm",
+                                                        className: "font-semibold text-blue-900 mb-1 text-xl",
                                                         children: "수익화 기회 발굴"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2673,7 +2673,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "가치있는 특허 선별로 기술이전·라이선싱 기회 창출"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2690,7 +2690,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-blue-50 p-2.5 rounded-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-semibold text-blue-900 mb-1 text-sm",
+                                                        className: "font-semibold text-blue-900 mb-1 text-xl",
                                                         children: "기업 가치 상승"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2698,7 +2698,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-gray-700",
+                                                        className: "text-lg text-gray-700",
                                                         children: "우수 특허 포트폴리오 유지로 투자 유치 및 M&A 가치 제고"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2738,7 +2738,7 @@ function AnnuityManagementSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                className: "text-base font-bold text-gray-900",
+                                                className: "text-[1.375rem] font-bold text-gray-900",
                                                 children: "IP 수익화를 위한 핵심 문제"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2758,7 +2758,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-purple-50 p-2.5 rounded-lg border-l-4 border-purple-500",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-bold text-purple-900 mb-1.5 text-sm",
+                                                        className: "font-bold text-purple-900 mb-1.5 text-xl",
                                                         children: "문제의 본질"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2766,7 +2766,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-gray-700 leading-relaxed",
+                                                        className: "text-lg text-gray-700 leading-relaxed",
                                                         children: [
                                                             "연차료 관리가 ",
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2803,7 +2803,7 @@ function AnnuityManagementSlide() {
                                                 className: "bg-gradient-to-br from-purple-100 to-blue-100 p-3 rounded-lg",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "font-bold text-purple-900 mb-1.5 text-sm",
+                                                        className: "font-bold text-purple-900 mb-1.5 text-xl",
                                                         children: "필요한 변화"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -2811,7 +2811,7 @@ function AnnuityManagementSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                        className: "space-y-1 text-xs text-gray-700",
+                                                        className: "space-y-1 text-lg text-gray-700",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 className: "flex items-start gap-1.5",
@@ -2984,7 +2984,7 @@ function AnnuityManagementSlide() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 p-4 rounded-2xl text-white text-center flex-shrink-0",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "font-bold text-xl",
+                    className: "font-bold text-[1.375rem]",
                     children: "IP 수익화의 본질을 꿰뚫어 본 IPNOW의 해답, Paytent"
                 }, void 0, false, {
                     fileName: "[project]/components/slides/annuity-management-slide.tsx",
@@ -3056,7 +3056,7 @@ function CompetitiveAdvantageSlide() {
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"],
             title: "IP 수익화 기회 발굴",
-            description: "다양한 레퍼런스 기반으로 IP 수익화까지 One-Stop 서비스 제공"
+            description: "다양한 레퍼런스 기반 IP 수익화까지 One-Stop 서비스제공"
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3133,7 +3133,7 @@ function CompetitiveAdvantageSlide() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-2xl font-bold text-foreground mb-4 whitespace-pre-line",
+                                className: "text-[1.375rem] font-bold text-foreground mb-4 whitespace-pre-line",
                                 children: advantage.title
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/competitive-advantage-slide.tsx",
@@ -3141,7 +3141,7 @@ function CompetitiveAdvantageSlide() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-base text-muted-foreground leading-relaxed whitespace-pre-line",
+                                className: "text-xl text-muted-foreground leading-relaxed whitespace-pre-line",
                                 children: advantage.description
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/competitive-advantage-slide.tsx",
@@ -3384,25 +3384,16 @@ function ServiceAdvantagesSlide() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-center",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "inline-flex items-center gap-2 px-6 py-3 bg-muted rounded-full mb-3",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-2.5 h-2.5 rounded-full bg-muted-foreground"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                    lineNumber: 66,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-lg font-bold text-muted-foreground",
-                                                    children: "기존 시장"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                    lineNumber: 67,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
+                                            className: "p-6 rounded-xl bg-muted border-2 border-muted-foreground/30 shadow-sm flex items-center justify-center min-h-[100px] mb-3",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-[1.375rem] font-bold text-muted-foreground",
+                                                children: "기존 시장"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/slides/service-advantages-slide.tsx",
+                                                lineNumber: 66,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
                                             fileName: "[project]/components/slides/service-advantages-slide.tsx",
                                             lineNumber: 65,
                                             columnNumber: 15
@@ -3416,50 +3407,41 @@ function ServiceAdvantagesSlide() {
                                         className: "w-16"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 70,
+                                        lineNumber: 69,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {}, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 71,
+                                        lineNumber: 70,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "w-16"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 72,
+                                        lineNumber: 71,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-center",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "inline-flex items-center gap-2 px-6 py-3 bg-primary rounded-full shadow-lg",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-2.5 h-2.5 rounded-full bg-white"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                    lineNumber: 75,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-lg font-bold text-primary-foreground",
-                                                    children: "IPNOW"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                    lineNumber: 76,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
+                                            className: "p-6 rounded-xl bg-primary border-2 border-primary shadow-sm flex items-center justify-center min-h-[100px]",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-[1.375rem] font-bold text-primary-foreground",
+                                                children: "IPNOW"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/slides/service-advantages-slide.tsx",
+                                                lineNumber: 74,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
                                             fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                            lineNumber: 74,
+                                            lineNumber: 73,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 72,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -3477,30 +3459,30 @@ function ServiceAdvantagesSlide() {
                                                 className: "p-6 rounded-xl bg-muted/50 border border-border shadow-sm flex flex-col justify-center hover:shadow-md transition-shadow min-h-[100px]",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-lg font-semibold text-foreground leading-relaxed",
+                                                        className: "text-xl font-bold text-foreground text-center leading-relaxed",
                                                         children: problem.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 88,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-base text-muted-foreground leading-relaxed mt-2",
+                                                        className: "text-xl font-bold text-muted-foreground text-center leading-relaxed mt-2",
                                                         children: problem.subtitle
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                        lineNumber: 91,
+                                                        lineNumber: 89,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, index, true, {
                                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 84,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 82,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3516,17 +3498,17 @@ function ServiceAdvantagesSlide() {
                                                     strokeWidth: 2.5
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                    lineNumber: 100,
+                                                    lineNumber: 98,
                                                     columnNumber: 19
                                                 }, this)
                                             }, i, false, {
                                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 97,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 95,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3534,21 +3516,21 @@ function ServiceAdvantagesSlide() {
                                         children: problems.map((problem, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "p-6 rounded-xl bg-amber-50 border-2 border-amber-300 shadow-sm flex items-center justify-center min-h-[100px]",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-lg font-bold text-amber-900 text-center leading-relaxed",
+                                                    className: "text-xl font-bold text-amber-900 text-center leading-relaxed",
                                                     children: problem.issue
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                    lineNumber: 112,
+                                                    lineNumber: 110,
                                                     columnNumber: 19
                                                 }, this)
                                             }, index, false, {
                                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 108,
+                                                lineNumber: 106,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 104,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3564,17 +3546,17 @@ function ServiceAdvantagesSlide() {
                                                     strokeWidth: 3
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                    lineNumber: 121,
+                                                    lineNumber: 119,
                                                     columnNumber: 19
                                                 }, this)
                                             }, i, false, {
                                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 120,
+                                                lineNumber: 118,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 116,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3585,41 +3567,41 @@ function ServiceAdvantagesSlide() {
                                                     className: "flex-1 flex flex-col justify-center",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-lg font-bold text-red-600 text-center leading-relaxed",
+                                                            className: "text-xl font-bold text-red-600 text-center leading-relaxed",
                                                             children: solution.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                            lineNumber: 134,
+                                                            lineNumber: 132,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-base text-red-500 text-center leading-relaxed mt-2",
+                                                            className: "text-xl font-bold text-red-500 text-center leading-relaxed mt-2",
                                                             children: solution.subtitle
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                            lineNumber: 135,
+                                                            lineNumber: 133,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 131,
                                                     columnNumber: 19
                                                 }, this)
                                             }, index, false, {
                                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 129,
+                                                lineNumber: 127,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 125,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                lineNumber: 82,
+                                lineNumber: 80,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -3635,11 +3617,11 @@ function ServiceAdvantagesSlide() {
                                 className: "flex-[2] p-8 rounded-2xl bg-white border-2 border-dashed border-blue-300 shadow-lg flex flex-col",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-xl font-bold text-center text-foreground mb-8",
+                                        className: "text-[1.375rem] font-bold text-center text-foreground mb-8",
                                         children: "연차료 관리 필수 제공 기능"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 145,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3655,32 +3637,32 @@ function ServiceAdvantagesSlide() {
                                                             className: "w-7 h-7 text-blue-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                            lineNumber: 155,
+                                                            lineNumber: 153,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                        lineNumber: 154,
+                                                        lineNumber: 152,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs font-medium text-center text-foreground leading-tight whitespace-pre-line",
+                                                        className: "text-base font-medium text-center text-foreground leading-tight whitespace-pre-line",
                                                         children: service.text
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                        lineNumber: 157,
+                                                        lineNumber: 155,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, index, true, {
                                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 153,
+                                                lineNumber: 151,
                                                 columnNumber: 19
                                             }, this);
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 147,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3688,68 +3670,52 @@ function ServiceAdvantagesSlide() {
                                         children: "*시스템 내 제공"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 165,
+                                        lineNumber: 163,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                lineNumber: 146,
+                                lineNumber: 144,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "relative flex items-center justify-center py-2",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 flex items-center",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-full border-t border-dashed border-muted-foreground/30"
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative flex flex-col items-center gap-1",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-2xl font-bold text-white leading-none",
+                                                children: "+"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/slides/service-advantages-slide.tsx",
+                                                lineNumber: 170,
+                                                columnNumber: 17
+                                            }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                            lineNumber: 171,
+                                            lineNumber: 169,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-base font-bold text-foreground",
+                                            children: "전문가 지원"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/slides/service-advantages-slide.tsx",
+                                            lineNumber: 172,
                                             columnNumber: 15
                                         }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 170,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "relative flex flex-col items-center gap-1",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "text-2xl font-bold text-white leading-none",
-                                                    children: "+"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                    lineNumber: 175,
-                                                    columnNumber: 17
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 174,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-base font-bold text-foreground",
-                                                children: "전문가 지원"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 177,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                        lineNumber: 173,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/slides/service-advantages-slide.tsx",
+                                    lineNumber: 168,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                lineNumber: 169,
+                                lineNumber: 167,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3764,12 +3730,12 @@ function ServiceAdvantagesSlide() {
                                                 children: "IP 컨설팅"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 179,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                            lineNumber: 183,
+                                            lineNumber: 178,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3780,36 +3746,36 @@ function ServiceAdvantagesSlide() {
                                                     "IP수익화",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                        lineNumber: 189,
+                                                        lineNumber: 184,
                                                         columnNumber: 19
                                                     }, this),
                                                     "지원"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                                lineNumber: 187,
+                                                lineNumber: 182,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                            lineNumber: 186,
+                                            lineNumber: 181,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                    lineNumber: 182,
+                                    lineNumber: 177,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                                lineNumber: 181,
+                                lineNumber: 176,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/slides/service-advantages-slide.tsx",
-                        lineNumber: 144,
+                        lineNumber: 142,
                         columnNumber: 9
                     }, this)
                 ]
@@ -3960,7 +3926,7 @@ function ServicesSlide() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-xl text-muted-foreground",
-                        children: "IPNOW가 제공하는 12가지 핵심 서비스를 확인해보세요"
+                        children: "IPNOW의 Paytent가 제공하는 12가지 핵심 연차료 서비스를 확인해보세요"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/services-slide.tsx",
                         lineNumber: 99,
@@ -4016,7 +3982,7 @@ function ServicesSlide() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-lg font-bold text-foreground mb-2",
+                                className: "text-[1.375rem] font-bold text-foreground mb-2",
                                 children: service.title
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/services-slide.tsx",
@@ -4024,7 +3990,7 @@ function ServicesSlide() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-muted-foreground leading-relaxed",
+                                className: "text-lg text-muted-foreground leading-relaxed",
                                 children: service.description
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/services-slide.tsx",
@@ -4101,7 +4067,7 @@ function CrossCheckSlide() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-xl text-muted-foreground",
-                        children: "연차료 누락 RISK 0% - 3단계 다중 구조 검증"
+                        children: "연차료 누락 RISK 0% - 3단계 다중 구조 검증 통한 연차료 누락 위험을 최소화"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/cross-check-slide.tsx",
                         lineNumber: 11,
@@ -4138,7 +4104,7 @@ function CrossCheckSlide() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-2xl font-bold text-foreground mb-3",
+                                            className: "text-[1.375rem] font-bold text-foreground mb-3",
                                             children: "1차 Risk 감소"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/cross-check-slide.tsx",
@@ -4146,7 +4112,7 @@ function CrossCheckSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-lg text-muted-foreground mb-4",
+                                            className: "text-xl text-muted-foreground mb-4",
                                             children: "시스템 크로스체크"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/cross-check-slide.tsx",
@@ -4154,7 +4120,7 @@ function CrossCheckSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-sm text-muted-foreground leading-relaxed",
+                                            className: "text-lg text-muted-foreground leading-relaxed",
                                             children: "독자적인 DB와 고객 IP List를 시스템으로 비교 분석하여 누락 방지"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/cross-check-slide.tsx",
@@ -4193,7 +4159,7 @@ function CrossCheckSlide() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-2xl font-bold text-foreground mb-3",
+                                            className: "text-[1.375rem] font-bold text-foreground mb-3",
                                             children: "2차 Risk 감소"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/cross-check-slide.tsx",
@@ -4201,7 +4167,7 @@ function CrossCheckSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-lg text-muted-foreground mb-4",
+                                            className: "text-xl text-muted-foreground mb-4",
                                             children: "멀티 크로스체크"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/cross-check-slide.tsx",
@@ -4209,7 +4175,7 @@ function CrossCheckSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-sm text-muted-foreground leading-relaxed",
+                                            className: "text-lg text-muted-foreground leading-relaxed",
                                             children: "다중 검증 프로세스로 시스템 오류까지 방어하는 이중 안전망"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/cross-check-slide.tsx",
@@ -4248,7 +4214,7 @@ function CrossCheckSlide() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-2xl font-bold text-foreground mb-3",
+                                            className: "text-[1.375rem] font-bold text-foreground mb-3",
                                             children: "3차 Risk 감소"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/cross-check-slide.tsx",
@@ -4256,7 +4222,7 @@ function CrossCheckSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-lg text-muted-foreground mb-4",
+                                            className: "text-xl text-muted-foreground mb-4",
                                             children: "체크 주기 단축"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/cross-check-slide.tsx",
@@ -4264,7 +4230,7 @@ function CrossCheckSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-sm text-muted-foreground leading-relaxed",
+                                            className: "text-lg text-muted-foreground leading-relaxed",
                                             children: "실시간 모니터링으로 마감 직전까지 완벽하게 관리"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/cross-check-slide.tsx",
@@ -4297,7 +4263,7 @@ function CrossCheckSlide() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-8 p-6 rounded-xl bg-primary/5 border border-primary/20",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-center text-lg text-foreground",
+                    className: "text-center text-[1.375rem] text-foreground",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "font-bold text-primary",
@@ -4361,7 +4327,7 @@ function DataServicesSlide() {
     const services = [
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$radio$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Radio$3e$__["Radio"],
-            title: "연차료\n시그널링",
+            title: "연차료 시그널링",
             items: [
                 "특허경쟁력 검토",
                 "(연계특허, 주요국가출원)"
@@ -4372,12 +4338,11 @@ function DataServicesSlide() {
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"],
-            title: "특허등급\n제공",
+            title: "특허등급 제공",
             items: [
-                "부유 특허의 명확한 평가",
+                "보유 특허의 명확한 평가",
                 "Smart5 등급 (발명진흥회)",
-                "NOW 등급",
-                "*자체등급, 투자활용성 증정"
+                "NOW 등급(자체 등급, 투자활용성 중점)"
             ],
             arrow: false,
             result: "",
@@ -4385,7 +4350,7 @@ function DataServicesSlide() {
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__["Building2"],
-            title: "관련기업\nData제공",
+            title: "관련기업 Data제공",
             items: [
                 "특허별 연관 기업군 정보",
                 "(사업현황, 특허정보 등)",
@@ -4398,7 +4363,7 @@ function DataServicesSlide() {
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"],
-            title: "시장정보\n제공",
+            title: "시장정보 제공",
             items: [
                 "특허별 연계시장 Insight",
                 "(시장 전망, 트렌드 등)",
@@ -4411,11 +4376,11 @@ function DataServicesSlide() {
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$line$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LineChart$3e$__["LineChart"],
-            title: "연차료\n예측",
+            title: "연차료 예측",
             items: [
                 "향후 17년간 연차료 예측",
                 "연차료 예상 수립",
-                "(실시간 특허문영 반영)"
+                "(실시간 특허운영 반영)"
             ],
             arrow: false,
             result: "",
@@ -4485,47 +4450,41 @@ function DataServicesSlide() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-xl font-bold text-foreground mb-4 whitespace-pre-line leading-tight",
+                                className: "text-[1.375rem] font-bold text-foreground mb-4 whitespace-pre-line leading-tight",
                                 children: service.title
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/data-services-slide.tsx",
                                 lineNumber: 69,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                className: "space-y-2 mb-6 flex-1",
-                                children: service.items.map((item, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                        className: "flex items-start gap-2 text-sm text-foreground leading-relaxed",
+                            service.arrow && service.items.length >= 2 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mb-6 flex-1",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "p-3 rounded-lg bg-card text-center mb-2",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-primary mt-0.5 flex-shrink-0",
-                                                children: "•"
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-lg font-normal text-foreground leading-[1.5]",
+                                                children: service.items[0]
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/data-services-slide.tsx",
                                                 lineNumber: 76,
                                                 columnNumber: 19
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: item
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-lg font-normal text-muted-foreground mt-1 leading-[1.5]",
+                                                children: service.items[1]
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/data-services-slide.tsx",
                                                 lineNumber: 77,
                                                 columnNumber: 19
                                             }, this)
                                         ]
-                                    }, idx, true, {
+                                    }, void 0, true, {
                                         fileName: "[project]/components/slides/data-services-slide.tsx",
                                         lineNumber: 75,
                                         columnNumber: 17
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "[project]/components/slides/data-services-slide.tsx",
-                                lineNumber: 73,
-                                columnNumber: 13
-                            }, this),
-                            service.arrow && service.result && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mb-4",
-                                children: [
+                                    }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-center mb-2",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4533,33 +4492,47 @@ function DataServicesSlide() {
                                             children: "↓"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/data-services-slide.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 80,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/data-services-slide.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 79,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "p-3 rounded-lg bg-muted text-center",
+                                        className: "p-3 rounded-lg text-center",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-sm font-medium text-foreground",
+                                            className: "text-lg font-normal text-foreground leading-[1.5]",
                                             children: service.result
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/data-services-slide.tsx",
-                                            lineNumber: 88,
+                                            lineNumber: 83,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/data-services-slide.tsx",
-                                        lineNumber: 87,
+                                        lineNumber: 82,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/data-services-slide.tsx",
-                                lineNumber: 83,
+                                lineNumber: 74,
+                                columnNumber: 15
+                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "space-y-2 mb-6 flex-1",
+                                children: service.items.map((item, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-lg font-normal text-foreground text-center leading-[1.5]",
+                                        children: item
+                                    }, idx, false, {
+                                        fileName: "[project]/components/slides/data-services-slide.tsx",
+                                        lineNumber: 89,
+                                        columnNumber: 19
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/components/slides/data-services-slide.tsx",
+                                lineNumber: 87,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4569,12 +4542,12 @@ function DataServicesSlide() {
                                     children: service.outcome
                                 }, void 0, false, {
                                     fileName: "[project]/components/slides/data-services-slide.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 97,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/data-services-slide.tsx",
-                                lineNumber: 93,
+                                lineNumber: 96,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -4666,7 +4639,7 @@ function TechValuationSlide() {
                         className: "p-6 rounded-xl bg-blue-50 border-2 border-blue-200 flex flex-col",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-2xl font-bold text-blue-900 mb-4",
+                                className: "text-[1.375rem] font-bold text-blue-900 mb-4",
                                 children: "특허의 숨겨진 가치를 발견하세요"
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4674,7 +4647,7 @@ function TechValuationSlide() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-base text-slate-700 mb-6 leading-relaxed",
+                                className: "text-lg text-slate-700 mb-6 leading-relaxed",
                                 children: "IPNOW의 기술가치평가 시스템은 비용접근법, 수익접근법, 시장접근법을 통합적으로 활용하여 특허의 객관적 가치를 산출합니다. 20년 이상의 특허 분석 노하우와 AI 기반 알고리즘이 만나 특허 자산의 정확한 가치를 도출합니다."
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4705,7 +4678,7 @@ function TechValuationSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                        className: "text-lg font-bold text-blue-900",
+                                                        className: "text-xl font-bold text-blue-900",
                                                         children: "차별화된 분석 시스템"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4719,7 +4692,7 @@ function TechValuationSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-slate-600 leading-relaxed",
+                                                className: "text-lg text-slate-600 leading-relaxed",
                                                 children: "150만건 이상의 특허 빅데이터를 기반으로 한 특허 평가 알고리즘으로 독자적인 가치를 발견합니다."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4753,7 +4726,7 @@ function TechValuationSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                        className: "text-lg font-bold text-blue-900",
+                                                        className: "text-xl font-bold text-blue-900",
                                                         children: "전문가 집단의 노하우"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4767,7 +4740,7 @@ function TechValuationSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-slate-600 leading-relaxed",
+                                                className: "text-lg text-slate-600 leading-relaxed",
                                                 children: "기술 개발, 소송, 라이센싱, 사업화 전문가 등 IBG의 IP 전문인력의 집약된 노하우를 반영한 다차원 분석을 적용합니다."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4801,7 +4774,7 @@ function TechValuationSlide() {
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                        className: "text-lg font-bold text-blue-900",
+                                                        className: "text-xl font-bold text-blue-900",
                                                         children: "신뢰할 수 있는 결과"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4815,7 +4788,7 @@ function TechValuationSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-slate-600 leading-relaxed",
+                                                className: "text-lg text-slate-600 leading-relaxed",
                                                 children: "다양한 기술 분야와 산업별 특성을 반영한 체계적인 평가 시스템으로 객관적이고 정밀한 가치평가 결과를 제공합니다."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4844,7 +4817,7 @@ function TechValuationSlide() {
                         className: "p-6 rounded-xl bg-slate-50 border-2 border-slate-200 flex flex-col overflow-hidden",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-2xl font-bold text-slate-800 mb-4",
+                                className: "text-[1.375rem] font-bold text-slate-800 mb-4",
                                 children: "기술가치평가보고서"
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4882,7 +4855,7 @@ function TechValuationSlide() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-4 p-4 rounded-xl bg-primary text-primary-foreground shadow-lg shrink-0",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-center text-lg font-bold",
+                    className: "text-center text-[1.375rem] font-bold",
                     children: "비용접근법, 수익접근법, 시장접근법을 통합한 정확한 특허 가치 산정으로 전략적 의사결정을 지원합니다"
                 }, void 0, false, {
                     fileName: "[project]/components/slides/tech-valuation-slide.tsx",
@@ -4940,7 +4913,7 @@ function PatentValueInfoSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-3xl font-bold text-foreground mb-3",
+                        className: "text-[2.75rem] font-bold text-foreground mb-3",
                         children: "특허연차료 전략적 납부판단 및 특허 Value Up을 위한 활용 정보"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/patent-value-info-slide.tsx",
@@ -5200,7 +5173,7 @@ function WhyPaytentAiSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-4xl font-bold text-foreground mb-4",
+                        className: "text-[2.75rem] font-bold text-foreground mb-4",
                         children: "왜 Paytent AI인가?"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
@@ -5208,7 +5181,7 @@ function WhyPaytentAiSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-2xl text-muted-foreground",
+                        className: "text-xl text-muted-foreground",
                         children: "연차료 관리에서 'AI 판단 도우미'로"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
@@ -5238,7 +5211,7 @@ function WhyPaytentAiSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-xl font-bold text-foreground",
+                                        className: "text-[1.375rem] font-bold text-foreground",
                                         children: "현재 위치"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
@@ -5256,8 +5229,19 @@ function WhyPaytentAiSlide() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-lg text-foreground leading-relaxed",
-                                        children: 'Paytent는 지금도 국내·해외 연차료를 통합 관리하는 "연차료 관리 전문 플랫폼"입니다.'
-                                    }, void 0, false, {
+                                        children: [
+                                            'Paytent는 지금도 국내·해외 연차료를 통합 관리하는 ',
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "font-bold",
+                                                children: '"연차료 관리 전문 플랫폼"'
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
+                                                lineNumber: 24,
+                                                columnNumber: 15
+                                            }, this),
+                                            '입니다.'
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
                                         lineNumber: 22,
                                         columnNumber: 13
@@ -5267,7 +5251,7 @@ function WhyPaytentAiSlide() {
                                         children: "이미 많은 고객사들이 IPNOW의 우수성을 높이 평가하며, 연차료 업무에 적극 활용하고 있습니다."
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 25,
+                                        lineNumber: 27,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -5292,21 +5276,21 @@ function WhyPaytentAiSlide() {
                                         className: "w-8 h-8 text-accent"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 34,
+                                        lineNumber: 36,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-xl font-bold text-foreground",
+                                        className: "text-[1.375rem] font-bold text-foreground",
                                         children: "환경이 바뀌고 있습니다"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 35,
+                                        lineNumber: 37,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                lineNumber: 33,
+                                lineNumber: 35,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5316,94 +5300,94 @@ function WhyPaytentAiSlide() {
                                         className: "p-3 rounded-lg bg-destructive/5 border border-destructive/20",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base font-semibold text-foreground mb-1",
+                                                className: "text-xl font-semibold text-foreground mb-1",
                                                 children: "특허 포트폴리오 증가"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                lineNumber: 39,
+                                                lineNumber: 41,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-muted-foreground",
+                                                className: "text-lg text-muted-foreground",
                                                 children: "관리 대상이 늘어남"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                lineNumber: 40,
+                                                lineNumber: 42,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 38,
+                                        lineNumber: 40,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "p-3 rounded-lg bg-destructive/5 border border-destructive/20",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base font-semibold text-foreground mb-1",
+                                                className: "text-xl font-semibold text-foreground mb-1",
                                                 children: "예산 압박 증가"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                lineNumber: 43,
+                                                lineNumber: 45,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-muted-foreground",
+                                                className: "text-lg text-muted-foreground",
                                                 children: "비용 효율화 요구"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                lineNumber: 44,
+                                                lineNumber: 46,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 44,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "p-3 rounded-lg bg-destructive/5 border border-destructive/20",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base font-semibold text-foreground mb-1",
+                                                className: "text-xl font-semibold text-foreground mb-1",
                                                 children: "담당 인원 부족"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                lineNumber: 47,
+                                                lineNumber: 49,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm text-muted-foreground",
+                                                className: "text-lg text-muted-foreground",
                                                 children: "업무 부담 가중"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                lineNumber: 48,
+                                                lineNumber: 50,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 48,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                lineNumber: 37,
+                                lineNumber: 39,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "mt-3 p-3 rounded-lg bg-accent/10 border border-accent/20",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-base text-foreground",
+                                    className: "text-lg text-foreground",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "font-semibold text-accent",
                                             children: "경영진의 질문:"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                            lineNumber: 53,
+                                            lineNumber: 55,
                                             columnNumber: 15
                                         }, this),
                                         " ",
@@ -5411,18 +5395,18 @@ function WhyPaytentAiSlide() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                    lineNumber: 52,
+                                    lineNumber: 54,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                lineNumber: 51,
+                                lineNumber: 53,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                        lineNumber: 32,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5435,29 +5419,29 @@ function WhyPaytentAiSlide() {
                                         className: "w-8 h-8 text-accent"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 61,
+                                        lineNumber: 63,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-xl font-bold text-foreground",
+                                        className: "text-[1.375rem] font-bold text-foreground",
                                         children: "우리가 내린 결론"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 62,
+                                        lineNumber: 64,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                lineNumber: 60,
+                                lineNumber: 62,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-base text-foreground leading-relaxed mb-3",
+                                className: "text-lg text-foreground leading-relaxed mb-3",
                                 children: "Paytent에 AI 기술을 결합하여 고객사의 연차료 업무 전반을 자동화·지능화한 Paytent AI로 고도화함으로써, 연차료 업무에서 생각과 판단까지 도와주는 IP 판단 도우미로 진화하고자 합니다."
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                lineNumber: 65,
+                                lineNumber: 67,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5473,29 +5457,29 @@ function WhyPaytentAiSlide() {
                                                         className: "w-5 h-5 text-primary mb-1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                        lineNumber: 75,
+                                                        lineNumber: 77,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-sm font-semibold text-foreground mb-1",
+                                                        className: "text-xl font-semibold text-foreground mb-1",
                                                         children: "자동화"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                        lineNumber: 76,
+                                                        lineNumber: 78,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-muted-foreground",
+                                                        className: "text-lg text-muted-foreground",
                                                         children: "반복 업무 자동 처리"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                        lineNumber: 77,
+                                                        lineNumber: 79,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                lineNumber: 74,
+                                                lineNumber: 76,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5505,29 +5489,29 @@ function WhyPaytentAiSlide() {
                                                         className: "w-5 h-5 text-accent mb-1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                        lineNumber: 80,
+                                                        lineNumber: 82,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-sm font-semibold text-foreground mb-1",
+                                                        className: "text-xl font-semibold text-foreground mb-1",
                                                         children: "지능화"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                        lineNumber: 81,
+                                                        lineNumber: 83,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-muted-foreground",
+                                                        className: "text-lg text-muted-foreground",
                                                         children: "AI 기반 의사결정 지원"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                        lineNumber: 82,
+                                                        lineNumber: 84,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                lineNumber: 79,
+                                                lineNumber: 81,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5537,35 +5521,35 @@ function WhyPaytentAiSlide() {
                                                         className: "w-5 h-5 text-secondary mb-1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                        lineNumber: 85,
+                                                        lineNumber: 87,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-sm font-semibold text-foreground mb-1",
+                                                        className: "text-xl font-semibold text-foreground mb-1",
                                                         children: "편리함"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 88,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-muted-foreground",
+                                                        className: "text-lg text-muted-foreground",
                                                         children: "사용자 경험 혁신"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                        lineNumber: 87,
+                                                        lineNumber: 89,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 86,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 75,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5578,7 +5562,7 @@ function WhyPaytentAiSlide() {
                                                     children: "Paytent AI"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                    lineNumber: 94,
+                                                    lineNumber: 96,
                                                     columnNumber: 17
                                                 }, this),
                                                 "는 연차료 데이터를 기반으로, 일정·의사결정·보고까지 도와주는 ",
@@ -5587,31 +5571,31 @@ function WhyPaytentAiSlide() {
                                                     children: "AI 판단 도우미"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                                    lineNumber: 96,
+                                                    lineNumber: 98,
                                                     columnNumber: 17
                                                 }, this),
                                                 "입니다."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 95,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                        lineNumber: 92,
+                                        lineNumber: 94,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                                lineNumber: 71,
+                                lineNumber: 73,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
-                        lineNumber: 59,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this)
                 ]
@@ -5653,7 +5637,7 @@ function PaytentAiFeaturesSlide() {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bell$3e$__["Bell"],
             title: "덜 챙기기",
             subtitle: "지능형 알림 및 캘린더",
-            description: "연차료 납부 마감일, 권리 포기 여부 결정 필요 시점 등을 자동으로 알림",
+            description: "연차료 납부 마감일, 권리 포기 여부 결정 시점 등을 자동으로 알림",
             details: [
                 "주간/월간 및 D-2 최종 데드라인 알림",
                 "플랫폼, 메일 등 희망하는 방법으로 알림",
@@ -5711,7 +5695,7 @@ function PaytentAiFeaturesSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-4xl font-bold text-foreground mb-4",
+                        className: "text-[2.75rem] font-bold text-foreground mb-4",
                         children: "Paytent AI 핵심 기능"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/paytent-ai-features-slide.tsx",
@@ -5719,7 +5703,7 @@ function PaytentAiFeaturesSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-2xl text-muted-foreground",
+                        className: "text-xl text-muted-foreground",
                         children: "고객이 체감하는 3가지 '편리함'"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/paytent-ai-features-slide.tsx",
@@ -5755,7 +5739,7 @@ function PaytentAiFeaturesSlide() {
                                 className: "mb-6",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-3xl font-bold text-foreground mb-2",
+                                        className: "text-[1.375rem] font-bold text-foreground mb-2",
                                         children: feature.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/paytent-ai-features-slide.tsx",
@@ -5763,7 +5747,7 @@ function PaytentAiFeaturesSlide() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: `text-lg font-semibold text-${feature.color} mb-3`,
+                                        className: `text-xl font-semibold text-${feature.color} mb-3`,
                                         children: feature.subtitle
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/paytent-ai-features-slide.tsx",
@@ -5771,7 +5755,7 @@ function PaytentAiFeaturesSlide() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-sm text-muted-foreground leading-relaxed",
+                                        className: "text-lg text-muted-foreground leading-relaxed",
                                         children: feature.description
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/paytent-ai-features-slide.tsx",
@@ -5798,7 +5782,7 @@ function PaytentAiFeaturesSlide() {
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-sm text-foreground",
+                                                className: "text-lg text-foreground",
                                                 children: detail
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/paytent-ai-features-slide.tsx",
@@ -5819,7 +5803,7 @@ function PaytentAiFeaturesSlide() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: `p-4 rounded-lg bg-${feature.color}/5 border border-${feature.color}/20`,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-sm font-semibold text-foreground",
+                                    className: "text-lg font-semibold text-foreground",
                                     children: [
                                         "💡 ",
                                         feature.benefit
@@ -5848,9 +5832,9 @@ function PaytentAiFeaturesSlide() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-8 flex justify-center",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "max-w-4xl w-full p-6 rounded-xl bg-accent/10 border-2 border-accent/30",
+                    className: "max-w-[1344px] w-full p-6 rounded-xl bg-accent/10 border-2 border-accent/30",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-xl font-bold text-center text-foreground",
+                        className: "text-[1.375rem] font-bold text-center text-foreground",
                         children: [
                             "모든 기능은 고객이 ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5967,7 +5951,7 @@ function PaytentVsAiSlide() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-lg text-muted-foreground",
+                                className: "text-xl text-muted-foreground",
                                 children: [
                                     "Paytent가 연차료 ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6026,7 +6010,7 @@ function PaytentVsAiSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "text-2xl font-bold text-foreground",
+                                                className: "text-[1.375rem] font-bold text-foreground",
                                                 children: "기존 Paytent가 잘하는 것"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6040,7 +6024,7 @@ function PaytentVsAiSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-base text-muted-foreground",
+                                        className: "text-lg text-muted-foreground",
                                         children: "빈틈없는 프로세스로 리스크는 최소, IP 수익화와 연차료 판단 가치는 최대로"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6068,7 +6052,7 @@ function PaytentVsAiSlide() {
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm text-foreground leading-relaxed",
+                                                    className: "text-lg text-foreground leading-relaxed",
                                                     children: feature
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6114,7 +6098,7 @@ function PaytentVsAiSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "text-2xl font-bold text-foreground",
+                                                className: "text-[1.375rem] font-bold text-foreground",
                                                 children: "여전히 남아 있던 과제"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6128,7 +6112,7 @@ function PaytentVsAiSlide() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-base text-muted-foreground",
+                                        className: "text-lg text-muted-foreground",
                                         children: "사람이 직접 생각하고 판단해야 하는 영역, 업무 부담은 최대, 의사결정 효율은 최소"
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6156,7 +6140,7 @@ function PaytentVsAiSlide() {
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm text-foreground leading-relaxed",
+                                                    className: "text-lg text-foreground leading-relaxed",
                                                     children: challenge
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6200,7 +6184,7 @@ function PaytentVsAiSlide() {
                             className: "text-center",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-base text-muted-foreground mb-2",
+                                    className: "text-lg text-muted-foreground mb-2",
                                     children: "기존 Paytent 위에"
                                 }, void 0, false, {
                                     fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6211,7 +6195,7 @@ function PaytentVsAiSlide() {
                                     className: "flex items-center gap-3",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "px-4 py-2 rounded-lg bg-primary/20 text-primary font-bold text-sm",
+                                            className: "px-4 py-2 rounded-lg bg-primary/20 text-primary font-bold text-lg",
                                             children: "덜 챙기기"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6219,7 +6203,7 @@ function PaytentVsAiSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-xl text-muted-foreground",
+                                            className: "text-lg text-muted-foreground",
                                             children: "+"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6227,7 +6211,7 @@ function PaytentVsAiSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "px-4 py-2 rounded-lg bg-accent/20 text-accent font-bold text-sm",
+                                            className: "px-4 py-2 rounded-lg bg-accent/20 text-accent font-bold text-lg",
                                             children: "덜 고민하기"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6235,7 +6219,7 @@ function PaytentVsAiSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-xl text-muted-foreground",
+                                            className: "text-lg text-muted-foreground",
                                             children: "+"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6243,7 +6227,7 @@ function PaytentVsAiSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "px-4 py-2 rounded-lg bg-secondary/20 text-secondary font-bold text-sm",
+                                            className: "px-4 py-2 rounded-lg bg-secondary/20 text-secondary font-bold text-lg",
                                             children: "덜 찾기"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6273,7 +6257,7 @@ function PaytentVsAiSlide() {
                             className: "text-center",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-base text-muted-foreground mb-2",
+                                    className: "text-lg text-muted-foreground mb-2",
                                     children: "세 가지 AI 레이어"
                                 }, void 0, false, {
                                     fileName: "[project]/components/slides/paytent-vs-ai-slide.tsx",
@@ -6368,7 +6352,7 @@ function PaytentAiAdoptionSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-4xl font-bold text-foreground mb-3",
+                        className: "text-[2.75rem] font-bold text-foreground mb-3",
                         children: "Paytent AI 도입 후 변화"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6376,7 +6360,7 @@ function PaytentAiAdoptionSlide() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-lg text-muted-foreground",
+                        className: "text-xl text-muted-foreground",
                         children: "그리고 앞으로의 여정"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6395,7 +6379,7 @@ function PaytentAiAdoptionSlide() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-xl font-bold text-foreground mb-4 text-center",
+                                className: "text-[1.375rem] font-bold text-foreground mb-4 text-center",
                                 children: "Before vs After"
                             }, void 0, false, {
                                 fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6410,7 +6394,7 @@ function PaytentAiAdoptionSlide() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "flex-1 p-2.5 rounded-lg bg-muted/50",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm text-muted-foreground",
+                                                    className: "text-lg text-muted-foreground",
                                                     children: item.before
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6432,7 +6416,7 @@ function PaytentAiAdoptionSlide() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "flex-1 p-2.5 rounded-lg bg-accent/10 border border-accent/30",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm text-foreground font-semibold",
+                                                    className: "text-xl text-foreground font-semibold",
                                                     children: item.after
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6477,7 +6461,7 @@ function PaytentAiAdoptionSlide() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-lg font-bold text-foreground",
+                                            className: "text-[1.375rem] font-bold text-foreground",
                                             children: "도입 일정"
                                         }, void 0, false, {
                                             fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6497,7 +6481,7 @@ function PaytentAiAdoptionSlide() {
                                             className: "p-2.5 rounded-lg bg-primary/10 border border-primary/20",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm font-semibold text-foreground",
+                                                    className: "text-xl font-semibold text-foreground",
                                                     children: "2026년 상반기"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6505,7 +6489,7 @@ function PaytentAiAdoptionSlide() {
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-xs text-muted-foreground",
+                                                    className: "text-lg text-muted-foreground",
                                                     children: "파일럿 고객사 적용"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6522,7 +6506,7 @@ function PaytentAiAdoptionSlide() {
                                             className: "p-2.5 rounded-lg bg-primary/10 border border-primary/20",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-sm font-semibold text-foreground",
+                                                    className: "text-xl font-semibold text-foreground",
                                                     children: "2026년 하반기"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6530,7 +6514,7 @@ function PaytentAiAdoptionSlide() {
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-xs text-muted-foreground",
+                                                    className: "text-lg text-muted-foreground",
                                                     children: "정식 오픈 및 기능 확장"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6566,7 +6550,7 @@ function PaytentAiAdoptionSlide() {
                             className: "space-y-2.5",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-lg font-bold text-foreground text-center leading-relaxed",
+                                    className: "text-xl font-bold text-foreground text-center leading-relaxed",
                                     children: '"Paytent AI는 저희가 혼자 완성하는 제품이 아니라, 고객사와 함께 만들어 가는 IP 판단 도우미입니다."'
                                 }, void 0, false, {
                                     fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6574,7 +6558,7 @@ function PaytentAiAdoptionSlide() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-base text-muted-foreground text-center",
+                                    className: "text-lg text-muted-foreground text-center",
                                     children: "\"여러분의 실제 고민과 데이터를 기반으로, '정말 쓰는 AI'를 만드는 게 저희의 목표입니다.\""
                                 }, void 0, false, {
                                     fileName: "[project]/components/slides/paytent-ai-adoption-slide.tsx",
@@ -6595,7 +6579,7 @@ function PaytentAiAdoptionSlide() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "p-5 rounded-xl bg-card border-2 border-accent/40 text-center",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-base text-foreground leading-relaxed",
+                            className: "text-xl text-foreground leading-relaxed",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "font-bold text-accent",

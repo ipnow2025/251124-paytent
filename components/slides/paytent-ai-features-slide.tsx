@@ -6,7 +6,7 @@ export function PaytentAiFeaturesSlide() {
       icon: Bell,
       title: "덜 챙기기",
       subtitle: "지능형 알림 및 캘린더",
-      description: "연차료 납부 마감일, 권리 포기 여부 결정 필요 시점 등을 자동으로 알림",
+      description: "연차료 납부 마감일, 권리 포기 여부 결정 시점 등을 자동으로 알림",
       details: [
         "주간/월간 및 D-2 최종 데드라인 알림",
         "플랫폼, 메일 등 희망하는 방법으로 알림",
@@ -41,8 +41,8 @@ export function PaytentAiFeaturesSlide() {
         <div className="inline-block px-4 py-2 bg-blue-100 rounded-lg mb-4">
           <span className="text-lg font-semibold text-blue-600">Chapter 04 Paytent AI</span>
         </div>
-        <h2 className="text-4xl font-bold text-foreground mb-4">Paytent AI 핵심 기능</h2>
-        <p className="text-2xl text-muted-foreground">고객이 체감하는 3가지 '편리함'</p>
+        <h2 className="text-[2.75rem] font-bold text-foreground mb-4">Paytent AI 핵심 기능</h2>
+        <p className="text-xl text-muted-foreground">고객이 체감하는 3가지 '편리함'</p>
       </div>
 
       <div className="flex-1 grid grid-cols-3 gap-6">
@@ -56,30 +56,30 @@ export function PaytentAiFeaturesSlide() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-3xl font-bold text-foreground mb-2">{feature.title}</h3>
-              <p className={`text-lg font-semibold text-${feature.color} mb-3`}>{feature.subtitle}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+              <h3 className="text-[1.375rem] font-bold text-foreground mb-2">{feature.title}</h3>
+              <p className={`text-xl font-semibold text-${feature.color} mb-3`}>{feature.subtitle}</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">{feature.description}</p>
             </div>
 
             <div className="flex-1 space-y-2 mb-6">
               {feature.details.map((detail, idx) => (
                 <div key={idx} className="flex items-start gap-2">
                   <span className={`text-${feature.color} mt-1`}>•</span>
-                  <span className="text-sm text-foreground">{detail}</span>
+                  <span className="text-lg text-foreground">{detail}</span>
                 </div>
               ))}
             </div>
 
             <div className={`p-4 rounded-lg bg-${feature.color}/5 border border-${feature.color}/20`}>
-              <p className="text-sm font-semibold text-foreground">💡 {feature.benefit}</p>
+              <p className="text-lg font-semibold text-foreground">💡 {feature.benefit}</p>
             </div>
           </div>
         ))}
       </div>
 
       <div className="mt-8 flex justify-center">
-        <div className="max-w-4xl w-full p-6 rounded-xl bg-accent/10 border-2 border-accent/30">
-          <p className="text-xl font-bold text-center text-foreground">
+        <div className="max-w-[1344px] w-full p-6 rounded-xl bg-accent/10 border-2 border-accent/30">
+          <p className="text-[1.375rem] font-bold text-center text-foreground">
             모든 기능은 고객이 <span className="font-bold">덜 챙기고, 덜 고민하고, 덜 찾게</span> 만드는 데 FOCUS가
             맞춰진, <span className="font-bold">AI 판단 도우미</span>입니다.
           </p>

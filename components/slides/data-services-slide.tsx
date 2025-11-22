@@ -4,7 +4,7 @@ export function DataServicesSlide() {
   const services = [
     {
       icon: Radio,
-      title: "연차료\n시그널링",
+      title: "연차료 시그널링",
       items: ["특허경쟁력 검토", "(연계특허, 주요국가출원)"],
       arrow: true,
       result: "특허 유지 or 포기 제안",
@@ -12,15 +12,15 @@ export function DataServicesSlide() {
     },
     {
       icon: FileText,
-      title: "특허등급\n제공",
-      items: ["부유 특허의 명확한 평가", "Smart5 등급 (발명진흥회)", "NOW 등급", "*자체등급, 투자활용성 증정"],
+      title: "특허등급 제공",
+      items: ["보유 특허의 명확한 평가", "Smart5 등급 (발명진흥회)", "NOW 등급(자체 등급, 투자활용성 중점)"],
       arrow: false,
       result: "",
       outcome: "보유 특허 Value 확인",
     },
     {
       icon: Building2,
-      title: "관련기업\nData제공",
+      title: "관련기업 Data제공",
       items: ["특허별 연관 기업군 정보", "(사업현황, 특허정보 등)", "Big Data 및 AI 활용", "Data 지속 Version Up"],
       arrow: false,
       result: "",
@@ -28,7 +28,7 @@ export function DataServicesSlide() {
     },
     {
       icon: TrendingUp,
-      title: "시장정보\n제공",
+      title: "시장정보 제공",
       items: ["특허별 연계시장 Insight", "(시장 전망, 트렌드 등)", "특허별 시장 관심도 확인", "120개 분야 Data 보유"],
       arrow: false,
       result: "",
@@ -36,8 +36,8 @@ export function DataServicesSlide() {
     },
     {
       icon: LineChart,
-      title: "연차료\n예측",
-      items: ["향후 17년간 연차료 예측", "연차료 예상 수립", "(실시간 특허문영 반영)"],
+      title: "연차료 예측",
+      items: ["향후 17년간 연차료 예측", "연차료 예상 수립", "(실시간 특허운영 반영)"],
       arrow: false,
       result: "",
       outcome: "쉬운 예산 관리",
@@ -66,27 +66,30 @@ export function DataServicesSlide() {
               <service.icon className="w-7 h-7 text-primary" />
             </div>
 
-            <h3 className="text-xl font-bold text-foreground mb-4 whitespace-pre-line leading-tight">
+            <h3 className="text-[1.375rem] font-bold text-foreground mb-4 whitespace-pre-line leading-tight">
               {service.title}
             </h3>
 
-            <ul className="space-y-2 mb-6 flex-1">
-              {service.items.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-sm text-foreground leading-relaxed">
-                  <span className="text-primary mt-0.5 flex-shrink-0">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            {service.arrow && service.result && (
-              <div className="mb-4">
+            {service.arrow && service.items.length >= 2 ? (
+              <div className="mb-6 flex-1">
+                <div className="p-3 rounded-lg bg-card text-center mb-2">
+                  <p className="text-lg font-normal text-foreground leading-[1.5]">{service.items[0]}</p>
+                  <p className="text-lg font-normal text-muted-foreground mt-1 leading-[1.5]">{service.items[1]}</p>
+                </div>
                 <div className="text-center mb-2">
                   <span className="text-2xl text-muted-foreground">↓</span>
                 </div>
-                <div className="p-3 rounded-lg bg-muted text-center">
-                  <span className="text-sm font-medium text-foreground">{service.result}</span>
+                <div className="p-3 rounded-lg text-center">
+                  <span className="text-lg font-normal text-foreground leading-[1.5]">{service.result}</span>
                 </div>
+              </div>
+            ) : (
+              <div className="space-y-2 mb-6 flex-1">
+                {service.items.map((item, idx) => (
+                  <p key={idx} className="text-lg font-normal text-foreground text-center leading-[1.5]">
+                    {item}
+                  </p>
+                ))}
               </div>
             )}
 

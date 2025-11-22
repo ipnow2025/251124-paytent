@@ -96,7 +96,7 @@ export function ServicesSlide() {
           <span className="text-lg font-semibold text-primary">Chapter 03 똑똑한 연차료 관리 방법</span>
         </div>
         <h2 className="text-[2.75rem] font-bold text-foreground mb-4">Paytent의 주요 서비스</h2>
-        <p className="text-xl text-muted-foreground">IPNOW가 제공하는 12가지 핵심 서비스를 확인해보세요</p>
+        <p className="text-xl text-muted-foreground">IPNOW의 Paytent가 제공하는 12가지 핵심 연차료 서비스를 확인해보세요</p>
       </div>
 
       <div className="flex-1 grid grid-cols-4 gap-4">
@@ -113,8 +113,8 @@ export function ServicesSlide() {
                 {service.icon && <service.icon className="w-5 h-5 text-accent" />}
               </div>
             </div>
-            <h3 className="text-lg font-bold text-foreground mb-2">{service.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+            <h3 className="text-[1.375rem] font-bold text-foreground mb-2">{service.title}</h3>
+            <p className="text-lg text-muted-foreground leading-relaxed">{service.description}</p>
           </div>
         ))}
       </div>

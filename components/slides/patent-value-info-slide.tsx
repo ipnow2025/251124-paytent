@@ -6,7 +6,7 @@ export function PatentValueInfoSlide() {
         <div className="inline-block px-4 py-2 bg-primary/10 rounded-lg mb-3">
           <span className="text-lg font-semibold text-primary">Chapter 03 똑똑한 연차료 관리 방법</span>
         </div>
-        <h2 className="text-3xl font-bold text-foreground mb-3">
+        <h2 className="text-[2.75rem] font-bold text-foreground mb-3">
           특허연차료 전략적 납부판단 및 특허 Value Up을 위한 활용 정보
         </h2>
       </div>
