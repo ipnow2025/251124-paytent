@@ -21,8 +21,8 @@ export function ServiceAdvantagesSlide() {
 
   const solutions = [
     {
-      title: "4단계 Cross Checking",
-      subtitle: "(남부누락의 구조적 방지)",
+      title: "3단계 Cross Checking",
+      subtitle: "(납부누락의 구조적 방지)",
     },
     {
       title: "비용처리 단계축소 및",

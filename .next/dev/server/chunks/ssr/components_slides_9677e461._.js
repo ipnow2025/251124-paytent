@@ -2116,7 +2116,7 @@ function CurrentIssuesSlide() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                         className: "text-[1.375rem] font-bold text-red-900 mb-2",
-                                        children: "③ 판단 시기 상시"
+                                        children: '③ 판단시기 "상실"'
                                     }, void 0, false, {
                                         fileName: "[project]/components/slides/current-issues-slide.tsx",
                                         lineNumber: 95,
@@ -2140,7 +2140,7 @@ function CurrentIssuesSlide() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                children: "· → 수익화 가능 IP를 남기지 못하고 기회와 예산이 동시에 사라짐"
+                                                children: "→ 수익화 가능 IP를 남기지 못하고 기회와 예산이 동시에 사라짐"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/slides/current-issues-slide.tsx",
                                                 lineNumber: 99,
@@ -3231,8 +3231,8 @@ function ServiceAdvantagesSlide() {
     ];
     const solutions = [
         {
-            title: "4단계 Cross Checking",
-            subtitle: "(남부누락의 구조적 방지)"
+            title: "3단계 Cross Checking",
+            subtitle: "(납부누락의 구조적 방지)"
         },
         {
             title: "비용처리 단계축소 및",
@@ -4248,17 +4248,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 function DataServicesSlide() {
     const services = [
         {
-            icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$radio$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Radio$3e$__["Radio"],
-            title: "연차료 시그널링",
-            items: [
-                "특허경쟁력 검토",
-                "(연계특허, 주요국가출원)"
-            ],
-            arrow: true,
-            result: "특허 유지 or 포기 제안",
-            outcome: "비전문가 판단근거 제공"
-        },
-        {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"],
             title: "특허등급 제공",
             items: [
@@ -4269,6 +4258,17 @@ function DataServicesSlide() {
             arrow: false,
             result: "",
             outcome: "보유 특허 Value 확인"
+        },
+        {
+            icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$radio$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Radio$3e$__["Radio"],
+            title: "연차료 시그널링",
+            items: [
+                "특허경쟁력 검토",
+                "(연계특허, 주요국가출원)"
+            ],
+            arrow: true,
+            result: "특허 유지 or 포기 제안",
+            outcome: "비전문가 판단근거 제공"
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__["Building2"],
@@ -4300,7 +4300,7 @@ function DataServicesSlide() {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$line$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LineChart$3e$__["LineChart"],
             title: "연차료 예측",
             items: [
-                "향후 17년간 연차료 예측",
+                "향후 15년간 연차료 예측",
                 "연차료 예상 수립",
                 "(실시간 특허운영 반영)"
             ],
@@ -5080,7 +5080,7 @@ function WhyPaytentAiSlide() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-xl text-muted-foreground",
-                        children: "연차료 관리에서 'AI 판단 도우미'로"
+                        children: "연차료 관리에서 'AI 판단 도우미'로 전환 필요"
                     }, void 0, false, {
                         fileName: "[project]/components/slides/why-paytent-ai-slide.tsx",
                         lineNumber: 11,

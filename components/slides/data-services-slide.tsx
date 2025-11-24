@@ -3,20 +3,20 @@ import { Radio, FileText, Building2, TrendingUp, LineChart } from "lucide-react"
 export function DataServicesSlide() {
   const services = [
     {
-      icon: Radio,
-      title: "연차료 시그널링",
-      items: ["특허경쟁력 검토", "(연계특허, 주요국가출원)"],
-      arrow: true,
-      result: "특허 유지 or 포기 제안",
-      outcome: "비전문가 판단근거 제공",
-    },
-    {
       icon: FileText,
       title: "특허등급 제공",
       items: ["보유 특허의 명확한 평가", "Smart5 등급 (발명진흥회)", "NOW 등급(자체 등급, 투자활용성 중점)"],
       arrow: false,
       result: "",
       outcome: "보유 특허 Value 확인",
+    },
+    {
+      icon: Radio,
+      title: "연차료 시그널링",
+      items: ["특허경쟁력 검토", "(연계특허, 주요국가출원)"],
+      arrow: true,
+      result: "특허 유지 or 포기 제안",
+      outcome: "비전문가 판단근거 제공",
     },
     {
       icon: Building2,
@@ -37,7 +37,7 @@ export function DataServicesSlide() {
     {
       icon: LineChart,
       title: "연차료 예측",
-      items: ["향후 17년간 연차료 예측", "연차료 예상 수립", "(실시간 특허운영 반영)"],
+      items: ["향후 15년간 연차료 예측", "연차료 예상 수립", "(실시간 특허운영 반영)"],
       arrow: false,
       result: "",
       outcome: "쉬운 예산 관리",

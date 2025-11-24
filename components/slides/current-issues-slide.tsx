@@ -92,11 +92,11 @@ export function CurrentIssuesSlide() {
             <div className="w-12 h-12 rounded-xl bg-red-500 flex items-center justify-center mb-3">
               <XCircle className="w-6 h-6 text-white" />
             </div>
-            <h4 className="text-[1.375rem] font-bold text-red-900 mb-2">③ 판단 시기 상시</h4>
+            <h4 className="text-[1.375rem] font-bold text-red-900 mb-2">③ 판단시기 "상실"</h4>
             <ul className="space-y-1.5 text-lg text-gray-700">
               <li>· 우수·핵심 특허를 선별 못함</li>
               <li>· 유지/포기 결정을 해야 할 타이밍을 놓침</li>
-              <li>· → 수익화 가능 IP를 남기지 못하고 기회와 예산이 동시에 사라짐</li>
+              <li>→ 수익화 가능 IP를 남기지 못하고 기회와 예산이 동시에 사라짐</li>
             </ul>
           </div>
         </div>

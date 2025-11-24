@@ -8,7 +8,7 @@ export function WhyPaytentAiSlide() {
           <span className="text-lg font-semibold text-blue-600">Chapter 04 Paytent AI</span>
         </div>
         <h2 className="text-[2.75rem] font-bold text-foreground mb-4">왜 Paytent AI인가?</h2>
-        <p className="text-xl text-muted-foreground">연차료 관리에서 'AI 판단 도우미'로</p>
+        <p className="text-xl text-muted-foreground">연차료 관리에서 'AI 판단 도우미'로 전환 필요</p>
       </div>
 
       <div className="flex-1 flex flex-col justify-center gap-4">

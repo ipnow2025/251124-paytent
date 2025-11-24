@@ -81,44 +81,55 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+// Slide Factory: 컴포넌트를 렌더링 함수로 변환
+const createSlide = (Component)=>{
+    return ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Component, {}, void 0, false, {
+            fileName: "[project]/app/page.tsx",
+            lineNumber: 32,
+            columnNumber: 16
+        }, ("TURBOPACK compile-time value", void 0));
+};
+// Slide Factory with Props: props가 필요한 컴포넌트를 위한 팩토리
+const createSlideWithProps = (Component, props)=>{
+    return ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Component, {
+            ...props
+        }, void 0, false, {
+            fileName: "[project]/app/page.tsx",
+            lineNumber: 40,
+            columnNumber: 16
+        }, ("TURBOPACK compile-time value", void 0));
+};
+// Slides 배열 정의
 const slides = [
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$cover$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CoverSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$chapter$2d$01$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Chapter01Slide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ip$2d$reality$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IpRealitySlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$why$2d$not$2d$managed$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WhyNotManagedSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ip$2d$judgment$2d$core$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IpJudgmentCoreSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$current$2d$issues$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CurrentIssuesSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$chapter$2d$02$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Chapter02Slide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$annuity$2d$management$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnnuityManagementSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$competitive$2d$advantage$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CompetitiveAdvantageSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$chapter$2d$03$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Chapter03Slide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$service$2d$advantages$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ServiceAdvantagesSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$services$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ServicesSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$cross$2d$check$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CrossCheckSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$data$2d$services$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DataServicesSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$patent$2d$value$2d$info$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PatentValueInfoSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$tech$2d$valuation$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TechValuationSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$chapter$2d$04$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Chapter04Slide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$why$2d$paytent$2d$ai$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WhyPaytentAiSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$paytent$2d$ai$2d$features$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PaytentAiFeaturesSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$paytent$2d$vs$2d$ai$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PaytentVsAiSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ai$2d$calendar$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AiCalendarSlide"],
-    ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ai$2d$calendar$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AiCalendarSlide"], {
-            isPage22: true
-        }, void 0, false, {
-            fileName: "[project]/app/page.tsx",
-            lineNumber: 52,
-            columnNumber: 9
-        }, ("TURBOPACK compile-time value", void 0)),
-    ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ai$2d$calendar$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AiCalendarSlide"], {
-            isPage23: true
-        }, void 0, false, {
-            fileName: "[project]/app/page.tsx",
-            lineNumber: 53,
-            columnNumber: 9
-        }, ("TURBOPACK compile-time value", void 0)),
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$paytent$2d$ai$2d$adoption$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PaytentAiAdoptionSlide"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$thank$2d$you$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThankYouSlide"]
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$cover$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CoverSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$chapter$2d$01$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Chapter01Slide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ip$2d$reality$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IpRealitySlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$why$2d$not$2d$managed$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WhyNotManagedSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ip$2d$judgment$2d$core$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IpJudgmentCoreSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$current$2d$issues$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CurrentIssuesSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$chapter$2d$02$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Chapter02Slide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$annuity$2d$management$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnnuityManagementSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$competitive$2d$advantage$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CompetitiveAdvantageSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$chapter$2d$03$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Chapter03Slide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$service$2d$advantages$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ServiceAdvantagesSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$services$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ServicesSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$cross$2d$check$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CrossCheckSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$data$2d$services$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DataServicesSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$patent$2d$value$2d$info$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PatentValueInfoSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$tech$2d$valuation$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TechValuationSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$chapter$2d$04$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Chapter04Slide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$why$2d$paytent$2d$ai$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WhyPaytentAiSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$paytent$2d$ai$2d$features$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PaytentAiFeaturesSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$paytent$2d$vs$2d$ai$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PaytentVsAiSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ai$2d$calendar$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AiCalendarSlide"]),
+    createSlideWithProps(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ai$2d$calendar$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AiCalendarSlide"], {
+        isPage22: true
+    }),
+    createSlideWithProps(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$ai$2d$calendar$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AiCalendarSlide"], {
+        isPage23: true
+    }),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$paytent$2d$ai$2d$adoption$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PaytentAiAdoptionSlide"]),
+    createSlide(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$slides$2f$thank$2d$you$2d$slide$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThankYouSlide"])
 ];
 function PresentationPage() {
     _s();
@@ -161,7 +172,7 @@ function PresentationPage() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CurrentSlideComponent, {}, void 0, false, {
                             fileName: "[project]/app/page.tsx",
-                            lineNumber: 91,
+                            lineNumber: 105,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -173,18 +184,18 @@ function PresentationPage() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/page.tsx",
-                            lineNumber: 94,
+                            lineNumber: 108,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/page.tsx",
-                    lineNumber: 90,
+                    lineNumber: 104,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 89,
+                lineNumber: 103,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -199,12 +210,12 @@ function PresentationPage() {
                             className: "h-5 w-5"
                         }, void 0, false, {
                             fileName: "[project]/app/page.tsx",
-                            lineNumber: 103,
+                            lineNumber: 117,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 102,
+                        lineNumber: 116,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -214,12 +225,12 @@ function PresentationPage() {
                                 className: `h-2 rounded-full transition-all ${index === currentSlide ? "w-8 bg-primary" : "w-2 bg-border hover:bg-muted-foreground"}`
                             }, index, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 108,
+                                lineNumber: 122,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 106,
+                        lineNumber: 120,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -231,24 +242,24 @@ function PresentationPage() {
                             className: "h-5 w-5"
                         }, void 0, false, {
                             fileName: "[project]/app/page.tsx",
-                            lineNumber: 119,
+                            lineNumber: 133,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 118,
+                        lineNumber: 132,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 101,
+                lineNumber: 115,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/page.tsx",
-        lineNumber: 87,
+        lineNumber: 101,
         columnNumber: 5
     }, this);
 }
