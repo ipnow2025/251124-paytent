@@ -44,7 +44,7 @@ export function PaytentAiAdoptionSlide() {
             ))}
           </div>
         </div>
-
+{/* 
         <div className="grid grid-cols-1 gap-5">
           <div className="p-5 rounded-xl bg-card border border-border">
             <div className="flex items-center gap-3 mb-3">
@@ -62,7 +62,7 @@ export function PaytentAiAdoptionSlide() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Closing Message */}
         <div className="p-6 rounded-2xl bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 border-2 border-accent/30">
