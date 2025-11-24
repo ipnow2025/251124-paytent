@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { CoverSlide } from "@/components/slides/cover-slide"
@@ -72,28 +72,103 @@ const slides = [
 export default function PresentationPage() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1))
+  }, [])
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => Math.max(prev - 1, 0))
+  }, [])
+
+  const goToSlide = useCallback((index: number) => {
+    setCurrentSlide(Math.max(0, Math.min(index, slides.length - 1)))
+  }, [])
+
+  const goToFirstSlide = useCallback(() => {
+    setCurrentSlide(0)
+  }, [])
+
+  const goToLastSlide = useCallback(() => {
+    setCurrentSlide(slides.length - 1)
+  }, [])
+
+  // 프레젠테이션 포인터 키보드 이벤트 처리
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight" || e.key === " ") {
+      // 다음 슬라이드: ArrowRight, Space, PageDown, Enter, N
+      if (
+        e.key === "ArrowRight" ||
+        e.key === " " ||
+        e.key === "PageDown" ||
+        e.key === "Enter" ||
+        e.key === "n" ||
+        e.key === "N"
+      ) {
         e.preventDefault()
         nextSlide()
-      } else if (e.key === "ArrowLeft") {
+      }
+      // 이전 슬라이드: ArrowLeft, PageUp, Backspace, P
+      else if (
+        e.key === "ArrowLeft" ||
+        e.key === "PageUp" ||
+        e.key === "Backspace" ||
+        e.key === "p" ||
+        e.key === "P"
+      ) {
         e.preventDefault()
         prevSlide()
+      }
+      // 첫 슬라이드: Home
+      else if (e.key === "Home") {
+        e.preventDefault()
+        goToFirstSlide()
+      }
+      // 마지막 슬라이드: End
+      else if (e.key === "End") {
+        e.preventDefault()
+        goToLastSlide()
+      }
+      // 숫자 키로 특정 슬라이드로 이동 (1-9)
+      else if (e.key >= "1" && e.key <= "9") {
+        e.preventDefault()
+        const slideIndex = parseInt(e.key) - 1
+        if (slideIndex < slides.length) {
+          goToSlide(slideIndex)
+        }
       }
     }
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [currentSlide])
+  }, [nextSlide, prevSlide, goToSlide, goToFirstSlide, goToLastSlide])
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }
+  // 슬라이드 영역 클릭으로 다음 슬라이드 이동
+  const handleSlideClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      // 네비게이션 컨트롤 영역이 아닌 경우에만 처리
+      const target = e.target as HTMLElement
+      if (
+        !target.closest("button") &&
+        !target.closest("[role='button']") &&
+        !target.closest(".navigation-controls")
+      ) {
+        // 왼쪽 클릭: 다음 슬라이드, 오른쪽 클릭: 이전 슬라이드
+        if (e.button === 0) {
+          // 왼쪽 클릭
+          const rect = e.currentTarget.getBoundingClientRect()
+          const clickX = e.clientX - rect.left
+          const middleX = rect.width / 2
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }
+          if (clickX > middleX) {
+            nextSlide()
+          } else {
+            prevSlide()
+          }
+        }
+      }
+    },
+    [nextSlide, prevSlide]
+  )
 
   const CurrentSlideComponent = slides[currentSlide]
 
@@ -101,7 +176,14 @@ export default function PresentationPage() {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Slide Container - 16:9 aspect ratio */}
       <div className="flex-1 flex items-center justify-center p-4 md:p-8">
-        <div className="w-full max-w-[1920px] aspect-video bg-card rounded-lg shadow-2xl overflow-hidden relative">
+        <div
+          className="w-full max-w-[1920px] aspect-video bg-card rounded-lg shadow-2xl overflow-hidden relative cursor-pointer"
+          onClick={handleSlideClick}
+          onContextMenu={(e) => {
+            e.preventDefault()
+            prevSlide()
+          }}
+        >
           <CurrentSlideComponent />
 
           {/* Slide Counter */}
@@ -112,7 +194,7 @@ export default function PresentationPage() {
       </div>
 
       {/* Navigation Controls */}
-      <div className="p-4 flex items-center justify-center gap-4">
+      <div className="navigation-controls p-4 flex items-center justify-center gap-4">
         <Button onClick={prevSlide} disabled={currentSlide === 0} variant="outline" size="icon">
           <ChevronLeft className="h-5 w-5" />
         </Button>
